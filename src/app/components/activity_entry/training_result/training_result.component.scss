@@ -1,0 +1,27 @@
+.collapsible-header {
+  padding-left: 50px;
+    background: url("../../../../images/corner-2.png") no-repeat;
+    background-size: 43px 43px;
+  &.success {
+    background: url("../../../../images/corner-1.png") no-repeat;
+    background-size: 43px 43px;
+  }
+}
+.results-container{
+  background-color: white;
+}
+
+.user_answer{
+  h3{
+    font-size: 1.80rem;
+    margin: 1.0rem 0 0.8rem 0;
+    color: grey;
+  }
+}
+
+.success.progress {
+  .determinate{
+    background-color: #407AFF;
+  }
+  background-color: rgba(64, 122, 255, 0.22);
+}

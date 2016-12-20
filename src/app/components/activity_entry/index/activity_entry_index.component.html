@@ -1,0 +1,33 @@
+    <div class="content">
+      <h2>過去のエントリー一覧</h2>
+
+      <div class="entries-container">
+        <ul class="entries-ul collection">
+          <li class="collection-item" *ngFor="let activity_entry of activitys">
+            <div>
+              <span class="activity-type ">
+                {{activity_entry.activity_type}}
+              </span>
+              <span class="activity-name">
+                {{activity_entry.activity_name}}
+              </span>
+
+
+              <span class="status badge {{activity_entry.status}}">
+                {{activity_entry.status}}
+              </span>
+            </div>
+            <div class="buttons">
+              <div class="waves-effect add-question waves-light btn amber darken-3 result-button"
+                *ngIf="activity_entry.status=='completed'"
+                   (click)="showResult(activity_entry.entry_id)"
+              >結果を見る</div>
+              <div class="waves-effect add-question waves-light btn blue darken-3 result-button"
+                   *ngIf="activity_entry.status=='launched' || activity_entry.status=='suspended'"
+                   (click)="startEntry(activity_entry.entry_id)"
+              >再開する</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>

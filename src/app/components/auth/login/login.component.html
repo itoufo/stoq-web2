@@ -1,0 +1,34 @@
+<!--<div *ngIf="_loading.isLoading()" id="loading_curtain"></div>-->
+<div id="loading_curtain"></div>
+
+<div class="signup">
+  <div class="p-container">
+    <h1 class="str-u-text-center"></h1>
+    <p class="str-u-text-center str-u-m20-b p-description">ログイン</p>
+    <div class="str-form">
+      <form id="login-form">
+        <div class="str-form-group">
+          <input [(ngModel)]="email" name="email" type="email" placeholder="メールアドレス" />
+        </div>
+        <div class="str-form-group">
+          <input [(ngModel)]="password" name="password" type="password" placeholder="パスワード" />
+        </div>
+        <div class="str-form-group">
+          <input id="remember-me" type="checkbox" name="remember"
+                 [(ngModel)]="remember" />
+          <label for="remember-me">アカウント情報を記憶する</label>
+        </div>
+        <div class="str-form-group">
+          <button type='submit'
+                  class="str-btn str-btn-block str-btn-cuxino"
+                  angulartics2On="click"
+                  angularticsEvent="LoginClick"
+                  angularticsCategory="login"
+          >ログイン</button>
+        </div>
+      </form>
+    </div>
+    <a href="#/signup">新規登録はこちら</a>
+    <a href="http://stoq.jp">StoQとは？</a>
+  </div>
+</div>

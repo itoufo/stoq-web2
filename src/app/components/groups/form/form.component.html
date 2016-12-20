@@ -1,0 +1,61 @@
+<div class="input-field" *ngIf=group.id>
+    グループコード: {{group.group_code}}
+</div>
+
+<div id="tab1" class="col s12">
+
+  <!-- コース設定 ここから -->
+  <form id="group_form">
+
+    <!--コース名編集 ここから -->
+    <div class="input-field">
+      <label [attr.for]="'group_name'" [ngClass]="{active: group.name}">グループ名</label>
+      <input type="text" id="group_name" [(ngModel)]="group.name" name="name" />
+    </div>
+    <!--コース名編集 ここまで -->
+
+    <!-- グループコード ここから -->
+    <div class="input-field" *ngIf=!group.id>
+      <label [attr.for]="'group_code'" [ngClass]="{active: group.group_code}">グループコード</label>
+      <input type="text" id="group_code" [(ngModel)]="group.group_code" name="group_code" />
+    </div>
+    <!-- グループコード ここから -->
+
+    <!--コース概要 ここから -->
+    <div class="input-field">
+      <label [attr.for]="'group_description'"
+             [ngClass]="{active: group.description}">グループ概要</label>
+    <textarea id="group_description"
+              class="materialize-textarea"
+              name="description"
+              [(ngModel)]="group.description"></textarea>
+    </div>
+    <!--コース概要 ここまで `-->
+
+
+    <!--ボタン ここから-->
+    <div class="post-course right" [ngSwitch]="group.id == null">
+      <div class="new-group-button1" *ngSwitchCase="true">
+        <button class="waves-effect waves-light btn"
+                type="submit"
+        >
+          グループ作成
+        </button>
+      </div>
+      <div class="new-group-button1" *ngSwitchDefault>
+        <input type="hidden" id="group_id" [(ngModel)]="group.id" name="group_id" />
+        <button class="waves-effect add-question waves-light btn"
+                type="submit"
+        >
+          グループ更新
+        </button>
+      </div>
+    </div>
+    <!--ボタン ここまで -->
+
+    <!--ボタン ここまで -->
+
+  </form>
+
+  <!-- コース設定 ここまで -->
+</div>

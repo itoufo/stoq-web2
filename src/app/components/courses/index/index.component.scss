@@ -1,0 +1,37 @@
+.delete-button {
+  font-size: 20pt;
+  color: #bdbdbd;
+  margin-top: 0;
+  position: absolute;
+  top: 2px;
+  right: 0px;
+}
+
+h4 {
+  a {
+    color: #000000;
+    border-bottom: 1px solid;
+  }
+  font-size: 20pt;
+}
+
+.courses-row {
+  position: relative;
+}
+
+.info-container {
+  position: absolute;
+  right: 20px;
+  top: 0px;
+}
+
+.course-collection-item {
+  .detail-container {
+    float: left;
+    margin-left: 10px;
+    p {
+      margin: 3px 10px;;
+    }
+  }
+}
+

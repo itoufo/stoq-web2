@@ -1,0 +1,32 @@
+.card{
+  margin: 2.5%;
+}
+
+.delete-button {
+  font-size: 30pt;
+  color: #e65100;
+  margin-top: 1rem;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+
+.difficulty{
+  margin-left: 5px;
+  font-size: 12pt;
+}
+
+.group-detail{
+  .btn{
+    padding-left: 1rem;
+    padding-right: 1.2rem;
+    font-size: 1.3rem;
+    margin-right: 5px;
+    i.left {
+      margin-right: 8px;
+      line-height: 24px;
+      margin-left: -41px;
+      font-size: 5.3rem;
+    }
+  }
+}

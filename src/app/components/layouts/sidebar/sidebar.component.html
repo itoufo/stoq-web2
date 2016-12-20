@@ -1,0 +1,11 @@
+<!-- START LEFT SIDEBAR NAV-->
+<ul id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y" style="width: 240px;">
+  <li class="bold" (click)=returnHome() *ngIf="_auth.getStatus()" ><a class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a></li>
+  <li class="bold" (click)=courseNew()  *ngIf="_auth.getStatus()d"><a class="waves-effect waves-cyan"><i class="mdi-av-my-library-books"></i> コース作成</a></li>
+  <li class="bold" (click)=groupIndex()  *ngIf="_auth.getStatus()d"><a class="waves-effect waves-cyan"><i class="mdi-social-people"></i> グループ管理</a></li>
+  <li class="bold" (click)=coursePublicIndex() ><a class="waves-effect waves-cyan"><i class="mdi-social-public"></i> 公開コース一覧</a></li>
+  <li class="bold" (click)=courseMyIndex() *ngIf="_auth.getStatus()" ><a class="waves-effect waves-cyan"><i class="mdi-action-list"></i> Myコース一覧</a></li>
+  <li class="bold" (click)=entriesIndex() *ngIf="_auth.getStatus()" ><a class="waves-effect waves-cyan"><i class="mdi-action-history"></i> エントリー履歴</a></li>
+</ul>
+<a href="javascript:void(0)" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
+

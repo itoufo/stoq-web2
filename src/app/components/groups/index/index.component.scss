@@ -1,0 +1,29 @@
+.btn-add-group{
+  padding-right: 10px;
+  padding-left: 10px;
+  @media only screen and (min-width: 601px){
+    margin: 2.5rem 0 1.624rem 0;
+  }
+}
+
+h4 {
+  a {
+    color: #000000;
+    border-bottom: 1px solid;
+  }
+  font-size: 20pt;
+  margin-left: 10px;
+}
+
+.btn-add-group{
+  padding-left: 1rem;
+  padding-right: 1.2rem;
+  font-size: 1.3rem;
+  margin-right: 5px;
+  i.left {
+    margin-right: 8px;
+    line-height: 24px;
+    margin-left: -41px;
+    font-size: 5.3rem;
+  }
+}

@@ -1,0 +1,44 @@
+    <div class="content">
+      <h2>トレーニング結果</h2>
+      <div class="result">
+        <div [ngSwitch]="training_result.success">
+          <span *ngSwitchCase="true">Success!</span>
+          <span *ngSwitchCase="false">Fault..</span>
+        </div>
+        <div class="training-score"
+             *ngIf="training_result.score"
+        >
+          {{training_result.score.raw}}/{{training_result.score.max}}
+          <div class="progress"
+               [ngClass]="{success: training_result.success}"
+          >
+            <div
+              class="determinate"
+              [style]="progressBarWidth()"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="results-container">
+        <ul class="collapsible collapsible-accordion results-container" data-collapsible="accordion">
+          <li *ngFor="let user_answer of user_answers">
+            <div class="collapsible-header" [ngClass]="{success: user_answer.result.success}">
+              Question. {{user_answer.question.index}}
+              <span class="score right">
+                {{user_answer.result.score.raw}}
+                /{{user_answer.result.score.max}}
+              </span>
+            </div>
+            <div class="collapsible-body" >
+              <div class="question-text" [innerHTML]="user_answer.question.text">
+              </div>
+              <hr>
+              <div class="user_answer">
+                <h3>Your Answer</h3>
+                {{user_answer.value}}
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>

@@ -1,0 +1,71 @@
+<div id="modal3" class="modal">
+
+  <div class="modal-header" *ngIf="popupBase.headerText">
+    <h1>{{popupBase.headerText}}</h1>
+  </div>
+
+  <div class="modal-content white red-text" *ngIf="popupBase.errorMessages">
+    <ul>
+      <li *ngFor="let error of popupBase.errorMessages">
+        <p>{{error.params()}} : {{error.messages()}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="popupBase.contentText || popupBase.imageSrc" class="modal-content {{popupBase.contentColor}} white-text">
+    <p>{{popupBase.contentText}}</p>
+    <div class="img-container center">
+      <img *ngIf="popupBase.imageSrc" src="{{popupBase.imageSrc}}" />
+    </div>
+  </div>
+</div>
+
+<div id="modal4" class="modal">
+  <div class="modal-header" *ngIf="popupBase.headerText">
+    <h1>
+      <i class="fa fa-question-circle"></i>
+      {{popupBase.headerText}}</h1>
+  </div>
+
+  <div class="modal-content white red-text" *ngIf="popupBase.errorMessages">
+    <ul>
+      <li *ngFor="let error of popupBase.errorMessages">
+        <p>{{error.params()}} : {{error.messages()}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="popupBase.contentText || popupBase.imageSrc" class="modal-content {{popupBase.contentColor}} white-text">
+    {{popupBase.contentText}}
+    <img *ngIf="popupBase.imageSrc" src="{{popupBase.imageSrc}}" />
+  </div>
+  <div class="modal-footer">
+    <a (click)="popupBase.okFunction()"
+       class="waves-effect waves-green btn-flat modal-action modal-close">OK</a>
+    <a (click)="popupBase.cancelFunction()"
+       class="waves-effect waves-red btn-flat modal-action modal-close">CANCEL</a>
+  </div>
+</div>
+
+<div id="modal5" class="modal">
+
+  <div class="modal-header" *ngIf="popupBase.headerText">
+    <h1>{{popupBase.headerText}}</h1>
+  </div>
+
+  <div class="modal-content white red-text" *ngIf="popupBase.errorMessages">
+    <ul>
+      <li *ngFor="let error of popupBase.errorMessages">
+        <p>{{error.params()}} : {{error.messages()}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="popupBase.contentText || popupBase.imageSrc" class="modal-content {{popupBase.contentColor}} white-text">
+    <p>{{popupBase.contentText}}</p>
+    <div class="img-container center">
+      <img *ngIf="popupBase.imageSrc" src="{{popupBase.imageSrc}}" />
+    </div>
+  </div>
+</div>
+
