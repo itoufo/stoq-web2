@@ -1,1 +1,1 @@
-export * from './index.component';
+export {CoursesIndexComponent} from './index.component';

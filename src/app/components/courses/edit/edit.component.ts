@@ -24,7 +24,7 @@ import {
 @Component({
   selector: 'courses-new',
   templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css'],
+  styleUrls: ['./edit.component.scss'],
   inputs: ["selected_question_type"],
   providers: [
     ApiService,

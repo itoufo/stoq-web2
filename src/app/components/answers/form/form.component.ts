@@ -8,7 +8,7 @@ import {
 @Component({
   selector: 'answer-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
+  styleUrls: ['./form.component.scss'],
   inputs: ["answer", "question"],
 })
 

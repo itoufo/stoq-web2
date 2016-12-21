@@ -14,7 +14,7 @@ export {
   FooterComponent,
   SidebarComponent,
   RightSidebarComponent,
-  PopupComponentt,
+  PopupComponent,
 } from "./layouts"
 
 /**
@@ -28,7 +28,7 @@ export {UserAnalysisComponent} from "./users"
 export {
   LoginComponent,
   SignupComponent,
-  ComfirmationComponent,
+  ConfirmationComponent,
 } from "./auth;
 
 
@@ -51,7 +51,7 @@ export {
  */
 export {
   QuestionAnalyzeComponent,
-  QuestionsFormComponentt,
+  QuestionsFormComponent,
   QuestionsNewComponent,
 } from "./questions";
 
@@ -67,9 +67,9 @@ export {
  */
 export {
   EntryComponent,
-  TrainingComponentt,
-  TrainingResultComponentt,
-  EntriesComponen,
+  TrainingComponent,
+  TrainingResultComponent,
+  EntriesComponent,
 } from "./activity_entry";
 
 /**
@@ -78,9 +78,9 @@ export {
 export {
   GroupsNewComponent,
   GroupsShowComponent,
-  GroupsIndexComponentt,
-  GroupsEditComponentt,
-  GroupsFormComponen,
+  GroupsIndexComponent,
+  GroupsEditComponent,
+  GroupsFormComponent,
 } from "./groups";
 
 /**

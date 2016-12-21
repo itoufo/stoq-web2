@@ -1,5 +1,5 @@
 export * from './edit';
 export * from './form';
-export * from './index';
+export { GroupsIndexComponent } from './index/index.component';
 export * from './new';
 export * from './show';

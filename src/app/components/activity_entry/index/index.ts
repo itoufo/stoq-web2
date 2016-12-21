@@ -1,1 +1,1 @@
-export * from './activity_entry_index.component';
+export {ActivityEntryIndexComponent} from './activity_entry_index.component';

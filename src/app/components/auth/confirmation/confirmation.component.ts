@@ -17,7 +17,7 @@ import {
 @Component({
   selector: 'login',
   templateUrl: './confirmation.component.html',
-  styleUrls: ['./confirmation.component.css'],
+  styleUrls: ['./confirmation.component.scss'],
   providers: [
     ApiService,
     AuthService,

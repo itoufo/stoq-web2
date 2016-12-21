@@ -27,7 +27,7 @@ import {
 @Component({
   selector: 'courses-index',
   templateUrl: './publicIndex.component.html',
-  styleUrls: ['./publicIndex.component.css'],
+  styleUrls: ['./publicIndex.component.scss'],
   providers: [
     ApiService,
     AuthService,

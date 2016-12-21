@@ -1,3 +1,5 @@
+var jQuery = require('jquery');
+
 import {
   Component,
   Output,
@@ -26,7 +28,7 @@ import {
 @Component({
   selector: 'courses-new',
   templateUrl: './new.component.html',
-  styleUrls: ['./new.component.css'],
+  styleUrls: ['./new.component.scss'],
   inputs: ["selected_question_type"],
   providers: [
     PopupService,

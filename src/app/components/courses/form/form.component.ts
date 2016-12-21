@@ -1,3 +1,5 @@
+var jQuery, $ = require('jquery');
+
 import {
   Component,
   ElementRef,
@@ -29,7 +31,7 @@ import {
 @Component({
   selector: 'courses-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
+  styleUrls: ['./form.component.scss'],
   providers: [
     ApiService,
     AuthService,

@@ -1,3 +1,6 @@
+var jQuery, $ = require('jquery');
+var moment = require('moment');
+
 import {
   Answer,
   Question,

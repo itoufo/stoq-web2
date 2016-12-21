@@ -1,3 +1,6 @@
+var jQuery, $ = require('jquery');
+var Chart = require('Chart');
+
 import {
   Component,
   OnInit
@@ -17,7 +20,7 @@ import {
 
 @Component({
   templateUrl: './analysis.component.html',
-  styleUrls: ['./analysis.component.css'],
+  styleUrls: ['./analysis.component.scss'],
   providers: [
     ApiService,
     AuthService,

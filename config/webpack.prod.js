@@ -31,6 +31,8 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   HMR: false
 });
 
+const MaterialBucket = 'stoq-material';
+
 module.exports = function (env) {
   return webpackMerge(commonConfig({env: ENV}), {
 

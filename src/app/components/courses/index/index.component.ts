@@ -1,3 +1,4 @@
+var jQuery, $ = require('jquery');
 import {
   Component,
   OnInit,
@@ -26,7 +27,7 @@ import {
 @Component({
   selector: 'courses-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css'],
+  styleUrls: ['./index.component.scss'],
   providers: [
     ApiService,
     AuthService,

@@ -1,1 +1,1 @@
-export * from './index.component';
+export {GroupsIndexComponent} from './index.component';

@@ -25,7 +25,7 @@ import {
 @Component({
   selector: 'courses-show',
   templateUrl: './show.component.html',
-  styleUrls: ['./show.component.css'],
+  styleUrls: ['./show.component.scss'],
   providers: [
     ApiService,
     AuthService,

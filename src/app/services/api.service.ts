@@ -25,7 +25,8 @@ export class ApiService {
   constructor(
     private _http: Http,
     @Inject('ApiEndpoint') private api_path: string,
-    @Inject('AnalyzeEndpoint') private analyze_path: string
+    @Inject('AnalyzeEndpoint') private analyze_path: string,
+    @Inject('MaterialBucket') private material_bucket: string
   ) {
 
   }
@@ -454,9 +455,9 @@ export class ApiService {
     return this._callPostApi('Secured', "/groups/edit", {
       group_id: group.id,
       group: {
-      name: group.name,
-      description: group.description
-    }
+        name: group.name,
+        description: group.description
+      }
     });
   }
 
@@ -492,6 +493,13 @@ export class ApiService {
     } else {
       return this._callGetApi('Secured', "/user/request/upload", {});
     }
+  }
+
+  postImage(params): Observable<Response>{
+    var url = "http://" + this.material_bucket + ".s3.amazonaws.com/";
+
+
+    return this._http.post(url, params, {});
   }
 
 

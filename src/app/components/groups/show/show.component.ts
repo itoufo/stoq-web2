@@ -27,7 +27,7 @@ import {Angulartics2On} from 'angulartics2';
 @Component({
   selector: 'group-show',
   templateUrl: './show.component.html',
-  styleUrls: ['./show.component.css'],
+  styleUrls: ['./show.component.scss'],
   providers: [
     ApiService,
     AuthService,

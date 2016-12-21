@@ -1,1 +1,1 @@
-export * from './training_result.component';
+export {TrainingResultComponent} from './training_result.component';

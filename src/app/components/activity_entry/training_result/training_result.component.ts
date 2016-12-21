@@ -1,3 +1,5 @@
+var jQuery, $ = require('jquery');
+
 import {
   Component,
   AfterViewInit,
@@ -30,7 +32,7 @@ import{
 @Component({
   selector: 'courses-show',
   templateUrl: './training_result.component.html',
-  styleUrls: ['./training_result.component.css'],
+  styleUrls: ['./training_result.component.scss'],
   providers: [
     ApiService,
     AuthService,

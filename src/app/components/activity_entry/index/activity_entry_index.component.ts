@@ -30,7 +30,7 @@ import {
 @Component({
   selector: 'courses-show',
   templateUrl: './activity_entry_index.component.html',
-  styleUrls: ['./activity_entry_index.component.css'],
+  styleUrls: ['./activity_entry_index.component.scss'],
   providers: [
     ApiService,
     AuthService,

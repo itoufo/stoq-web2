@@ -19,7 +19,7 @@ import { Response } from '@angular/http';
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
   providers: [
     ApiService,
     AuthService,

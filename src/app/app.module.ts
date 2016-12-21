@@ -20,7 +20,6 @@ import { NoContentComponent } from './no-content';
 import { XLarge } from './home/x-large';
 
 import {
-  CoursesComponent,
   CoursesNewComponent,
   CoursesEditComponent,
   ConfirmationComponent,

@@ -1,3 +1,5 @@
+var jQuery, $ = require('jquery');
+
 import {
   Component,
   AfterViewInit,
@@ -36,7 +38,7 @@ import { Response } from '@angular/http';
 @Component({
   selector: 'courses-show',
   templateUrl: './training.component.html',
-  styleUrls: ['./training.component.css'],
+  styleUrls: ['./training.component.scss'],
   providers: [
     ApiService,
     AuthService,

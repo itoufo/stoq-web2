@@ -27,6 +27,8 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   HMR: HMR
 });
 
+const MaterialBucket = 'stoq-material-dev';
+
 /**
  * Webpack configuration
  *

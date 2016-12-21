@@ -27,7 +27,7 @@ import {
 @Component({
   selector: 'courses-new',
   templateUrl: './addQuestion.component.html',
-  styleUrls: ['./addQuestion.component.css'],
+  styleUrls: ['./addQuestion.component.scss'],
   inputs: [
     "selected_question_type"
   ],

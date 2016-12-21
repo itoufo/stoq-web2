@@ -1,3 +1,7 @@
+var jQuery, $ = require('jquery');
+var wysihtml5, $ = require('wysihtml5');
+var wysihtml5ParserRules, $ = require('wysihtml5ParserRules');
+
 import {
   Component,
   Input,
@@ -8,7 +12,8 @@ import {
   Output,
   EventEmitter,
   ElementRef,
-  Injector
+  Injector,
+  Inject
 } from '@angular/core';
 import { Router } from '@angular/router';
 import {OnDestroy} from "@angular/core";
@@ -38,7 +43,7 @@ declare const AWS: any;
 @Component({
   selector: 'question-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css'],
+  styleUrls: ['./form.component.scss'],
   providers: [ApiService],
   inputs: ['question'],
 })
@@ -51,7 +56,7 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
   public random = Math.floor( Math.random() * 10000000 );
 
   private _loaded: boolean = false;
-  private _editor: WysihtmlEditor;
+  private _editor: any;
   private _editorFocused: boolean = false;
 
   private file: File;
@@ -66,8 +71,7 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
     private _api: ApiService,
     private _auth: AuthService,
     private _popup: PopupService,
-    private _router: Router,
-    @Inject('MaterialBucket') private material_bucket: string
+    private _router: Router
   ) {
     this._logger.debug("***** question component init ******");
     this._logger.debug(this.question);
@@ -127,15 +131,8 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
     this._api.getImageSignature().subscribe(
       data => {
         var jsonData: {data: any} = data.json();
-        var fd = new FormData();
-        for(var k  in jsonData){
-          fd.append(k, jsonData[k]);
-        }
-        fd.append("acl", "public-read");
-        fd.append("file", this.file);
-        var request = new XMLHttpRequest();
-        request.open("PUT", "http://" + material_bucket + ".s3.amazonaws.com/");
-        request.send(formData);
+        jsonData["file"] = this.file;
+        jsonData["acl"] = "public-read";
       },
       err => {
         this._popup.displayError(err, "Question 更新エラー");
@@ -347,4 +344,5 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
     }
   }
 }
+
 

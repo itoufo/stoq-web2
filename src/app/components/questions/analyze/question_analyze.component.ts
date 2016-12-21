@@ -1,3 +1,8 @@
+var jQuery, $ = require('jquery');
+var Chart, $ = require('Chart');
+var wysihtml5, $ = require('wysihtml5');
+var wysihtml5ParserRules, $ = require('wysihtml5ParserRules');
+
 import {
   Component,
   OnInit,
@@ -26,7 +31,7 @@ import {
 
 @Component({
   templateUrl: './question_analyze.component.html',
-  styleUrls: ['./question_analyze.component.css'],
+  styleUrls: ['./question_analyze.component.scss'],
   providers: [
     ApiService,
     AuthService,

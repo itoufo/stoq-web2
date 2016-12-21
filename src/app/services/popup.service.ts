@@ -1,3 +1,5 @@
+var jQuery, $ = require('jquery');
+
 import {Injectable} from "@angular/core";
 
 import {
@@ -10,6 +12,8 @@ import {
 } from "./../services";
 
 var POPUPBASE = new PopupBase();
+
+
 
 @Injectable()
 export class PopupService {
