@@ -1,0 +1,190 @@
+<!-- START LEFT SIDEBAR NAV-->
+<ul id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y" style="width: 240px;">
+  <li>
+    <a
+      (click)="courseConfig($event)"
+      [ngClass] = "{selected: selectedIndex == -1}"
+    >コース設定</a>
+  </li>
+  <li *ngFor="let question of course.questions" class="bold">
+    <a
+      class="waves-effect waves-cyan"
+      [ngClass] = "{selected: selectedIndex == question.index}"
+      (click)="selectQuestion($event, question.index)"
+    >Question.{{question.index}}</a>
+  </li>
+</ul>
+
+<a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan">
+  <i class="mdi-navigation-menu"></i>
+</a>
+
+
+
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3">
+        <a class="active"
+           href="#tab1"
+           (click)="courseConfig($event)"
+           >コース設定</a></li>
+      <li class="tab col s3"[ngClass]="{disabled: !course.isValid()}" >
+        <a href="#tab2"
+           (click)="tabQuestions($event)"
+        >Questions</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="tab1" class="row">
+
+  <!-- コース設定 ここから -->
+  <form id="course_form">
+
+    <!--コース名編集 ここから -->
+    <div class="input-field col m6 s8">
+      <label [attr.for]="'course_name'" [ngClass]="{active: course.name}">コース名</label>
+      <input type="text" id="course_name" [(ngModel)]="course.name" name="name" />
+    </div>
+    <!--コース名編集 ここまで -->
+
+    <!--コース形式 ここから -->
+    <div class="select-wrapper initialized col m6 s8">
+      <label [attr.for]="'course_' + random">コース形式</label>
+      <select id="course_course_type"
+              class="browser-default select-course-types"
+              name="course_type"
+              [(ngModel)]="course.course_type">
+        <option value disabled selected>コース形式を選択して下さい</option>
+        <option *ngFor="let type of courseTypes" value="{{type.value}}">{{type.name}}</option>
+      </select>
+    </div>
+    <!--コース形式 ここまで `-->
+
+    <!--コース概要 ここから -->
+    <div class="input-field col s12">
+      <label [attr.for]="'course_description'"
+             [ngClass]="{active: course.description}">コース概要</label>
+      <textarea id="course_description"
+                class="materialize-textarea"
+                name="description"
+                [(ngModel)]="course.description"></textarea>
+    </div>
+    <!--コース概要 ここまで `-->
+
+
+
+    <!--詳細設定 ここから -->
+    <div class="select-wrapper col m6 s12">
+      <ul class="collapsible collapsible-accordion select-config" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header ">詳細設定</div>
+          <div class="collapsible-body">
+            <div>
+              <input id="course_is_private" type="checkbox"  name="is_private"
+                     [(ngModel)]="course.config.is_private" />
+              <label for="course_is_private">公開しない</label>
+            </div>
+            <div>
+              <input id="course_is_draft" type="checkbox" name="is_draft"
+                     [(ngModel)]="course.config.is_draft" />
+              <label for="course_is_draft">下書きとして作成する</label>
+            </div>
+            <div>
+              <input id="course_copy_forbidden" type="checkbox" name="copy_forbidden"
+                     [(ngModel)]="course.config.copy_forbidden" />
+              <label for="course_copy_forbidden">他のユーザによる再利用を禁止する</label>
+            </div>
+            <div>
+              <input id="course_auto_weigh" type="checkbox" checked="checked" name="auto_weigh"
+                     [(ngModel)]="course.config.auto_weigh" />
+              <label for="course_auto_weigh">問題の重みを自動的に計算する</label>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!--詳細設定 ここまで -->
+
+    <!--ボタン ここから-->
+    <div class="post-course right col m6 s12" [ngSwitch]="course.id == null">
+      <div class="new-course-button1"
+           *ngSwitchCase="true"
+      >
+        <button class="waves-effect add-question green waves-light btn"
+                type="submit"
+                *ngSwitchCase="true"
+        >
+          NEXT >
+        </button>
+        <!--<button class="waves-effect add-question waves-light btn"-->
+              <!--(click)=postCreateCourse()-->
+              <!--*ngSwitchWhen="true"-->
+        <!--</button>-->
+      </div>
+      <button class="waves-effect add-question green waves-light btn"
+              type="submit"
+              *ngSwitchDefault
+      >
+        コース設定更新
+      </button>
+    </div>
+    <!--ボタン ここまで -->
+
+  </form>
+
+
+  <!-- コース設定 ここまで -->
+</div>
+
+<div id="tab2" class="col s12">
+  <!-- Question設定 ここから -->
+  <div class="question_form_container">
+
+    <!-- 問題を追加 ここから -->
+    <div class="col s12 center bold" (click)=createQuestion() >
+      <a class="waves-effect add-question waves-light btn add-question-btn">
+        <i class="mdi-action-add"></i>問題を追加
+      </a>
+    </div>
+    <!-- 問題を追加 ここまで -->
+
+    <!-- 問題作成処理のプログレスパー -->
+    <div class="progress">
+      <!--<div *ngIf="questionLoading"-->
+           <!--class="indeterminate"></div>-->
+    </div>
+
+    <div id="questions_tab"
+         style="width: 100%;">
+      <div class="tab col s1 waves-light btn"
+           [ngClass]='
+      {
+        "orange": (question.index==selectedIndex),
+        "light": !(question.index==selectedIndex)
+      }'
+           *ngFor="let question of course.questions"
+           (click)="selectQuestion($event, question.index)" >
+        Q.{{question.index}}
+      </div>
+    </div>
+
+    <div class="question_form"
+         *ngFor="let question of course.questions">
+      <!--<question-form [question]="question" *ngIf="question.index==selectedIndex"></question-form>-->
+      <question-form [question]="question"
+                     [ngClass]="{active: (question.index==selectedIndex)}"
+                     (activate)="selectQuestionIndex(question.index)"
+                     (startLoading)="questionStartLoading()"
+                     (endLoading)="questionEndLoading()"
+      >
+      </question-form>
+      <!--<div class="bold" (click)=postUpdateQuestion(question) >-->
+        <!--<a class="waves-effect add-question waves-light btn">-->
+          <!--<i class="mdi-action-add"></i>Questionを更新する-->
+        <!--</a></div>-->
+    </div>
+  </div>
+  <!-- Question設定 ここまで -->
+</div>

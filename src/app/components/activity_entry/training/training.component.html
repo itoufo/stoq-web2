@@ -1,0 +1,135 @@
+<!-- START LEFT SIDEBAR NAV-->
+<ul id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y" style="width: 240px;">
+  <li *ngFor="let question of questions" class="bold">
+    <a
+      class="waves-effect waves-cyan"
+      [ngClass] = "{selected: activity.currentIndex == question.index}"
+      (click)="select(question.index)"
+    >Question.{{question.index}}</a>
+  </li>
+</ul>
+
+<a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan">
+  <i class="mdi-navigation-menu"></i>
+</a>
+
+    <div class="content">
+      <div class="container content">
+        <div *ngIf="activity">
+          <div class="form" *ngIf="!hasQuestion()">
+            Question does not exist
+          </div>
+
+          <div class="form" *ngIf="hasQuestion()">
+            <h2>トレーニング  Q.{{activity.currentIndex}}</h2>
+
+            <div class="card question-content">
+              <div class="card-content">
+                <div class="question-text" [innerHTML]="currentQuestion().text"></div>
+
+                <!-- 選択肢一覧 -->
+
+                <!--<ol class="training-question-answers">-->
+                <!--<li class="training-question-answer"-->
+                <!--*ngFor="#answer of currentQuestion().answers">{{answer.value}}</li>-->
+                <!--</ol>-->
+                <!-- 選択肢一覧 ここまで -->
+              </div>
+            </div>
+            <!--<p>{{currentQuestion().type}}</p>-->
+            <div class="row">
+
+              <!-- ヒント -->
+              <div class="col s12 m6 l6" [ngClass]="{hidden: !currentQuestion().hint}">
+                <div class="card">
+                  <div class="card-image waves-effect waves-block waves-light center activator">
+                    <h2>
+                      <a class="activator">ヒントを見る</a>
+                    </h2>
+                  </div>
+                  <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-1">
+                    Hint<i class="mdi-navigation-close right"></i></span>
+                    <p>
+                      {{currentQuestion().hint}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- ヒント ここまで -->
+
+              <!-- メモ欄 -->
+              <div
+                class="col s12"
+                [ngClass]="{'m6 l6': currentQuestion().hint, 'm12 l12': !currentQuestion().hint}"
+              >
+                <textarea placeholder="メモ欄"
+                          class="card"
+                          [(ngModel)]="currentQuestion().memo">
+                </textarea>
+              </div>
+              <!-- メモ欄 ここまで -->
+
+              <!-- 解答パネル(選択問題） -->
+              <div class="col s12 m12 l12" *ngIf='currentQuestion().type=="select"'>
+                <div class="card">
+                  <div class="answer-panels">
+                    <div *ngFor="let answer of currentQuestion().answers">
+                      <button class="btn-hover btn-4 btn-4c"
+                              (click)="selectAnswer(answer)"
+                              angulartics2On="click"
+                              angularticsEvent="ClickAnswer"
+                      >
+                        <div class="selection-index">{{answer.index}}.</div>
+                        <div class="selection-value">&nbsp;&nbsp;{{answer.value}}</div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 解答パネル(選択問題） ここまで -->
+
+              <!-- 解答入力問題(入力問題） -->
+              <div class="col s12 m12 l12" *ngIf='currentQuestion().type=="input"'>
+                <div class="card">
+                  <form>
+                    <input type="text" [(ngModel)]="currentQuestion().userAnswer"
+                           [ngModelOptions]="{standalone: true}" placeholder="解答を入力">
+                    <button class="btn teal str-btn str-btn-block str-btn-cuxino"
+                            (click)="submitInput()"
+                            angulartics2On="click"
+                            angularticsEvent="DeleteCourse"
+                   >
+                      解答を送信
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <!-- 解答パネル(入力問題）ここまで -->
+
+              <!-- 操作ボタン -->
+              <div class="buttons col s12 m12 l12">
+                <button class="suspend-button btn"
+                        (click)="suspendTraining()"
+                >中断する</button>
+                <button class="end-button btn"
+                        (click)="endTraining()"
+                >終了する</button>
+
+                <button class="end-button btn"
+                        (click)="selectPrev()"
+                        *ngIf="!isFirst()"
+                >前へ</button>
+                <button class="end-button btn"
+                        (click)="selectNext()"
+                        *ngIf="!isLast()"
+                >次へ</button>
+              </div>
+              <!-- 操作ボタン -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>

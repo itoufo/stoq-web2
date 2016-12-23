@@ -31,6 +31,10 @@ const METADATA = {
   isDevServer: helpers.isWebpackDevServer()
 };
 
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+
 /*
  * Webpack configuration
  *
@@ -129,6 +133,12 @@ module.exports = function (options) {
           use: ['to-string-loader', 'css-loader']
         },
 
+        {
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          loaders: ['raw-loader','sass-loader']
+        },
+
         /* Raw loader support for *.html
          * Returns file content as string
          *
@@ -162,7 +172,9 @@ module.exports = function (options) {
         $: 'jquery',
         jquery: 'jquery',  // </added>
         moment: 'moment',   // </added>
-        wysihtml5: 'wysihtml5'   // </added>
+        wysihtml5: 'wysihtml5',   // </added>
+        wysihtml5ParserRules: 'wysihtml5ParserRules',   // </added>
+        Chart: 'Chart'   // </added>
       }),
 
       new AssetsPlugin({
@@ -301,7 +313,17 @@ module.exports = function (options) {
         /facade(\\|\/)math/,
         helpers.root('node_modules/@angular/core/src/facade/math.js')
       ),
+
+      new webpack.ProvidePlugin({
+        jQuery: "jquery",
+        $: "jquery",
+        Chart: "chart",
+        moment: "moment",
+        wysihtml5: "wysihtml5",
+        wysihtml5ParserRules: "wysihtml5ParserRules",
+      }),
     ],
+
 
     /*
      * Include polyfills or mocks for various node stuff

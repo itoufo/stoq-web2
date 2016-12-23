@@ -1,0 +1,50 @@
+<sidebar id="left-sidebar-nav"></sidebar>
+
+<h3 *ngIf="loading">
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  Loading...
+</h3>
+
+<section id="content">
+  <div class="container">
+
+    <div class="content">
+      <h1>Account Info</h1>
+      <div class="card">
+        <ul>
+          <li>
+            アカウント名: {{_auth.showAccountName()}}
+          </li>
+          <li>
+            メールアドレス: {{_auth.getEmail()}}
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>
+          共通ユーザ評価
+          <span class="user_rank">
+            UserRank: {{userRank.toPrecision(3)}}
+          </span>
+        </h2>
+        <div id="chart-container">
+          <canvas id="lineChartCanvas" height="450" width="600"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END CONTENT -->
+<right-sidebar id="right-sidebar-nav"></right-sidebar>

@@ -1,0 +1,95 @@
+.card{
+  margin: 2.5%;
+}
+
+table{
+  margin-top: 15px;
+}
+
+td, th {
+  padding: 5px 5px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+.question-index{
+  margin-top: 5px;
+  margin-bottom: 12px;
+  font-size: 1.4em;
+}
+
+.delete-button-container {
+  margin-top: 1rem;
+}
+
+.delete-button {
+  font-size: 30pt;
+  color: #bdbdbd;
+  margin-top: 1rem;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
+.questions-row {
+  position: relative;
+}
+.question-text{
+  margin-left: 1rem;
+}
+
+.course-title {
+  margin: 1rem 0 1rem 0;
+}
+.course-info {
+  td, th{
+    padding: 2px 5px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+  tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+.difficulty{
+  margin-left: 5px;
+  font-size: 12pt;
+}
+
+.course-detail{
+
+  .btn, .btn-large{
+    padding-left: 1rem;
+    padding-right: 1.2rem;
+    font-size: 1.3rem;
+    margin-right: 5px;
+    i.left {
+      margin-right: 8px;
+      line-height: 24px;
+      margin-left: -41px;
+      font-size: 5.3rem;
+    }
+  }
+  .btn.analyze-button{
+
+    i.left {
+      margin-right: inherit;
+      line-height: 33px;
+      margin-left: -9px;
+      font-size: 35px;
+    }
+  }
+
+}
+.course-actions{
+  margin-left: 2%;
+  .col{
+    margin-bottom: 10px;
+  }
+}
+
+

@@ -1,0 +1,228 @@
+<div *ngIf="question" class="question-wrapper">
+  <!--<div *ngIf="question.course">Question.{{question.index + 1}}</div>-->
+
+
+  <form id="{{formId()}}">
+
+    <div class="error error-description"></div>
+
+    <div class="suggestion"
+      *ngIf="!question.type"
+    >
+      問題の形式を選択して下さい
+    </div>
+    <!--Question Type ここから -->
+    <!--<div-->
+      <!--class="select-wrapper tooltipped"-->
+      <!--data-position="top"-->
+      <!--data-tooltip="問題の形式を選択してください"-->
+      <!--delay="500"-->
+    <!--&gt;-->
+    <div class="select-wrapper"
+         data-balloon="上に表示" data-balloon-pos="up"
+    >
+      <label class="form-title" [attr.for]="'quesiton_type' + question.index" >問題形式</label>
+      <select id="question_type_{{random}}" class="browser-default" name="question_type"
+              (change)="chengeType($event.target.value)"
+              [(ngModel)]="question.type">
+        <option value disabled selected>追加する問題の形式を選択して下さい</option>
+        <option *ngFor="let type of questionAttributeTypes" value="{{type.value}}">{{type.name}}</option>
+      </select>
+    </div>
+    <!--Question Type ここまで -->
+
+    <!--Question Diffiiculty ここから -->
+    <div class="input-field"
+         [ngClass]="{hidden: !question.type}">
+      <label class="form-title"
+             [ngClass]="{active: question.difficulty}"
+             [attr.for]="'explanation_area_' + random">初期難易度</label>
+      <input id="difficulty_area_{{random}}"
+                type="text"
+                class="difficulty_area"
+                name="difficulty"
+                [(ngModel)]="question.difficulty"/>
+    </div>
+    <!--Question Diffiiculty ここまで -->
+
+    <!--Question Text ここから-->
+    <div class="input-field issue-editor-container" id ="{{editorContainerId()}}"
+         [ngClass]="{hidden: !question.type}">
+      <label class="form-title"
+             [ngClass]="{active: _editorFocused || question.text}"
+      >問題文</label>
+      <!--<label class="form-title active" [attr.for]="'issue_editor_' + question.index" >問題文</label>-->
+      <div class="wysihtml5-toolbar" id="{{toolbarId()}}" style="display: none;">
+
+        <a class="wysiwyg-command wysiwyg-bold"
+           data-wysihtml5-command="bold"><i class="fa fa-bold"></i></a>
+        <a class="wysiwyg-command wysiwyg-italic"
+           data-wysihtml5-command="italic"><i class="fa fa-italic"></i></a>
+
+        <!-- Some wysihtml5 commands require extra parameters -->
+        <a class="wysiwyg-command wysiwyg-color wysiwyg-color-red"
+           data-wysihtml5-command="foreColor"
+           data-wysihtml5-command-value="red">R</a>
+        <a class="wysiwyg-command wysiwyg-color wysiwyg-color-green"
+           data-wysihtml5-command="foreColor"
+           data-wysihtml5-command-value="green">G</a>
+        <a class="wysiwyg-command wysiwyg-color wysiwyg-color-blue"
+           data-wysihtml5-command="foreColor"
+           data-wysihtml5-command-value="blue">B</a>
+
+        <a class="wysiwyg-command wysiwyg-list wysiwyg-list-ordered"
+           data-wysihtml5-command="insertOrderedList"><i class="fa fa-list-ol"></i>
+        </a>
+
+        <a class="wysiwyg-command wysiwyg-list wysiwyg-list-unordered"
+           data-wysihtml5-command="insertUnorderedList"><i class="fa fa-list-ul"></i>
+        </a>
+
+        <!-- Some wysihtml5 commands like 'createLink' require extra paramaters specified by the user (eg. href) -->
+        <a class="wysiwyg-command"
+           data-wysihtml5-command="createLink"><i class="fa fa-link"></i></a>
+        <div data-wysihtml5-dialog="createLink" style="display: none;">
+          Link:
+          <input data-wysihtml5-dialog-field="href" value="http://" class="text">
+          <a data-wysihtml5-dialog-action="save">OK</a> <a data-wysihtml5-dialog-action="cancel">Cancel</a>
+        </div>
+
+        <!-- User can define the image's src: -->
+        <a class="wysiwyg-command"
+           data-wysihtml5-command="insertImage"><i class="fa fa-file-image-o"></i></a>
+        <div data-wysihtml5-dialog="insertImage" style="display: none;">
+          Image:
+          <input type="file" (change)="fileEvent($event)" />
+          <button
+            onclick="return false;"
+            (click)="uploadfile(f)">Upload file!</button>
+          <!--<a data-wysihtml5-dialog-action="save">OK</a>-->
+          <!--<a data-wysihtml5-dialog-action="cancel">Cancel</a>-->
+        </div>
+        <!-- Pre-defined src -->
+
+      </div>
+
+      <textarea id="{{editorId()}}"
+              class="issue-editor issue_area" name="text"
+              [(ngModel)]="question.text"
+      ></textarea>
+
+    </div>
+    <!--Question Text ここまで -->
+
+    <!--Question Hint ここから-->
+    <div class="input-field"
+         [ngClass]="{hidden: !question.type}">
+      <label class="form-title"
+             [ngClass]="{active: question.hint}"
+             [attr.for]="'hint_area_' + random">Hint</label>
+      <textarea id="hint_area_{{random}}" class="hint_area" name="hint"
+                [(ngModel)]="question.hint"></textarea>
+    </div>
+    <!--Question Hint ここまで-->
+
+    <!--Question Explanation ここから -->
+    <div class="input-field"
+         [ngClass]="{hidden: !question.type}">
+      <label class="form-title"
+             [ngClass]="{active: question.explanation}"
+             [attr.for]="'explanation_area_' + random">解説文</label>
+      <textarea id="explanation_area_{{random}}" class="explanation_area" name="explanation"
+                [(ngModel)]="question.explanation"></textarea>
+    </div>
+    <!--Question Explanation ここまで -->
+
+    <!-- ボタン ここから -->
+    <div class="post-course center" [ngSwitch]="question.id == null"
+         [ngClass]="{hidden: !question.type}">
+      <div class="new-course-button1"
+           *ngSwitchCase="true"
+      >
+
+        <button class="waves-effect green add-question waves-light btn"
+                type="submit"
+                *ngSwitchCase="true"
+        >
+          追加
+        </button>
+      </div>
+      <button class="waves-effect green add-question waves-light btn"
+              type="submit"
+              *ngSwitchDefault
+      >
+        更新
+      </button>
+    </div>
+    <!-- ボタン ここまで -->
+
+    <hr/>
+
+    <!--Question Answers ここから -->
+    <div id="answer_score_container"
+         [ngClass]="{hidden: !question.type}">
+      <h5>回答と得点</h5>
+      <div class="row answers-row">
+        <div class="answer-form"  *ngFor="let answer of question.answers">
+          <answer-form [answer]="answer"></answer-form>
+        </div>
+
+        <div class="bold" (click)=createAnswer() >
+          <a class="waves-effect add-question waves-light blue btn">
+            <i class="mdi-action-add"></i>選択肢を追加
+          </a></div>
+      </div>
+    </div>
+    <!--Question Answers ここまで -->
+
+
+    <!-- Reference ここから -->
+    <div id="reference_container"
+         [ngClass]="{hidden: !question.type}">
+      <h5>出典</h5>
+      <div class="row references-row">
+        <div class="reference-wrapper" *ngFor="let reference of question.references">
+          <div class="referece-input"
+               class="col s10"
+          >
+            <input
+              type="text"
+              id="reference_value" [(ngModel)]="reference.value" />
+          </div>
+        </div>
+        <button class="waves-effect add-question waves-light blue btn"
+                (click)="addReference()"
+                onclick="return false;"
+        >出典追加</button>
+      </div>
+    </div>
+
+    <!-- ボタン ここから -->
+    <div class="post-course right" [ngSwitch]="question.id == null">
+
+      <div class="new-course-button1"
+           *ngSwitchCase="true"
+      >
+
+        <button class="waves-effect green add-question waves-light btn"
+                type="submit"
+                *ngSwitchCase="true"
+        >
+          追加
+        </button>
+      </div>
+      <button class="waves-effect green add-question waves-light btn"
+              type="submit"
+              *ngSwitchDefault
+      >
+        更新
+      </button>
+    </div>
+    <!-- ボタン ここまで -->
+
+  </form>
+
+</div>
+
+<!--<p>{{question.text}}</p>-->
+<!--<p>{{question.hint}}</p>-->

@@ -1,0 +1,58 @@
+select {
+  background-color: #fff;
+}
+
+.add-question{
+  margin-top: 0.5rem 0 1rem 0;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+input, textarea{
+  background-color: #fff;
+}
+
+#questions_tab{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#questions_tab .tab{
+  margin: 3px 5px 3px 5px;
+};
+
+.select-course-types{
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.select-config{
+  box-shadow: none;
+
+  border-top: 1px solid #9e9e9e;
+  border-right: 1px solid #9e9e9e;
+  border-left: 1px solid #9e9e9e;
+  .collapsible-header{
+    border-bottom: 1px solid #9e9e9e;
+  }
+  .collapsible-body{
+    border-bottom: 1px solid #9e9e9e;
+  }
+}
+
+.add-question-btn{
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 46px;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 110%;
+  margin: 1.46rem 0 0.168rem 0;
+}

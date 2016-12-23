@@ -1,0 +1,27 @@
+<sidebar id="left-sidebar-nav"></sidebar>
+
+<section id="content">
+  <div class="container">
+    <div class="content">
+      <div class="container content">
+        <div class="form">
+          <h2
+            *ngIf="parent_id"
+          >サブグループ作成</h2>
+          <h2
+            *ngIf="!parent_id"
+          >新規グループ作成</h2>
+
+          <groups-form
+            [parent]="parent_id"
+            [group]="group"
+            [popup]="popup"
+          ></groups-form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END CONTENT -->
+<right-sidebar id="right-sidebar-nav"></right-sidebar>

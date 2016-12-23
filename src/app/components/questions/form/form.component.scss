@@ -1,0 +1,140 @@
+form {
+  margin-top: 2rem;
+}
+
+input, textarea{
+  background-color: #fff;
+}
+
+select {
+  background-color: #fff;
+}
+
+.issue-editor{
+  background-color: #fff;
+  height: 250px;
+  min-height: 250px;
+  margin: 0px;
+  border: none;
+}
+
+.issue-editor.input{
+
+}
+
+.issue-editor.select{
+
+}
+
+.editor_controll{
+  margin: 0px;
+  background: rgba(50, 50, 50, 0.60);
+  border: 1px gray solid;
+  padding: 0 10px;
+}
+
+.editor_controll div{
+  font-size: 20pt;
+  border: 1px;
+}
+
+
+.editor_controll a{
+  color: #ffffff;
+  -webkit-transition: 0.1s ease-in-out;
+}
+
+.editor_controll a:hover{
+  color: rgb(255, 246, 106);
+}
+
+
+.add-question{
+  margin: 0.5rem 0 1rem 0;
+
+}
+
+
+.hint_area, .issue_area{
+  //margin-top:0px;
+}
+
+.hint_area{
+  margin: 0.5rem 0 1rem 0;
+
+}
+
+h3.form-title{
+  margin: 0.5rem 0.5rem 0;
+}
+
+.issue-editor-container{
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #9e9e9e;
+
+  label {
+    top: 3.5rem
+  }
+
+  label.active {
+    top: 0.2rem;
+  }
+}
+
+.invalid {
+  .issue-editor-container{
+    border: 1px solid #FF4081;
+
+    .wysihtml5-toolbar {
+      border-bottom: 1px solid #FF4081;
+    }
+
+    .error {
+      top: -4rem;
+      font-size: 40pt;
+    }
+
+    label.active {
+      top: -0.6rem;
+    }
+
+  }
+}
+
+.wysihtml5-toolbar{
+
+  padding: 5px 10px;
+  display: inline-block;
+  border-bottom: 1px solid #9e9e9e;
+  width: 100%;
+
+  a {
+    color: black;
+  }
+
+  .wysiwyg-color {
+    font-size: large;
+    &.wysiwyg-color-red {
+      color: red;
+    }
+
+    &.wysiwyg-color-blue {
+      color: blue;
+    }
+
+    &.wysiwyg-color-green {
+      color: green;
+    }
+  }
+
+  .wysiwyg-command{
+    font-size: 1.4rem;
+    margin-right: 0.9rem;
+  }
+
+}
+
+.error-description {
+  color: red;
+}

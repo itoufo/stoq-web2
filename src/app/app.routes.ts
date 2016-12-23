@@ -5,6 +5,31 @@ import { NoContentComponent } from './no-content';
 
 import { DataResolver } from './app.resolver';
 
+import {
+  CoursesComponent,
+  CoursesNewComponent,
+  CoursesEditComponent,
+  ConfirmationComponent,
+  CoursesIndexComponent,
+  CoursesPublicIndexComponent,
+  CoursesShowComponent,
+  ActivityEntryIndexComponent,
+  QuestionAnalyzeComponent,
+  QuestionsFormComponent,
+  QuestionsNewComponent,
+  CoursesAddQuestionComponent,
+  TrainingComponent,
+  TrainingResultComponent,
+  UserAnalysisComponent,
+  SignupComponent,
+  LoginComponent,
+  EntriesComponent,
+  EntryComponent,
+  GroupsNewComponent,
+  GroupsShowComponent,
+  GroupsIndexComponent,
+  GroupsEditComponent,
+} from './components'
 
 export const ROUTES: Routes = [
   { path: '',      component: HomeComponent },

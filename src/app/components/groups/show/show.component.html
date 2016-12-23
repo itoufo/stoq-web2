@@ -1,0 +1,57 @@
+<sidebar id="left-sidebar-nav"></sidebar>
+
+<section id="content">
+  <div class="container">
+    <div class="content">
+      <div class="container content group-detail">
+        <div class="form">
+          <h2>グループ情報</h2>
+          <div class="card" *ngIf="!loading && !group">
+            <div class="card-content">
+              <h1>404 Content Not Found</h1>
+            </div>
+          </div>
+          <div *ngIf="!loading && group" class="group-detail">
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">{{group.name}}</span>
+                <p>
+                  {{group.description}}
+                </p>
+              </div>
+              <div class="card-action" *ngIf='authGroup()'>
+                <a class="waves-effect waves-light orange darken-1 btn" (click)="Edit()"
+                >
+                  編集
+                  <i class="mdi-action-settings left"></i>
+                </a>
+                <a class="waves-effect waves-light green btn" (click)="AddGroup()"
+                >
+                  サブグループ追加
+                  <i class="mdi-content-add-circle-outline left"></i>
+                </a>
+                <a class="waves-effect waves-light blue btn" (click)="AddCourse()"
+                >
+                  コース追加
+                  <i class="mdi-content-add-circle-outline left"></i>
+                </a>
+              </div>
+              <div class="members">
+                <h2>メンバー一覧</h2>
+                <ul>
+                  <li *ngFor="let user of group.users"  class="li-member">
+                    {{user.role.name}} : {{user.email}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END CONTENT -->
+<right-sidebar id="right-sidebar-nav"></right-sidebar>

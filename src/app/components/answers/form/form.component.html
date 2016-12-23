@@ -1,0 +1,41 @@
+<!--TODO: 正解を不特定数に Questionｔ同じ-->
+<div *ngIf="answer">
+  <div [ngSwitch]="answer.question.type">
+    <div *ngSwitchCase="'select'" class="row answer_input_row input">
+      <div class="col s1">
+        <a class="btn-floating waves-effect waves-light "><i class="mdi-content-clear"></i></a>
+      </div>
+      <div class="col s9">
+        <input type="text" [(ngModel)]="answer.value" placeholder="選択肢文章" />
+      </div>
+      <div class="col s2 dummy_flag">
+        <input id="is_dummy_{{random}}" type="checkbox" name="answer_is_dummy"
+               [(ngModel)]="answer.is_dummy" value="false"/>
+        <label [attr.for]="dummy_id">ダミーの選択肢？</label>
+      </div>
+    </div>
+
+    <div *ngSwitchCase="'input'" class="row answer_input_row input">
+      <div class="col s1">
+        <a class="btn-floating waves-effect waves-light deep-orange"
+          (click)="deleteAnswer()"
+        ><i class="mdi-content-clear"></i></a>
+      </div>
+      <div class="col s9">
+        <input type="text" name="answer_text"
+               [(ngModel)]="answer.value" placeholder="正答" />
+      </div>
+      <div class="col s2">
+        <input id="value_{{random}}" name="answer_score"
+               type="text" [(ngModel)]="answer.score.raw"
+               placeholder="得点 1 ~ 100"
+        />
+      </div>
+    </div>
+
+    <div *ngSwitchDefault class="row answer_input_row input">
+      <p>問題形式を選択して下さい</p>
+    </div>
+
+  </div>
+</div>

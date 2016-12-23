@@ -1,0 +1,52 @@
+<sidebar id="left-sidebar-nav"></sidebar>
+
+<section id="content">
+  <div class="container">
+
+    <div class="content">
+      <h2>My コース一覧</h2>
+
+      <div class="col s12 m12 l6">
+        <ul *ngIf="!loading" class="collection">
+          <li class="collection-item avatar">
+            <i class="mdi-file-folder circle light-blue"></i>
+            <span class="collection-header">Courses</span>
+          </li>
+          <!--コース一覧ここから -->
+          <li *ngFor="let course of courses"  class="collection-item course-collection-item">
+            <div class="courses-row row">
+              <div class="detail-container">
+                <h4>
+                  <a href="javascript:void(0);"
+                     (click)="getDetail(course.id)">{{course.name}}</a></h4>
+                <p class="collections-content">{{course.description}}</p>
+              </div>
+              <div class="info-container">
+                <span class="task-cat cyan">{{course.course_type}}</span>
+                <p class="question-text">questions: {{course.questions_count}}</p>
+              </div>
+              <!--削除ボタン-->
+              <div class="button-container" *ngIf="course.userData.permission == 'author'">
+                <a
+                  class="delete-button"
+                  (click)="deleteCourse(course)" >
+                  <i class="mdi-action-highlight-remove"></i>
+                </a>
+              </div>
+              <!--削除ボタン ここまで-->
+
+              <!--<div class="col s3">-->
+                <!--<div class="project-line"><canvas width="70" height="30" style="display: inline-block; width: 70px; height: 30px; vertical-align: top;"></canvas></div>-->
+              <!--</div>-->
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- END CONTENT -->
+<right-sidebar id="right-sidebar-nav"></right-sidebar>
+

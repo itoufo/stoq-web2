@@ -1,0 +1,23 @@
+<div class="form">
+  <input type="text" [(ngModel)]="name" placeholder="コース名" />
+  <label for="course_type" class="select-group">
+    <select>
+      <option *ngFor="#type of courseTypes" value={{type.id}}>{{type.name}}</option>
+    </select>
+  </label>
+  <textarea placeholder="内容" [(ngModel)]="description"></textarea>
+  <textarea placeholder="問題" [(ngModel)]="question_attributes__text"></textarea>
+  <textarea placeholder="ヒント" [(ngModel)]="question_attributes__hint"></textarea>
+  <label for="question_attributes_type" class="select-group">
+    <select>
+      <option *ngFor="#type of questionAttributeTypes" value={{type.id}}>{{type.name}}</option>
+    </select>
+  </label>
+  <textarea type="text" [(ngModel)]="question_attributes__answer_value" placeholder="答え"></textarea>
+  <label for="is_dummy" class="select-group">
+    <select>
+      <option *ngFor="#dummy of dumy_check" value={{dummy.id}}>{{dummy.name}}</option>
+    </select>
+  </label>
+  <button class="submit">コースを作成する</button>
+</div>

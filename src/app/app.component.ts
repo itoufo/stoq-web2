@@ -5,6 +5,21 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 import { AppState } from './app.service';
 
+import {
+  ApiService,
+  ActivityService,
+  AuthService,
+  ErrorService,
+  LoadingService,
+  LoggerService,
+  PopupService,
+} from './services/index';
+
+import {
+  ServerErrorComponent,
+  NotFoundComponent,
+} from "./components/index";
+
 /*
  * App Component
  * Top Level Component
@@ -14,6 +29,15 @@ import { AppState } from './app.service';
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './app.component.css'
+  ],
+  providers: [
+    Location,
+    PopupService,
+    ApiService,
+    AuthService,
+    ErrorService,
+    LoggerService,
+    LoadingService,
   ],
   template: `
     <nav>

@@ -1,0 +1,27 @@
+.activity-type {
+  margin-right: 10px;
+  &:after {
+    content: ":";
+  }
+}
+span.badge.status {
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 2px;
+
+  &.suspended{
+    background-color: #e6bf00;
+  }
+
+  &.launched{
+    background-color: #0a833d;
+  }
+
+  &.completed{
+    background-color: #0000ee;
+  }
+}
+.buttons{
+  margin-top: 1rem;
+}
