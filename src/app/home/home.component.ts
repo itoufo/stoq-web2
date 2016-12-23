@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
+import 'moment';
+var wysihtml5 = require('../js/wysihtml5/dist/wysihtml5-0.4.0pre.js');
 
 @Component({
   // The selector is what angular internally uses
@@ -28,6 +30,8 @@ export class HomeComponent {
 
   ngOnInit() {
     console.log('hello `Home` component');
+    console.log(moment().format('dddd'));
+    console.log(wysihtml5);
     // this.title.getData().subscribe(data => this.data = data);
   }
 
