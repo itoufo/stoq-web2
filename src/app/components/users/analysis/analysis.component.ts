@@ -1,5 +1,5 @@
 import 'jquery';
-import 'Chart';
+var Chart = require('../../../js/plugins/chartjs/index');
 
 import {
   Component,

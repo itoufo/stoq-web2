@@ -1,3 +1,6 @@
+
+
+var Chart = require('./chart');
 var helpers = Chart.helpers;
 
 function lineEnabled(dataset, options) {
@@ -64,9 +67,6 @@ Chart.controllers.lineWithLine = Chart.controllers.line.extend({
     //Draw the points
     for (i=0, ilen=points.length; i<ilen; ++i) {
       points[i].draw();
-
-      console.log(vIndexes);
-      console.log(vIndexes.includes(points[i]._index));
       if(vIndexes.includes(points[i]._index) && this.chart.options.showVertical){
         var ctx = this.chart.chart.ctx;
         ctx.save();
@@ -83,3 +83,7 @@ Chart.controllers.lineWithLine = Chart.controllers.line.extend({
     }
   }
 });
+
+
+module.exports = Chart;
+
