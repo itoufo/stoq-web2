@@ -1,0 +1,54 @@
+<!-- START HEADER -->
+<header id="header" class="page-topbar" [authed]="_auth.getStatus()"></header>
+
+<popup
+  [popupBase]="_popup.currentBase()"
+></popup>
+
+<!-- END HEADER -->
+<div class="progress transparent">
+  <div *ngIf="_loading.isLoading()"  class="indeterminate"></div>
+</div>
+
+<div *ngIf="_loading.isSetCurtain()" id="loadingCurtain"></div>
+
+<!--<div class="error" *ngIf="_err.errorViewStatus()" *ngSwitch="_err.errorType()">-->
+
+<div class="error" *ngIf="_err.errorViewStatus()" [ngSwitch]="_err.errorType()">
+  <serverError *ngSwitchCase="'serverError'"></serverError>
+  <notFound *ngSwitchCase="'notFound'"></notFound>
+</div>
+
+<!--<div *ngSwitch="true">-->
+  <!--<p [ngSwitchWhen]="init">init</p>-->
+  <!--<p [ngSwitchWhen]="true">OK</p>-->
+  <!--<p [ngSwitchWhen]="false">こっちは表示されないはず</p>-->
+<!--</div>-->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START MAIN -->
+
+<!--<div id="main" *ngIf="!_err.errorViewStatus()" >-->
+<div id="main"  [ngClass]="{disabled: _err.errorViewStatus()}">
+
+<!-- START WRAPPER -->
+  <!--<login *ngSwitchWhen="false"></login>-->
+  <div class="wrapper">
+
+    <router-outlet
+      (activate)='routerOnActivate($event)'
+      (deactivate)='routerOnDeactivate($event)'
+    >
+    </router-outlet>
+  </div>
+  <!-- END WRAPPER -->
+</div>
+<!-- END MAIN -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- START FOOTER -->
+<!--<footer class="page-footer" *ngIf="_auth.getStatus()"></footer>-->
+<!-- END FOOTER -->
+
+
