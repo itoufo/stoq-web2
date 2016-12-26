@@ -31,6 +31,7 @@ export class PopupComponent {
     constructor(private _router: Router) {
         console.log("*** About Popup ***");
         //console.log(this._router);
+        this.popupBase = new PopupBase();
     }
 }
 

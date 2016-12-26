@@ -1,7 +1,7 @@
 import 'jquery';
 
-var wysihtml5 = require('../../../js/wysihtml5/dist/wysihtml5-0.4.0pre');
-var wysihtml5ParserRules = require('../../../js/wysihtml5/dist/advanced');
+var wysihtml5 = require('../../../../js/wysihtml5/dist/wysihtml5-0.4.0pre');
+var wysihtml5ParserRules = require('../../../../js/wysihtml5/dist/advanced');
 
 import {
   Component,

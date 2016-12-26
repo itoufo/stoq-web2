@@ -18,6 +18,8 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const V8LazyParseWebpackPlugin = require('v8-lazy-parse-webpack-plugin');
+
+
 /**
  * Webpack Constants
  */
@@ -31,7 +33,9 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   HMR: false
 });
 
-const MaterialBucket = 'stoq-material';
+const API_ENDPOINT = 'https://stoq-api.herokuapp.com/api/v1';
+const ANALYZE_ENDPOINT = 'https://stoq-analy.herokuapp.com';
+const MATERIAL_BUCKET = 'stoq-material';
 
 module.exports = function (env) {
   return webpackMerge(commonConfig({env: ENV}), {
@@ -122,10 +126,16 @@ module.exports = function (env) {
       new DefinePlugin({
         'ENV': JSON.stringify(METADATA.ENV),
         'HMR': METADATA.HMR,
+        'ApiEndpoint': API_ENDPOINT,
+        'AnalyzeEndpoint': ANALYZE_ENDPOINT,
+        'MaterialBucket': MATERIAL_BUCKET,
         'process.env': {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
+          'apiendpoint': api_endpoint,
+          'analyzeendpoint': analyze_endpoint,
+          'materialbucket': material_bucket,
         }
       }),
 

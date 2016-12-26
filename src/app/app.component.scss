@@ -1,3 +1,16 @@
+@import "../sass/materialize";
+@import "../sass/style";
+@import "../sass/flip-board";
+@import "../sass/buttons/default";
+@import "../sass/buttons/component";
+@import "../sass/custom/custom";
+@import "../js/plugins/perfect-scrollbar/perfect-scrollbar.css";
+@import "../js/plugins/jvectormap/jquery-jvectormap.css";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+@import "../sass/balloon";
+@import "../sass/wysihtml5";
+
+
 #loadingCurtain{
   width: 100%;
   height: 100%;

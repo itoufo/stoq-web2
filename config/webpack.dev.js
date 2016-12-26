@@ -13,6 +13,11 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
+const  API_ENDPOINT = 'http://localhost:3000/api/v1';
+const  ANALYZE_ENDPOINT = 'http://127.0.0.1:8888';
+const  MATERIAL_BUCKET = 'stoq-material-dev';
+
+
 /**
  * Webpack Constants
  */
