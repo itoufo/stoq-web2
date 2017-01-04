@@ -1,9 +1,19 @@
-import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule, PreloadAllModules } from '@angular/router';
-import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+import {
+  NgModule,
+  ApplicationRef
+} from '@angular/core';
+import {
+  removeNgStyles,
+  createNewHosts,
+  createInputTransfer
+} from '@angularclass/hmr';
+import {
+  RouterModule,
+  PreloadAllModules
+} from '@angular/router';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -17,7 +27,7 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home/index';
 import { AboutComponent } from './about/index';
 import { NoContentComponent } from './no-content';
-import { XLarge } from './home/x-large';
+import { XLargeDirective } from './home/x-large';
 
 import {
   CoursesNewComponent,
@@ -87,7 +97,6 @@ type StoreType = {
     HomeComponent,
     NoContentComponent,
     XLarge,
-
     CoursesIndexComponent,
     LoginComponent,
     SignupComponent,
@@ -124,7 +133,6 @@ type StoreType = {
     GroupsFormComponent,
     GroupsIndexComponent,
     UserAnalysisComponent,
-
   ],
   imports: [ // import Angular's modules
     BrowserModule,
@@ -138,10 +146,16 @@ type StoreType = {
   ]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef, public appState: AppState) {}
 
-  hmrOnInit(store: StoreType) {
-    if (!store || !store.state) return;
+  constructor(
+    public appRef: ApplicationRef,
+    public appState: AppState
+  ) {}
+
+  public hmrOnInit(store: StoreType) {
+    if (!store || !store.state) {
+      return;
+    }
     console.log('HMR store', JSON.stringify(store, null, 2));
     // set state
     this.appState._state = store.state;
@@ -156,8 +170,8 @@ export class AppModule {
     delete store.restoreInputValues;
   }
 
-  hmrOnDestroy(store: StoreType) {
-    const cmpLocation = this.appRef.components.map(cmp => cmp.location.nativeElement);
+  public hmrOnDestroy(store: StoreType) {
+    const cmpLocation = this.appRef.components.map((cmp) => cmp.location.nativeElement);
     // save state
     const state = this.appState._state;
     store.state = state;
@@ -169,11 +183,10 @@ export class AppModule {
     removeNgStyles();
   }
 
-  hmrAfterDestroy(store: StoreType) {
+  public hmrAfterDestroy(store: StoreType) {
     // display new elements
     store.disposeOldHosts();
     delete store.disposeOldHosts;
   }
 
 }
-

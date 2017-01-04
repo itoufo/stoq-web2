@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
 
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLarge } from './x-large';
-import 'moment';
+var moment = require('moment');
 var wysihtml5 = require('../../js/wysihtml5/dist/wysihtml5-0.4.0pre.js');
+import { XLargeDirective } from './x-large';
 
 @Component({
   // The selector is what angular internally uses
@@ -20,22 +24,23 @@ var wysihtml5 = require('../../js/wysihtml5/dist/wysihtml5-0.4.0pre.js');
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './home.component.html'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   // Set our default values
-  localState = { value: '' };
+  public localState = { value: '' };
   // TypeScript public modifiers
-  constructor(public appState: AppState, public title: Title) {
+  constructor(
+    public appState: AppState,
+    public title: Title
+  ) {}
 
-  }
-
-  ngOnInit() {
+  public ngOnInit() {
     console.log('hello `Home` component');
     console.log(moment().format('dddd'));
     console.log(wysihtml5);
     // this.title.getData().subscribe(data => this.data = data);
   }
 
-  submitState(value: string) {
+  public submitState(value: string) {
     console.log('submitState', value);
     this.appState.set('value', value);
     this.localState.value = '';
