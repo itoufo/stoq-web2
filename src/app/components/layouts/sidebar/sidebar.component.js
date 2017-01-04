@@ -5,11 +5,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var jQuery, $ = require('jquery');
+// import * as jQuery from 'jquery';
 require('hammerjs');
-require('velocity-animate');
-require('materialize-css');
-require('../../../../js/materialize-plugins/sideNav.js');
 var core_1 = require('@angular/core');
 var SidebarComponent = (function () {
     function SidebarComponent(_location, _router, _loading, _logger, _auth, _err) {
@@ -23,11 +20,11 @@ var SidebarComponent = (function () {
     }
     SidebarComponent.prototype.ngAfterViewInit = function () {
         //Main Left Sidebar Menu
-        jquery('.sidebar-collapse').sideNav({
+        jQuery('.sidebar-collapse').sideNav({
             edge: 'left'
         });
         // FULL SCREEN MENU (Layout 02)
-        jquery('.menu-sidebar-collapse').sideNav({
+        jQuery('.menu-sidebar-collapse').sideNav({
             menuWidth: 240,
             edge: 'left'
         });

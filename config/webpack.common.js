@@ -125,6 +125,14 @@ module.exports = function (options) {
           test: require.resolve('jquery'),
           loaders: ['expose-loader?jQuery', 'expose-loader?$']
         },
+        {
+          test: require.resolve('materialize-css'),
+          loaders: ['expose-loader?Materialize']
+        },
+        {
+          test: require.resolve('../src/js/plugins/chartjs/chart.js'),
+          loaders: ['expose-loader?Chart']
+        },
         /*
          * to string and css loader support for *.css files
          * Returns file content as string

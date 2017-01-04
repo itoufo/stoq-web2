@@ -1,6 +1,10 @@
 /*
  * Angular 2 decorators and services
  */
+
+import 'velocity-animate';
+import '../js/materialize-plugins/sideNav.js';
+
 import {
   Component,
   OnInit,
