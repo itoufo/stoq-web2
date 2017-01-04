@@ -1,4 +1,8 @@
-import * as jquery  from 'jquery';
+import * as jquery from 'jquery';
+
+/// <reference path="../../../../../node_modules/@types/jquery.validation/index.d.ts" />
+
+import 'jquery-validation';
 
 import {
   Component,
@@ -75,9 +79,9 @@ export class LoginComponent implements OnInit, AfterViewInit{
       },
       errorElement : 'div',
       errorPlacement: function(error, element) {
-        var placement = jQuery(element).data('error');
+        var placement = jquery(element).data('error');
         if (placement) {
-          jQuery(placement).append(error)
+          jquery(placement).append(error)
         } else {
           error.insertAfter(element);
         }

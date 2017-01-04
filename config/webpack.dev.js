@@ -112,7 +112,7 @@ module.exports = function (options) {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
-          'API_ENDPOINT': JSON.stringify(METADATA.API_ENDPOINTMaterialBucket),
+          'API_ENDPOINT': JSON.stringify(METADATA.API_ENDPOINT),
           'ANALYZE_ENDPOINT': JSON.stringify(METADATA.ANALYZE_ENDPOINT),
           'MATERIAL_BUCKET': JSON.stringify(METADATA.MATERIAL_BUCKET),
         }

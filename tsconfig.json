@@ -24,7 +24,11 @@
       "selenium-webdriver",
       "source-map",
       "uglify-js",
-      "webpack"
+      "webpack",
+      "jquery",
+      "jquery.leanmodal",
+      "jquery.validation",
+      "materialize-css"
     ]
   },
   "exclude": [

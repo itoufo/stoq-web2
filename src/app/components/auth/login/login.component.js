@@ -6,6 +6,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var jquery = require('jquery');
+/// <reference path="../../../../../node_modules/@types/jquery.validation/index.d.ts" />
+require('jquery-validation');
 var core_1 = require('@angular/core');
 var services_1 = require("./../../../services");
 var LoginComponent = (function () {
@@ -43,9 +45,9 @@ var LoginComponent = (function () {
             },
             errorElement: 'div',
             errorPlacement: function (error, element) {
-                var placement = jQuery(element).data('error');
+                var placement = jquery(element).data('error');
                 if (placement) {
-                    jQuery(placement).append(error);
+                    jquery(placement).append(error);
                 }
                 else {
                     error.insertAfter(element);

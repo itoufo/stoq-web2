@@ -64,6 +64,8 @@ export class CoursesComponent implements OnInit {
   routerOnActivate(e) {
     console.log('routerOnActivate');
     console.log(e);
+    console.log("aaaaaaaaaaaaa");
+    console.log(process.env);
     //this._logger.debug(`Finished navigating from "${prev ? prev.urlPath : 'null'}" to "${next.urlPath}"`); return new Promise(resolve => {
     //  // The ChildCmp gets instantiated only when the Promise is resolved
     //  setTimeout(() => resolve(null), 1000);
@@ -73,8 +75,6 @@ export class CoursesComponent implements OnInit {
   routerOnDeactivate(e:any) {
     console.log('routerOnDeactivate     aa');
     console.log(e);
-    console.log("aaaaaaaaaaaaa");
-    console.log(process.env);
     //this._logger.debug(`Finished navigating from "${prev ? prev.urlPath : 'null'}" to "${next.urlPath}"`);
     //return new Promise(resolve => {
     //  // The ChildCmp gets instantiated only when the Promise is resolved

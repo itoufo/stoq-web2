@@ -54,43 +54,42 @@ export class SignupComponent implements OnInit{
 
     jquery(formId).data('validator', null);
     jquery(formId).unbind('validate');
-
-    jquery(formId).validate({
-      debug: true,
-      rules: {
-        email: {
-          required: true
-        },
-        password: {
-          required: true
-        },
-        password_confirmation: {
-          required: true
-        }
-      },
-      messages: {
-        email: {
-          required: "メールアドレスを入力して下さい"
-        },
-        password: {
-          required: "パスワードを入力して下さい"
-        },
-        password_confirmation: {
-          required: "確認用パスワードを入力して下さい"
-        }
-      },
-      errorElement : 'div',
-      errorPlacement: function(error, element) {
-        var placement = jQuery(element).data('error');
-        if (placement) {
-          jQuery(placement).append(error)
-        } else {
-          error.insertAfter(element);
-        }
-      },
-      submitHandler: this.submit.bind(this),
-      invalidHandler: this.invalidFunction.bind(this)
-    });
+    //jquery(formId).validate({
+    //  debug: true,
+    //  rules: {
+    //    email: {
+    //      required: true
+    //    },
+    //    password: {
+    //      required: true
+    //    },
+    //    password_confirmation: {
+    //      required: true
+    //    }
+    //  },
+    //  messages: {
+    //    email: {
+    //      required: "メールアドレスを入力して下さい"
+    //    },
+    //    password: {
+    //      required: "パスワードを入力して下さい"
+    //    },
+    //    password_confirmation: {
+    //      required: "確認用パスワードを入力して下さい"
+    //    }
+    //  },
+    //  errorElement : 'div',
+    //  errorPlacement: function(error, element) {
+    //    var placement = jQuery(element).data('error');
+    //    if (placement) {
+    //      jQuery(placement).append(error)
+    //    } else {
+    //      error.insertAfter(element);
+    //    }
+    //  },
+    //  submitHandler: this.submit.bind(this),
+    //  invalidHandler: this.invalidFunction.bind(this)
+    //});
   }
 
   invalidFunction(){

@@ -1,5 +1,5 @@
 import * as moment from 'moment/moment';
-import * as jquery from "jquery/dist/jquery.js";
+import * as jquery from "jquery";
 
 
 import {

@@ -19,7 +19,11 @@
     ],
     "types": [
       "hammerjs",
-      "node"
+      "node",
+      "jquery",
+      "jquery.leanmodal",
+      "jquery.validation",
+      "materialize-css"
     ]
   },
   "exclude": [

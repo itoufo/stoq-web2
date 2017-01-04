@@ -30,6 +30,8 @@ var CoursesComponent = (function () {
     CoursesComponent.prototype.routerOnActivate = function (e) {
         console.log('routerOnActivate');
         console.log(e);
+        console.log("aaaaaaaaaaaaa");
+        console.log(process.env);
         //this._logger.debug(`Finished navigating from "${prev ? prev.urlPath : 'null'}" to "${next.urlPath}"`); return new Promise(resolve => {
         //  // The ChildCmp gets instantiated only when the Promise is resolved
         //  setTimeout(() => resolve(null), 1000);
@@ -38,8 +40,6 @@ var CoursesComponent = (function () {
     CoursesComponent.prototype.routerOnDeactivate = function (e) {
         console.log('routerOnDeactivate     aa');
         console.log(e);
-        console.log("aaaaaaaaaaaaa");
-        console.log(process.env);
         //this._logger.debug(`Finished navigating from "${prev ? prev.urlPath : 'null'}" to "${next.urlPath}"`);
         //return new Promise(resolve => {
         //  // The ChildCmp gets instantiated only when the Promise is resolved
