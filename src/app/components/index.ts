@@ -29,6 +29,7 @@ export {
   LoginComponent,
   SignupComponent,
   ConfirmationComponent,
+  ResetPasswordComponent,
 } from "./auth";
 
 

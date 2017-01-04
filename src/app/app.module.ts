@@ -62,6 +62,7 @@ import {
   FooterComponent,
   PopupComponent,
   NotFoundComponent,
+  ResetPasswordComponent,
 } from './components/index'
 
 import {
@@ -132,6 +133,7 @@ type StoreType = {
     GroupsFormComponent,
     GroupsIndexComponent,
     UserAnalysisComponent,
+    ResetPasswordComponent,
   ],
   imports: [ // import Angular's modules
     BrowserModule,

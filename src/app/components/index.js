@@ -26,6 +26,7 @@ var auth_1 = require("./auth");
 exports.LoginComponent = auth_1.LoginComponent;
 exports.SignupComponent = auth_1.SignupComponent;
 exports.ConfirmationComponent = auth_1.ConfirmationComponent;
+exports.ResetPasswordComponent = auth_1.ResetPasswordComponent;
 /**
  * コース関連
  */

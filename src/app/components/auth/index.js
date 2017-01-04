@@ -5,4 +5,5 @@ function __export(m) {
 __export(require('./confirmation'));
 __export(require('./login'));
 __export(require('./signup'));
+__export(require('./reset_password'));
 //# sourceMappingURL=index.js.map

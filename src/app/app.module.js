@@ -114,6 +114,7 @@ var AppModule = (function () {
                 index_3.GroupsFormComponent,
                 index_3.GroupsIndexComponent,
                 index_3.UserAnalysisComponent,
+                index_3.ResetPasswordComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule,

@@ -11,8 +11,8 @@ require('jquery-validation');
 var core_1 = require('@angular/core');
 var services_1 = require("./../../../services");
 var models_1 = require("./../../../models");
-var SignupComponent = (function () {
-    function SignupComponent(_router, _api, _auth, _error, _popup, _loading) {
+var ResetPasswordComponent = (function () {
+    function ResetPasswordComponent(_router, _api, _auth, _error, _popup, _loading) {
         this._router = _router;
         this._api = _api;
         this._auth = _auth;
@@ -20,11 +20,11 @@ var SignupComponent = (function () {
         this._popup = _popup;
         this._loading = _loading;
     }
-    SignupComponent.prototype.navigateToLogin = function () {
+    ResetPasswordComponent.prototype.navigateToLogin = function () {
         this._router.navigate(['signup']);
     };
-    SignupComponent.prototype.ngOnInit = function () {
-        var formId = "#signup-form";
+    ResetPasswordComponent.prototype.ngOnInit = function () {
+        var formId = "#reset_password-form";
         jquery(formId).data('validator', null);
         jquery(formId).unbind('validate');
         jquery(formId).validate({
@@ -32,23 +32,11 @@ var SignupComponent = (function () {
             rules: {
                 email: {
                     required: true
-                },
-                password: {
-                    required: true
-                },
-                password_confirmation: {
-                    required: true
                 }
             },
             messages: {
                 email: {
                     required: "メールアドレスを入力して下さい"
-                },
-                password: {
-                    required: "パスワードを入力して下さい"
-                },
-                password_confirmation: {
-                    required: "確認用パスワードを入力して下さい"
                 }
             },
             errorElement: 'div',
@@ -65,18 +53,14 @@ var SignupComponent = (function () {
             invalidHandler: this.invalidFunction.bind(this)
         });
     };
-    SignupComponent.prototype.invalidFunction = function () {
+    ResetPasswordComponent.prototype.invalidFunction = function () {
     };
-    SignupComponent.prototype.submit = function () {
+    ResetPasswordComponent.prototype.submit = function () {
         var _this = this;
         console.log('submit signup');
         this._loading.startLoading();
-        this._api.postSignup({ email: this.email, password: this.password, password_confirmation: this.password_confirmation }).subscribe(function (data) {
+        this._api.postResetPassword({ email: this.email }).subscribe(function (data) {
             var body = data.json().data;
-            console.log(data.headers);
-            localStorage.setItem('Access-Token', data.headers.get('Access-Token'));
-            localStorage.setItem('Client', data.headers.get('Client'));
-            localStorage.setItem('Uid', _this.email);
         }, function (err) {
             console.log(err);
             _this._error.errorInit(err);
@@ -86,22 +70,22 @@ var SignupComponent = (function () {
              */
             var popup = new models_1.PopupBase();
             popup.id = "#modal3";
-            _this._popup.displayError(err, "新規登録エラー");
+            _this._popup.displayError(err, "再設定エラー");
             _this._loading.endLoading();
         }, function () {
             alert('確認用メールを送信しました！');
         });
     };
-    SignupComponent = __decorate([
+    ResetPasswordComponent = __decorate([
         core_1.Component({
             selector: 'signup',
-            templateUrl: './signup.component.html',
-            styleUrls: ['./signup.component.scss'],
+            templateUrl: './reset_password.component.html',
+            styleUrls: ['./reset_password.component.scss'],
             providers: [services_1.ApiService, services_1.AuthService],
             inputs: ['email', 'password', 'password_confirmation']
         })
-    ], SignupComponent);
-    return SignupComponent;
+    ], ResetPasswordComponent);
+    return ResetPasswordComponent;
 }());
-exports.SignupComponent = SignupComponent;
-//# sourceMappingURL=signup.component.js.map
+exports.ResetPasswordComponent = ResetPasswordComponent;
+//# sourceMappingURL=reset_password.component.js.map

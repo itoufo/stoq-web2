@@ -29,6 +29,7 @@ import {
   GroupsShowComponent,
   GroupsIndexComponent,
   GroupsEditComponent,
+  ResetPasswordComponent,
 } from './components'
 
 export const ROUTES: Routes = [
@@ -39,6 +40,7 @@ export const ROUTES: Routes = [
   },
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
+  { path: 'reset_password', component: ResetPasswordComponent},
   { path: 'confirmation', component: ConfirmationComponent},
   { path: 'courses', component: CoursesComponent,
     children: [

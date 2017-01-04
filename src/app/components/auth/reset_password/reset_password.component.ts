@@ -1,4 +1,4 @@
-import * as jquery  from 'jquery';
+import * as jquery from 'jquery';
 /// <reference path="../../../../../node_modules/@types/jquery.validation/index.d.ts" />
 import 'jquery-validation';
 
@@ -27,13 +27,13 @@ import {Angulartics2On} from 'angulartics2';
 
 @Component({
   selector: 'signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  templateUrl: './reset_password.component.html',
+  styleUrls: ['./reset_password.component.scss'],
   providers: [ApiService, AuthService],
   inputs: ['email', 'password', 'password_confirmation'],
 })
 
-export class SignupComponent implements OnInit{
+export class ResetPasswordComponent implements OnInit{
   private email: string;
   private password: string;
   private password_confirmation: string;
@@ -53,7 +53,7 @@ export class SignupComponent implements OnInit{
     this._router.navigate(['signup']);  }
 
   ngOnInit() {
-    var formId = "#signup-form";
+    var formId = "#reset_password-form";
 
     jquery(formId).data('validator', null);
     jquery(formId).unbind('validate');
@@ -63,23 +63,11 @@ export class SignupComponent implements OnInit{
         email: {
           required: true
         },
-        password: {
-          required: true
-        },
-        password_confirmation: {
-          required: true
-        }
       },
       messages: {
         email: {
           required: "メールアドレスを入力して下さい"
         },
-        password: {
-          required: "パスワードを入力して下さい"
-        },
-        password_confirmation: {
-          required: "確認用パスワードを入力して下さい"
-        }
       },
       errorElement : 'div',
       errorPlacement: function(error, element) {
@@ -102,14 +90,9 @@ export class SignupComponent implements OnInit{
   submit() {
     console.log('submit signup');
     this._loading.startLoading();
-    this._api.postSignup({ email: this.email, password: this.password, password_confirmation: this.password_confirmation }).subscribe(
+    this._api.postResetPassword({ email: this.email }).subscribe(
       data => {
         var body = data.json().data;
-        console.log(data.headers);
-
-        localStorage.setItem('Access-Token', data.headers.get('Access-Token'));
-        localStorage.setItem('Client', data.headers.get('Client'));
-        localStorage.setItem('Uid', this.email);
       },
       err => {
         console.log(err);
@@ -121,7 +104,7 @@ export class SignupComponent implements OnInit{
            */
           var popup = new PopupBase();
           popup.id = "#modal3";
-          this._popup.displayError(err, "新規登録エラー");
+          this._popup.displayError(err, "再設定エラー");
           this._loading.endLoading();
       },
       () => {

@@ -8,6 +8,7 @@ exports.ROUTES = [
     },
     { path: 'login', component: components_1.LoginComponent },
     { path: 'signup', component: components_1.SignupComponent },
+    { path: 'reset_password', component: components_1.ResetPasswordComponent },
     { path: 'confirmation', component: components_1.ConfirmationComponent },
     { path: 'courses', component: components_1.CoursesComponent,
         children: [

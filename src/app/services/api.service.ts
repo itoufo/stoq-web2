@@ -69,7 +69,7 @@ export class ApiService {
    * @returns {Observable<Response>|Observable<R>}
    */
   postResetPassword(params: any) {
-    params['redirect_udl'] = "https://" + document.location.hostname + "#/login";
+    params['redirect_url'] = "https://" + document.location.hostname + "#/login";
     return this._callPostApi('Anonymous', '/auth/password', params);
   }
 

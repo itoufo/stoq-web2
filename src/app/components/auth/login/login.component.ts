@@ -1,8 +1,5 @@
 import * as jquery from 'jquery';
-import * as Materialize from '../../../../js/materialize.js';
-
 /// <reference path="../../../../../node_modules/@types/jquery.validation/index.d.ts" />
-
 import 'jquery-validation';
 
 import {

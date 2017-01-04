@@ -6,7 +6,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var jquery = require('jquery');
-var Materialize = require('../../../../js/materialize.js');
 /// <reference path="../../../../../node_modules/@types/jquery.validation/index.d.ts" />
 require('jquery-validation');
 var core_1 = require('@angular/core');
