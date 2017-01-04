@@ -126,16 +126,13 @@ module.exports = function (env) {
       new DefinePlugin({
         'ENV': JSON.stringify(METADATA.ENV),
         'HMR': METADATA.HMR,
-        'ApiEndpoint': API_ENDPOINT,
-        'AnalyzeEndpoint': ANALYZE_ENDPOINT,
-        'MaterialBucket': MATERIAL_BUCKET,
         'process.env': {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
-          'apiendpoint': api_endpoint,
-          'analyzeendpoint': analyze_endpoint,
-          'materialbucket': material_bucket,
+          'ApiEndpoint': API_ENDPOINT,
+          'AnalyzeEndpoint': ANALYZE_ENDPOINT,
+          'MaterialBucket': MATERIAL_BUCKET,
         }
       }),
 

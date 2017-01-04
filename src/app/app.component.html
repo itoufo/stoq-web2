@@ -20,9 +20,9 @@
 </div>
 
 <!--<div *ngSwitch="true">-->
-  <!--<p [ngSwitchWhen]="init">init</p>-->
-  <!--<p [ngSwitchWhen]="true">OK</p>-->
-  <!--<p [ngSwitchWhen]="false">こっちは表示されないはず</p>-->
+<!--<p [ngSwitchWhen]="init">init</p>-->
+<!--<p [ngSwitchWhen]="true">OK</p>-->
+<!--<p [ngSwitchWhen]="false">こっちは表示されないはず</p>-->
 <!--</div>-->
 
 <!-- //////////////////////////////////////////////////////////////////////////// -->
@@ -31,7 +31,7 @@
 <!--<div id="main" *ngIf="!_err.errorViewStatus()" >-->
 <div id="main"  [ngClass]="{disabled: _err.errorViewStatus()}">
 
-<!-- START WRAPPER -->
+  <!-- START WRAPPER -->
   <!--<login *ngSwitchWhen="false"></login>-->
   <div class="wrapper">
 

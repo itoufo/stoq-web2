@@ -21,15 +21,17 @@ export class ApiService {
   //public api_path = "http://localhost:3000/api/v1";
   //public analyze_path = "https://stoq-analy.herokuapp.com";
 
-  private api_path = process.env.ApiEndpoint;
-  private analyze_path= process.env.AnalyzeEndpoint;
-  private material_bucket= process.env.MaterialBucket;
-
+  private api_path;
+  private analyze_path;
+  private material_bucket;
 
   public headers: Headers;
   constructor(
     private _http: Http,
   ) {
+    this.api_path = process.env.API_ENDPOINT;
+    this.analyze_path = process.env.ANALYZE_ENDPOINT;
+    this.material_bucket= process.env.MATERIAL_BUCKET;
   }
 
   // *********************** ***************************

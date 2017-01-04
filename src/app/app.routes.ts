@@ -32,12 +32,48 @@ import {
 } from './components'
 
 export const ROUTES: Routes = [
-  { path: '',      component: HomeComponent },
-  { path: 'home',  component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  {
-    path: 'detail', loadChildren: () => System.import('./+detail')
-      .then((comp: any) => comp.default),
+  { path: '',
+    redirectTo: '/courses',
+    pathMatch: 'full'
+
   },
+  { path: 'login', component: LoginComponent},
+  { path: 'signup', component: SignupComponent},
+  { path: 'confirmation', component: ConfirmationComponent},
+  { path: 'courses', component: CoursesComponent,
+    children: [
+      { path: 'public', component: CoursesPublicIndexComponent},
+      { path: '', component: CoursesIndexComponent},
+      { path: 'index', component: CoursesIndexComponent },
+      { path: 'new', component: CoursesNewComponent },
+      { path: 'new/parent/:parent_id', component: CoursesNewComponent },
+      { path: ':course_id', component: CoursesShowComponent},
+      {path: ':course_id/edit', component: CoursesEditComponent},
+      {path: ':course_id/add_question', component: CoursesAddQuestionComponent},
+    ]
+  },
+  { path: 'groups',
+    children: [
+      { path: 'new', component: GroupsNewComponent },
+      { path: 'new/parent/:parent_id', component: GroupsNewComponent },
+      { path: 'index', component: GroupsIndexComponent },
+      { path: ':group_id/detail', component: GroupsShowComponent },
+      { path: ':group_id/edit', component: GroupsEditComponent },
+    ]
+  },
+  { path: 'question/analyze/:question_id', component: QuestionAnalyzeComponent, },
+  {
+    path: 'entry', component: EntryComponent,
+    children: [
+      { path: 'training', component: TrainingComponent},
+    ]
+  },
+  { path: 'entries', component: EntriesComponent,
+    children: [
+      { path: '', component: ActivityEntryIndexComponent},
+      { path: 'results/:entry_id', component: TrainingResultComponent},
+    ]
+  },
+  { path: 'analysis', component: UserAnalysisComponent},
   { path: '**',    component: NoContentComponent },
 ];

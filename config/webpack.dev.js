@@ -13,10 +13,9 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
-const  API_ENDPOINT = 'http://localhost:3000/api/v1';
-const  ANALYZE_ENDPOINT = 'http://127.0.0.1:8888';
-const  MATERIAL_BUCKET = 'stoq-material-dev';
-
+const  API_ENDPOINT = process.env.ApiEndpoint = 'http://localhost:3000/api/v1';
+const  ANALYZE_ENDPOINT = process.env.AnalyzeEndpoint = 'http://127.0.0.1:8888';
+const  MATERIAL_BUCKET = process.env.MaterialBucket = 'stoq-material-dev';
 
 /**
  * Webpack Constants
@@ -29,7 +28,10 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   host: HOST,
   port: PORT,
   ENV: ENV,
-  HMR: HMR
+  HMR: HMR,
+  API_ENDPOINT: API_ENDPOINT,
+  ANALYZE_ENDPOINT: ANALYZE_ENDPOINT,
+  MATERIAL_BUCKET: MATERIAL_BUCKET
 });
 
 const MaterialBucket = 'stoq-material-dev';
@@ -110,6 +112,9 @@ module.exports = function (options) {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
+          'API_ENDPOINT': JSON.stringify(METADATA.API_ENDPOINTMaterialBucket),
+          'ANALYZE_ENDPOINT': JSON.stringify(METADATA.ANALYZE_ENDPOINT),
+          'MATERIAL_BUCKET': JSON.stringify(METADATA.MATERIAL_BUCKET),
         }
       }),
 
