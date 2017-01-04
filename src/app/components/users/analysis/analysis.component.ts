@@ -1,4 +1,5 @@
-import 'jquery';
+import * as moment from 'moment/moment';
+import * as jquery from "jquery/dist/jquery.js";
 var Chart = require('../../../../js/plugins/chartjs/index');
 
 import {
@@ -157,8 +158,8 @@ export class UserAnalysisComponent implements OnInit{
     };
 
 
-    $('#lineChartCanvas').remove();
-    $('#chart-container').append('<canvas id="lineChartCanvas" height="450" width="600"></canvas>');
+    jquery('#lineChartCanvas').remove();
+    jquery('#chart-container').append('<canvas id="lineChartCanvas" height="450" width="600"></canvas>');
     var canvas: HTMLCanvasElement =  <HTMLCanvasElement> document.getElementById('lineChartCanvas');
     var ctx = canvas.getContext("2d");
     //ctx.clearRect(0, 0, canvas.width, canvas.height);

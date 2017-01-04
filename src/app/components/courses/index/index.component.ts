@@ -122,18 +122,18 @@ export class CoursesIndexComponent implements OnInit, AfterContentChecked {
   }
 
   ngAfterContentChecked() {
-    jQuery(this.el.nativeElement).find('.project-line')
-      .each(function(i){
-        //var self = jQuery(this.el.nativeElement).find('.project-line')[i];
-        jQuery(this).sparkline([9, 5, 3, 2, 2, 4, 6, 7, 5, 6, 7, 9, 5, 6, 7, 9, 9, 5, 3, 2, 2, 4, 6, 7], {
-          type: 'line',
-          width: '100%',
-          height: '30',
-          lineWidth: 2,
-          lineColor: '#00bcd4',
-          fillColor: 'rgba(0, 188, 212, 0.5)',
-        });
-    });
+    //jQuery(this.el.nativeElement).find('.project-line')
+    //  .each(function(i){
+    //    //var self = jQuery(this.el.nativeElement).find('.project-line')[i];
+    //    jQuery(this).sparkline([9, 5, 3, 2, 2, 4, 6, 7, 5, 6, 7, 9, 5, 6, 7, 9, 9, 5, 3, 2, 2, 4, 6, 7], {
+    //      type: 'line',
+    //      width: '100%',
+    //      height: '30',
+    //      lineWidth: 2,
+    //      lineColor: '#00bcd4',
+    //      fillColor: 'rgba(0, 188, 212, 0.5)',
+    //    });
+    //});
   }
 
   deleteCourse(course: Course) {

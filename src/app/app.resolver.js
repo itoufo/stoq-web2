@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -17,7 +18,7 @@ var DataResolver = (function () {
         core_1.Injectable()
     ], DataResolver);
     return DataResolver;
-})();
+}());
 exports.DataResolver = DataResolver;
 // an array of services to resolve routes with data
 exports.APP_RESOLVER_PROVIDERS = [

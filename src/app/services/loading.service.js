@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
+var jquery = require('jquery');
 var LoadingService = (function () {
     function LoadingService() {
     }
@@ -45,23 +47,23 @@ var LoadingService = (function () {
     LoadingService.prototype.no_scroll = function () {
         //PC用
         var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
-        jQuery(document).on(scroll_event, function (e) { e.preventDefault(); });
+        jquery(document).on(scroll_event, function (e) { e.preventDefault(); });
         //SP用
-        jQuery(document).on('touchmove.noScroll', function (e) { e.preventDefault(); });
+        jquery(document).on('touchmove.noScroll', function (e) { e.preventDefault(); });
     };
     //スクロール復活用関数
     LoadingService.prototype.return_scroll = function () {
         //PC用
         var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
-        jQuery(document).off(scroll_event);
+        jquery(document).off(scroll_event);
         //SP用
-        jQuery(document).off('.noScroll');
+        jquery(document).off('.noScroll');
     };
     LoadingService = __decorate([
         core_1.Injectable()
     ], LoadingService);
     return LoadingService;
-})();
+}());
 exports.LoadingService = LoadingService;
 var loadingStatus;
 var loadingCurtain;

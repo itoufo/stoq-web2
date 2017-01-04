@@ -1,6 +1,7 @@
-import * as jQuery from 'jquery';
 import 'hammerjs';
 import '../../../../js/materialize.js'
+import * as jquery  from 'jquery';
+import 'materialize-css'
 
 import {
   Component,
@@ -25,7 +26,8 @@ import {
     styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements AfterViewInit{
-    constructor(
+
+  constructor(
       private _location: Location,
       private _router: Router,
       private _loading: LoadingService,
@@ -37,12 +39,12 @@ export class SidebarComponent implements AfterViewInit{
     }
     ngAfterViewInit() {
         //Main Left Sidebar Menu
-        jQuery('.sidebar-collapse').sideNav({
+        jquery('.sidebar-collapse').sideNav({
             edge: 'left', // Choose the horizontal origin
         });
 
         // FULL SCREEN MENU (Layout 02)
-        jQuery('.menu-sidebar-collapse').sideNav({
+        jquery('.menu-sidebar-collapse').sideNav({
             menuWidth: 240,
             edge: 'left', // Choose the horizontal origin
             // closeOnClick:true, // Set if default menu open is true

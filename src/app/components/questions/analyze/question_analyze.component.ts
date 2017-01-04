@@ -1,4 +1,5 @@
-import 'jquery';
+import * as moment from 'moment/moment';
+import * as jquery from "jquery/dist/jquery.js";
 var Chart = require('../../../../js/plugins/chartjs/index');
 
 import {
@@ -164,8 +165,8 @@ export class QuestionAnalyzeComponent implements OnInit, AfterViewInit{
     var rreChartData = this.rreData(rreLabels, rreData);
 
 
-    $('#lineChartCanvas').remove();
-    $('#chart-container').append('<canvas id="lineChartCanvas" height="450" width="600"></canvas>');
+    jquery('#lineChartCanvas').remove();
+    jquery('#chart-container').append('<canvas id="lineChartCanvas" height="450" width="600"></canvas>');
     var canvas: HTMLCanvasElement =   <HTMLCanvasElement>document.querySelector('#lineChartCanvas');
     var ctx = canvas.getContext("2d");
     Chart.defaults.global.title.text = "memory strength";
@@ -176,8 +177,8 @@ export class QuestionAnalyzeComponent implements OnInit, AfterViewInit{
 
     console.log(lineChart);
 
-    $('#RresChartCanvas').remove();
-    $('#rres-chart-container').append('<canvas id="RresChartCanvas" height="450" width="600"></canvas>');
+    jquery('#RresChartCanvas').remove();
+    jquery('#rres-chart-container').append('<canvas id="RresChartCanvas" height="450" width="600"></canvas>');
     var rreCanvas: HTMLCanvasElement =  <HTMLCanvasElement>document.querySelector('#RresChartCanvas');
     var rreCtx = rreCanvas.getContext("2d");
     Chart.defaults.global.title.text = "memory strength";

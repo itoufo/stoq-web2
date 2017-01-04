@@ -33,8 +33,6 @@ const METADATA = {
 };
 
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 
 /*
  * Webpack configuration
@@ -64,7 +62,7 @@ module.exports = function (options) {
 
       'polyfills': './src/polyfills.browser.ts',
       'main':      AOT ? './src/main.browser.aot.ts' :
-                  './src/main.browser.ts'
+        './src/main.browser.ts'
 
     },
 
@@ -133,7 +131,6 @@ module.exports = function (options) {
           test: /\.css$/,
           use: ['to-string-loader', 'css-loader']
         },
-
         {
           test: /\.scss$/,
           exclude: /node_modules/,
@@ -175,7 +172,8 @@ module.exports = function (options) {
         moment: 'moment',   // </added>
         wysihtml5: 'wysihtml5',   // </added>
         wysihtml5ParserRules: 'wysihtml5ParserRules',   // </added>
-        Chart: 'Chart'   // </added>
+        Chart: 'Chart',   // </added>
+        Materialize: 'materialize-css'
       }),
 
       new AssetsPlugin({
@@ -207,20 +205,20 @@ module.exports = function (options) {
       new CommonsChunkPlugin({
         name: 'vendor',
         chunks: ['main'],
-        minChunks: module => /node_modules\//.test(module.resource)
+        minChunks: Infinity,
       }),
       // Specify the correct order the scripts will be injected in
       new CommonsChunkPlugin({
         name: ['polyfills', 'vendor'].reverse()
       }),
 
-      /**
-       * Plugin: ContextReplacementPlugin
-       * Description: Provides context to Angular's use of System.import
-       *
-       * See: https://webpack.github.io/docs/list-of-plugins.html#contextreplacementplugin
-       * See: https://github.com/angular/angular/issues/11580
-       */
+    /**
+     * Plugin: ContextReplacementPlugin
+     * Description: Provides context to Angular's use of System.import
+     *
+     * See: https://webpack.github.io/docs/list-of-plugins.html#contextreplacementplugin
+     * See: https://github.com/angular/angular/issues/11580
+     */
       new ContextReplacementPlugin(
         // The (\\|\/) piece accounts for path separators in *nix and Windows
         /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
@@ -297,11 +295,11 @@ module.exports = function (options) {
         headTags: require('./head-config.common')
       }),
 
-      /**
-       * Plugin LoaderOptionsPlugin (experimental)
-       *
-       * See: https://gist.github.com/sokra/27b24881210b56bbaff7
-       */
+    /**
+     * Plugin LoaderOptionsPlugin (experimental)
+     *
+     * See: https://gist.github.com/sokra/27b24881210b56bbaff7
+     */
       new LoaderOptionsPlugin({}),
 
       // Fix Angular 2
@@ -325,17 +323,7 @@ module.exports = function (options) {
         /facade(\\|\/)math/,
         helpers.root('node_modules/@angular/core/src/facade/math.js')
       ),
-
-      new webpack.ProvidePlugin({
-        jQuery: "jquery",
-        $: "jquery",
-        Chart: "chart",
-        moment: "moment",
-        wysihtml5: "wysihtml5",
-        wysihtml5ParserRules: "wysihtml5ParserRules",
-      }),
     ],
-
 
     /*
      * Include polyfills or mocks for various node stuff
@@ -351,6 +339,5 @@ module.exports = function (options) {
       clearImmediate: false,
       setImmediate: false
     }
-
   };
 }

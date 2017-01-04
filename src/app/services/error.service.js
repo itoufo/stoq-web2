@@ -1,5 +1,6 @@
 // エラーメッセージを解釈・整形するサービス
 // 個々のエラー描写は各コンポーネントに任せる
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var models_1 = require("../models");
+var index_1 = require("../models/index");
 var ErrorService = (function () {
     function ErrorService(_api, _auth, _router) {
         this._api = _api;
@@ -83,7 +84,7 @@ var ErrorService = (function () {
         var errors = [];
         this._errJson = JSON.parse(this._err._body);
         this._errJson.errors.forEach(function (error) {
-            errors.push(new models_1.ErrorMessage(error));
+            errors.push(new index_1.ErrorMessage(error));
         });
         return errors;
     };
@@ -110,7 +111,7 @@ var ErrorService = (function () {
         core_1.Injectable()
     ], ErrorService);
     return ErrorService;
-})();
+}());
 exports.ErrorService = ErrorService;
 var errorType = null;
 var showError;

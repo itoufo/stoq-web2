@@ -1,1 +1,1 @@
-{"version":3,"file":"popup.js","sourceRoot":"","sources":["popup.ts"],"names":[],"mappings":";;;;;;;YAIA;gBAWE;oBAPO,iBAAY,GAAW,MAAM,CAAC;oBAI9B,eAAU,GAAa,cAAO,CAAC,CAAC;oBAChC,mBAAc,GAAa,cAAO,CAAC,CAAC;gBAE5B,CAAC;gBAClB,gBAAC;YAAD,CAAC,AAZD,IAYC;YAZD,iCAYC,CAAA"}
+{"version":3,"file":"popup.js","sourceRoot":"","sources":["popup.ts"],"names":[],"mappings":";AAIA;IAWE;QAPO,iBAAY,GAAW,MAAM,CAAC;QAI9B,eAAU,GAAa,cAAO,CAAC,CAAC;QAChC,mBAAc,GAAa,cAAO,CAAC,CAAC;IAE5B,CAAC;IAClB,gBAAC;AAAD,CAAC,AAZD,IAYC;AAZY,iBAAS,YAYrB,CAAA"}

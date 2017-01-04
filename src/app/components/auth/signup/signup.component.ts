@@ -1,3 +1,4 @@
+import * as jquery  from 'jquery';
 import {
   Component,
   OnInit,
@@ -18,7 +19,6 @@ import {
   SelectValue,
   PopupBase
 } from "./../../../models";
-import 'jquery';
 
 import {Angulartics2On} from 'angulartics2';
 
@@ -52,10 +52,10 @@ export class SignupComponent implements OnInit{
   ngOnInit() {
     var formId = "#signup-form";
 
-    jQuery(formId).data('validator', null);
-    jQuery(formId).unbind('validate');
+    jquery(formId).data('validator', null);
+    jquery(formId).unbind('validate');
 
-    jQuery(formId).validate({
+    jquery(formId).validate({
       debug: true,
       rules: {
         email: {

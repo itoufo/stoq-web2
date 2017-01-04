@@ -1,5 +1,5 @@
-import 'jquery';
-
+import * as jquery  from 'jquery';
+import '../../../../js/materialize-plugins/leanModal.js'
 import {
   Component,
   Output,
@@ -24,6 +24,7 @@ import {
   PopupBase,
   ErrorMessage,
 } from "./../../../models";
+
 
 @Component({
   selector: 'courses-new',
@@ -90,9 +91,9 @@ export class CoursesNewComponent implements OnInit, AfterViewInit {
     // POPUPのデザインを選択
     this.popup.id = "#modal3";
 
-    jQuery("form").unbind('submit');
-    jQuery('.modal-trigger').unbind('click');
-    jQuery('.modal-trigger').leanModal({
+    jquery("form").unbind('submit');
+    jquery('.modal-trigger').unbind('click');
+    jquery('.modal-trigger').leanModal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
       in_duration: 300, // Transition in duration

@@ -1,10 +1,8 @@
 import {Injectable} from '@angular/core';
-import 'jquery';
+import * as jquery  from 'jquery';
 
 @Injectable()
 
-//
-// まだ実装してない〜
 
 export class LoadingService {
 
@@ -53,18 +51,18 @@ export class LoadingService {
   no_scroll() {
     //PC用
     var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
-    jQuery(document).on(scroll_event,function(e){e.preventDefault();});
+    jquery(document).on(scroll_event,function(e){e.preventDefault();});
     //SP用
-    jQuery(document).on('touchmove.noScroll', function(e) {e.preventDefault();});
+    jquery(document).on('touchmove.noScroll', function(e) {e.preventDefault();});
   }
 
   //スクロール復活用関数
   return_scroll() {
     //PC用
     var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
-    jQuery(document).off(scroll_event);
+    jquery(document).off(scroll_event);
     //SP用
-    jQuery(document).off('.noScroll');
+    jquery(document).off('.noScroll');
   }
 }
 

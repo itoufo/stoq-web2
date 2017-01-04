@@ -1,7 +1,7 @@
 // var jQuery, $ = require('jquery');
 // var moment = require('moment');
-import 'moment'
-import 'jquery'
+import * as moment from 'moment/moment';
+import * as jquery from "jquery/dist/jquery.js";
 
 import {
   Answer,

@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6,6 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require('@angular/core');
 var title_1 = require('./title');
+var moment = require('moment');
+var wysihtml5 = require('../../js/wysihtml5/dist/wysihtml5-0.4.0pre.js');
 var HomeComponent = (function () {
     // TypeScript public modifiers
     function HomeComponent(appState, title) {
@@ -16,6 +19,8 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         console.log('hello `Home` component');
+        console.log(moment().format('dddd'));
+        console.log(wysihtml5);
         // this.title.getData().subscribe(data => this.data = data);
     };
     HomeComponent.prototype.submitState = function (value) {
@@ -40,6 +45,6 @@ var HomeComponent = (function () {
         })
     ], HomeComponent);
     return HomeComponent;
-})();
+}());
 exports.HomeComponent = HomeComponent;
 //# sourceMappingURL=home.component.js.map

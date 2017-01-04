@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('@angular/core');
-var models_1 = require('./../models');
+var index_1 = require('./../models/index');
 var CURRENT_ACTIVITY;
 var ActivityService = (function () {
     function ActivityService(_api, _logger, _loading, _error) {
@@ -19,7 +20,7 @@ var ActivityService = (function () {
         localStorage.setItem('CurrentActivity', CURRENT_ACTIVITY.entry_id);
     };
     ActivityService.prototype.setActivity = function (activity_type, activity_params) {
-        var session = new models_1.ActivitySession(activity_type, activity_params);
+        var session = new index_1.ActivitySession(activity_type, activity_params);
         this.setActivitySession(session);
     };
     ActivityService.prototype.getActivity = function () {
@@ -36,7 +37,7 @@ var ActivityService = (function () {
         core_1.Injectable()
     ], ActivityService);
     return ActivityService;
-})();
+}());
 exports.ActivityService = ActivityService;
 /***
 export class Authentication {

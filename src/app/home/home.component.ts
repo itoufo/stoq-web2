@@ -5,10 +5,8 @@ import {
 
 import { AppState } from '../app.service';
 import { Title } from './title';
-import { XLarge } from './x-large';
 var moment = require('moment');
 var wysihtml5 = require('../../js/wysihtml5/dist/wysihtml5-0.4.0pre.js');
-import { XLargeDirective } from './x-large';
 
 @Component({
   // The selector is what angular internally uses

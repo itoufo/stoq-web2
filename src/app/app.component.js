@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,43 +9,115 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
  * Angular 2 decorators and services
  */
 var core_1 = require('@angular/core');
-var services_1 = require('./services');
+var index_1 = require('./services/index');
 /*
  * App Component
  * Top Level Component
  */
 var AppComponent = (function () {
-    function AppComponent(appState) {
-        this.appState = appState;
+    function AppComponent(_router, _api, _auth, _title, _logger, _loading, _err, _popup) {
+        this._router = _router;
+        this._api = _api;
+        this._auth = _auth;
+        this._title = _title;
+        this._logger = _logger;
+        this._loading = _loading;
+        this._err = _err;
+        this._popup = _popup;
         this.angularclassLogo = 'assets/img/angularclass-avatar.png';
         this.name = 'Angular 2 Webpack Starter';
         this.url = 'https://twitter.com/AngularClass';
+        this.authenticated = false;
+        // ページ名の配列をつくる。
+        this.pageIds = ["Home", "Testimonial", "Faq"];
+        // 必要あれば、ベースのタイトルを用意する。
+        this.baseTitle = "学習プラットフォーム StoQ";
+        // ページタイトルのハッシュを用意する。
+        this.pageTitles = {
+            home: "Home | " + this.baseTitle,
+            testimonial: "Testimonial | " + this.baseTitle,
+            faq: "Faq | " + this.baseTitle,
+            login: "Login | " + this.baseTitle,
+            "courses/index": 'Courses | ' + this.baseTitle,
+            "courses/new": 'New Course | ' + this.baseTitle
+        };
+        this.loading = false;
+        this._loading.startLoading();
+        this._auth.setCredentials();
+        //_router.subscribe( ( path ) => {
+        //  this.setSelected( path );
+        //});
     }
+    AppComponent.prototype.routerOnActivate = function (e) {
+        console.log('routerOnActivate');
+        console.log(e);
+        //this._logger.debug(`Finished navigating from "${prev ? prev.urlPath : 'null'}" to "${next.urlPath}"`); return new Promise(resolve => {
+        //  // The ChildCmp gets instantiated only when the Promise is resolved
+        //  setTimeout(() => resolve(null), 1000);
+        //});
+    };
+    AppComponent.prototype.routerOnDeactivate = function (e) {
+        console.log('routerOnDeactivate');
+        console.log(e);
+        //this._logger.debug(`Finished navigating from "${prev ? prev.urlPath : 'null'}" to "${next.urlPath}"`);
+        //return new Promise(resolve => {
+        //  // The ChildCmp gets instantiated only when the Promise is resolved
+        //  setTimeout(() => resolve(null), 1000);
+        //});
+    };
+    /**
+     * 指定のページを選択されている状態にし、ページタイトルをパスに対応するものに変更する。
+     * 小文字に統一。
+     */
+    AppComponent.prototype.setSelected = function (routeObj) {
+        // selectedIdを更新。小文字に統一。
+        this.selectedId = routeObj.instruction.routeName.toLowerCase();
+        // ページタイトルを更新。
+        var title = this.pageTitles[this.selectedId];
+        this._title.setTitle(title);
+    };
     AppComponent.prototype.ngOnInit = function () {
-        console.log('Initial App State', this.appState.state);
+        this._logger.debug("app component oninit");
+        this._loading.endLoading();
+        //this._auth.check_if_authenticated(function(result: boolean, self: AppComponent){
+        //  self.authenticated = true;
+        //  console.log(result);
+        //  console.log(self._auth.getStatus());
+        //  if (self._auth.getStatus()) {
+        //    self._router.navigate(['Home', {}]);
+        //  }else{
+        //    self._router.navigate(['Login', {}]);
+        //  }
+        //}, this, true);
+        // this._router.navigate(['Home', {}])
+    };
+    AppComponent.prototype.startLoading = function () {
+        this.loading = true;
+    };
+    AppComponent.prototype.endLoading = function () {
+        this.loading = false;
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
             encapsulation: core_1.ViewEncapsulation.None,
+            templateUrl: './app.component.html',
             styleUrls: [
-                './app.component.css'
+                './app.component.scss'
             ],
             providers: [
                 Location,
-                services_1.PopupService,
-                services_1.ApiService,
-                services_1.AuthService,
-                services_1.ErrorService,
-                Title,
-                services_1.LoggerService,
-                services_1.LoadingService,
-            ],
-            template: "\n    <nav>\n      <span>\n        <a [routerLink]=\" ['./'] \">\n          Index\n        </a>\n      </span>\n      |\n      <span>\n        <a [routerLink]=\" ['./home'] \">\n          Home\n        </a>\n      </span>\n      |\n      <span>\n        <a [routerLink]=\" ['./detail'] \">\n          Detail\n        </a>\n      </span>\n      |\n      <span>\n        <a [routerLink]=\" ['./about'] \">\n          About\n        </a>\n      </span>\n    </nav>\n\n    <main>\n      <router-outlet></router-outlet>\n    </main>\n\n    <pre class=\"app-state\">this.appState.state = {{ appState.state | json }}</pre>\n\n    <footer>\n      <span>WebPack Angular 2 Starter by <a [href]=\"url\">@AngularClass</a></span>\n      <div>\n        <a [href]=\"url\">\n          <img [src]=\"angularclassLogo\" width=\"25%\">\n        </a>\n      </div>\n    </footer>\n  "
+                index_1.PopupService,
+                index_1.ApiService,
+                index_1.AuthService,
+                index_1.ErrorService,
+                index_1.LoggerService,
+                index_1.LoadingService,
+            ]
         })
     ], AppComponent);
     return AppComponent;
-})();
+}());
 exports.AppComponent = AppComponent;
 /*
  * Please review the https://github.com/AngularClass/angular2-examples/ repo for

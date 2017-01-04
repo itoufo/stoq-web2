@@ -96,7 +96,6 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     NoContentComponent,
-    XLarge,
     CoursesIndexComponent,
     LoginComponent,
     SignupComponent,

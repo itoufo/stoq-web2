@@ -1,3 +1,5 @@
+import * as jquery  from 'jquery';
+
 import {
   Component,
   OnInit,
@@ -53,11 +55,11 @@ export class LoginComponent implements OnInit, AfterViewInit{
 
     var formId = "#login-form";
 
-    jQuery(formId).data('validator', null);
-    jQuery(formId).unbind('validate');
-    jQuery(formId).unbind('submit');
+    jquery(formId).data('validator', null);
+    jquery(formId).unbind('validate');
+    jquery(formId).unbind('submit');
 
-    jQuery(formId).validate({
+    jquery(formId).validate({
       debug: true,
       rules: {
         email: "required",

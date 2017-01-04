@@ -1,4 +1,5 @@
-import 'jquery';
+import * as moment from 'moment/moment';
+import * as jquery from "jquery/dist/jquery.js";
 
 var wysihtml5 = require('../../../../js/wysihtml5/dist/wysihtml5-0.4.0pre');
 var wysihtml5ParserRules = require('../../../../js/wysihtml5/dist/advanced');
@@ -106,10 +107,10 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
 
     this.startValidation();
 
-    jQuery(this.el.nativeElement)
+    jquery(this.el.nativeElement)
       .find("#" + this.editorContainerId() + ' iframe.wysihtml5-sandbox, input[name="_wysihtml5_mode"]').remove();
 
-    var $editor = jQuery(this.el.nativeElement).find("#" + this.editorId());
+    var $editor = jquery(this.el.nativeElement).find("#" + this.editorId());
     $editor.css("display", "block");
 
     this._editor = new wysihtml5.Editor( this.editorId(), { // id of textarea element
@@ -121,8 +122,8 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
     this._editor.on("change", this.setQuestionText.bind(this));
     this._editor.on("focus", this.focusEditor.bind(this));
 
-    $(document).ready(function(){
-      $('.tooltipped').tooltip({delay: 50});
+    jquery(document).ready(function(){
+      jquery('.tooltipped').tooltip({delay: 50});
     });
 
     this._loading.endLoading();
@@ -214,10 +215,10 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
 
   startValidation() {
     var formId = "#" + this.formId();
-    jQuery(formId).data('validator', null);
-    jQuery(formId).unbind('validate');
+    jquery(formId).data('validator', null);
+    jquery(formId).unbind('validate');
 
-    jQuery(formId).validate({
+    jquery(formId).validate({
       ignore: ":hidden:not(textarea)",
       debug: true,
       rules: {
@@ -232,9 +233,9 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
       },
       errorElement : 'div',
       errorPlacement: function(error, element) {
-        var placement = jQuery(element).data('error');
+        var placement = jquery(element).data('error');
         if (placement) {
-          jQuery(placement).append(error)
+          jquery(placement).append(error)
         } else {
           error.insertAfter(element);
         }
@@ -324,8 +325,8 @@ export class QuestionsFormComponent implements OnChanges, OnInit, AfterViewInit,
 
   invalidFunction(event, validator) {
 
-    var form = jQuery("#" + this.formId());
-    var errorDescription = jQuery("#" + this.formId() + " div.error");
+    var form = jquery("#" + this.formId());
+    var errorDescription = jquery("#" + this.formId() + " div.error");
 
     form.addClass("invalid");
 

@@ -1,5 +1,5 @@
-import 'jquery';
-import 'moment';
+import * as moment from 'moment/moment';
+import * as jquery from "jquery/dist/jquery.js";
 
 import {
   Course,
@@ -45,7 +45,7 @@ export class Question {
   }
 
   textHtml() {
-    return $(this.text).html();
+    return jquery(this.text).html();
   }
 
   createdAt() {
