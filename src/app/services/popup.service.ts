@@ -1,5 +1,3 @@
-var jQuery, $ = require('jquery');
-
 import {Injectable} from "@angular/core";
 
 import {

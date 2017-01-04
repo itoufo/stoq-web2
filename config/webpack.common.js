@@ -126,11 +126,11 @@ module.exports = function (options) {
           loaders: ['expose-loader?jQuery', 'expose-loader?$']
         },
         {
-          test: require.resolve('materialize-css'),
+          test: require.resolve(helpers.root('/src/js/materialize.js')),
           loaders: ['expose-loader?Materialize']
         },
         {
-          test: require.resolve('../src/js/plugins/chartjs/chart.js'),
+          test: require.resolve(helpers.root('/src/js/plugins/chartjs/chart.js')),
           loaders: ['expose-loader?Chart']
         },
         /*
@@ -184,7 +184,7 @@ module.exports = function (options) {
         wysihtml5: 'wysihtml5',   // </added>
         wysihtml5ParserRules: 'wysihtml5ParserRules',   // </added>
         Chart: 'Chart',   // </added>
-        Materialize: 'materialize-css'
+        Materialize: helpers.root('/src/js/plugins/chartjs/chart.js')
       }),
 
       new AssetsPlugin({

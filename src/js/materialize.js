@@ -4469,3 +4469,5 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         a("input, textarea").characterCounter();
     });
 }(jQuery);
+
+module.exports = Materialize;

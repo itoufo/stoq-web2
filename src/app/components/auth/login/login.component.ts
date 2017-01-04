@@ -1,4 +1,5 @@
 import * as jquery from 'jquery';
+import * as Materialize from '../../../../js/materialize.js';
 
 /// <reference path="../../../../../node_modules/@types/jquery.validation/index.d.ts" />
 
@@ -94,7 +95,6 @@ export class LoginComponent implements OnInit, AfterViewInit{
 
   }
 
-
   ngAfterViewInit(){
     this._loading.endLoading();
   }
@@ -117,6 +117,8 @@ export class LoginComponent implements OnInit, AfterViewInit{
         this._logger.error(err);
         this._loading.endLoading();
         this._auth.setStatus(false);
+        console.log(Materialize);
+        console.log(Materialize.toast);
         Materialize.toast('<span>ログインに失敗しました。</span>', 1500)
       },
       () => this._logger.debug('login success')

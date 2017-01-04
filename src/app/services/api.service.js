@@ -40,6 +40,15 @@ var ApiService = (function () {
         return this._callPostApi('Anonymous', '/auth/sign_in', params);
     };
     /**
+     * ログイン
+     * @param params { email, passeword }
+     * @returns {Observable<Response>|Observable<R>}
+     */
+    ApiService.prototype.postResetPassword = function (params) {
+        params['redirect_udl'] = "https://" + document.location.hostname + "#/login";
+        return this._callPostApi('Anonymous', '/auth/password', params);
+    };
+    /**
      * トークンの有効性検証
      * ヘッダから uid, client, access-token を取得
      * @returns {Observable<R>|Observable<R>}

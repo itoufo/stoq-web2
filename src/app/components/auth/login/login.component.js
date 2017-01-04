@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var jquery = require('jquery');
+var Materialize = require('../../../../js/materialize.js');
 /// <reference path="../../../../../node_modules/@types/jquery.validation/index.d.ts" />
 require('jquery-validation');
 var core_1 = require('@angular/core');
@@ -77,6 +78,8 @@ var LoginComponent = (function () {
             _this._logger.error(err);
             _this._loading.endLoading();
             _this._auth.setStatus(false);
+            console.log(Materialize);
+            console.log(Materialize.toast);
             Materialize.toast('<span>ログインに失敗しました。</span>', 1500);
         }, function () { return _this._logger.debug('login success'); });
     };
