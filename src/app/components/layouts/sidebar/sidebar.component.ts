@@ -1,7 +1,9 @@
+var jQuery, $ = require('jquery');
+
 import 'hammerjs';
-import '../../../../js/materialize.js'
-import * as jquery  from 'jquery';
-import 'materialize-css'
+import 'velocity-animate';
+import 'materialize-css';
+import '../../../../js/materialize-plugins/sideNav.js';
 
 import {
   Component,

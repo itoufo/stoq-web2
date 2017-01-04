@@ -146,9 +146,9 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         }, c.each = function(a, c, d) {
             var e, f = 0, g = a.length, h = b(a);
             if (d) {
-                if (h) for (;g > f && (e = c.apply(a[f], d), e !== !1); f++) ; else for (f in a) if (e = c.apply(a[f], d), 
+                if (h) for (;g > f && (e = c.apply(a[f], d), e !== !1); f++) ; else for (f in a) if (e = c.apply(a[f], d),
                 e === !1) break;
-            } else if (h) for (;g > f && (e = c.call(a[f], f, a[f]), e !== !1); f++) ; else for (f in a) if (e = c.call(a[f], f, a[f]), 
+            } else if (h) for (;g > f && (e = c.call(a[f], f, a[f]), e !== !1); f++) ; else for (f in a) if (e = c.call(a[f], f, a[f]),
             e === !1) break;
             return a;
         }, c.data = function(a, b, e) {
@@ -167,9 +167,9 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             });
         }, c.extend = function() {
             var a, b, d, e, f, g, h = arguments[0] || {}, i = 1, j = arguments.length, k = !1;
-            for ("boolean" == typeof h && (k = h, h = arguments[i] || {}, i++), "object" != typeof h && "function" !== c.type(h) && (h = {}), 
-            i === j && (h = this, i--); j > i; i++) if (null != (f = arguments[i])) for (e in f) a = h[e], 
-            d = f[e], h !== d && (k && d && (c.isPlainObject(d) || (b = c.isArray(d))) ? (b ? (b = !1, 
+            for ("boolean" == typeof h && (k = h, h = arguments[i] || {}, i++), "object" != typeof h && "function" !== c.type(h) && (h = {}),
+            i === j && (h = this, i--); j > i; i++) if (null != (f = arguments[i])) for (e in f) a = h[e],
+            d = f[e], h !== d && (k && d && (c.isPlainObject(d) || (b = c.isArray(d))) ? (b ? (b = !1,
             g = a && c.isArray(a) ? a : []) : g = a && c.isPlainObject(a) ? a : {}, h[e] = c.extend(k, g, d)) : void 0 !== d && (h[e] = d));
             return h;
         }, c.queue = function(a, d, e) {
@@ -190,7 +190,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             c.each(a.nodeType ? [ a ] : a, function(a, d) {
                 b = b || "fx";
                 var e = c.queue(d, b), f = e.shift();
-                "inprogress" === f && (f = e.shift()), f && ("fx" === b && e.unshift("inprogress"), 
+                "inprogress" === f && (f = e.shift()), f && ("fx" === b && e.unshift("inprogress"),
                 f.call(d, function() {
                     c.dequeue(d, b);
                 }));
@@ -219,8 +219,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     top: 0,
                     left: 0
                 } : c(a).offset();
-                return d.top -= parseFloat(b.style.marginTop) || 0, d.left -= parseFloat(b.style.marginLeft) || 0, 
-                a.style && (e.top += parseFloat(a.style.borderTopWidth) || 0, e.left += parseFloat(a.style.borderLeftWidth) || 0), 
+                return d.top -= parseFloat(b.style.marginTop) || 0, d.left -= parseFloat(b.style.marginLeft) || 0,
+                a.style && (e.top += parseFloat(a.style.borderTopWidth) || 0, e.left += parseFloat(a.style.borderLeftWidth) || 0),
                 {
                     top: d.top - e.top,
                     left: d.left - e.left
@@ -322,7 +322,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         }
         function j(a, b) {
             var c = a;
-            return p.isString(a) ? t.Easings[a] || (c = !1) : c = p.isArray(a) && 1 === a.length ? h.apply(null, a) : p.isArray(a) && 2 === a.length ? u.apply(null, a.concat([ b ])) : p.isArray(a) && 4 === a.length ? i.apply(null, a) : !1, 
+            return p.isString(a) ? t.Easings[a] || (c = !1) : c = p.isArray(a) && 1 === a.length ? h.apply(null, a) : p.isArray(a) && 2 === a.length ? u.apply(null, a.concat([ b ])) : p.isArray(a) && 4 === a.length ? i.apply(null, a) : !1,
             c === !1 && (c = t.Easings[t.defaults.easing] ? t.defaults.easing : s), c;
         }
         function k(a) {
@@ -358,16 +358,16 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                                         H && (D.rootPropertyValue = H);
                                     }
                                     var I = v.setPropertyValue(y, B, D.currentValue + (0 === parseFloat(C) ? "" : D.unitType), D.rootPropertyValue, D.scrollData);
-                                    v.Hooks.registered[B] && (g(y).rootPropertyValueCache[G] = v.Normalizations.registered[G] ? v.Normalizations.registered[G]("extract", null, I[1]) : I[1]), 
+                                    v.Hooks.registered[B] && (g(y).rootPropertyValueCache[G] = v.Normalizations.registered[G] ? v.Normalizations.registered[G]("extract", null, I[1]) : I[1]),
                                     "transform" === I[0] && (z = !0);
                                 }
                             }
-                            j.mobileHA && g(y).transformCache.translate3d === d && (g(y).transformCache.translate3d = "(0px, 0px, 0px)", 
+                            j.mobileHA && g(y).transformCache.translate3d === d && (g(y).transformCache.translate3d = "(0px, 0px, 0px)",
                             z = !0), z && v.flushTransformCache(y);
                         }
                     }
-                    j.display !== d && "none" !== j.display && (t.State.calls[f][2].display = !1), j.visibility !== d && "hidden" !== j.visibility && (t.State.calls[f][2].visibility = !1), 
-                    j.progress && j.progress.call(h[1], h[1], r, Math.max(0, n + j.duration - b), n, q), 
+                    j.display !== d && "none" !== j.display && (t.State.calls[f][2].display = !1), j.visibility !== d && "hidden" !== j.visibility && (t.State.calls[f][2].visibility = !1),
+                    j.progress && j.progress.call(h[1], h[1], r, Math.max(0, n + j.duration - b), n, q),
                     1 === r && l(f);
                 }
             }
@@ -377,16 +377,16 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             if (!t.State.calls[a]) return !1;
             for (var c = t.State.calls[a][0], e = t.State.calls[a][1], f = t.State.calls[a][2], h = t.State.calls[a][4], i = !1, j = 0, k = c.length; k > j; j++) {
                 var l = c[j].element;
-                if (b || f.loop || ("none" === f.display && v.setPropertyValue(l, "display", f.display), 
-                "hidden" === f.visibility && v.setPropertyValue(l, "visibility", f.visibility)), 
+                if (b || f.loop || ("none" === f.display && v.setPropertyValue(l, "display", f.display),
+                "hidden" === f.visibility && v.setPropertyValue(l, "visibility", f.visibility)),
                 f.loop !== !0 && (m.queue(l)[1] === d || !/\.velocityQueueEntryFlag/i.test(m.queue(l)[1])) && g(l)) {
                     g(l).isAnimating = !1, g(l).rootPropertyValueCache = {};
                     var n = !1;
                     m.each(v.Lists.transforms3D, function(a, b) {
                         var c = /^scale/.test(b) ? 1 : 0, e = g(l).transformCache[b];
-                        g(l).transformCache[b] !== d && new RegExp("^\\(" + c + "[^.]").test(e) && (n = !0, 
+                        g(l).transformCache[b] !== d && new RegExp("^\\(" + c + "[^.]").test(e) && (n = !0,
                         delete g(l).transformCache[b]);
-                    }), f.mobileHA && (n = !0, delete g(l).transformCache.translate3d), n && v.flushTransformCache(l), 
+                    }), f.mobileHA && (n = !0, delete g(l).transformCache.translate3d), n && v.flushTransformCache(l),
                     v.Values.removeClass(l, "velocity-animating");
                 }
                 if (!b && f.complete && !f.loop && j === k - 1) try {
@@ -397,8 +397,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     }, 1);
                 }
                 h && f.loop !== !0 && h(e), g(l) && f.loop === !0 && !b && (m.each(g(l).tweensContainer, function(a, b) {
-                    /^rotate/.test(a) && 360 === parseFloat(b.endValue) && (b.endValue = 0, b.startValue = 360), 
-                    /^backgroundPosition/.test(a) && 100 === parseFloat(b.endValue) && "%" === b.unitType && (b.endValue = 0, 
+                    /^rotate/.test(a) && 360 === parseFloat(b.endValue) && (b.endValue = 0, b.startValue = 360),
+                    /^backgroundPosition/.test(a) && 100 === parseFloat(b.endValue) && "%" === b.unitType && (b.endValue = 0,
                     b.startValue = 100);
                 }), t(l, "reverse", {
                     loop: !0,
@@ -416,7 +416,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             if (c.documentMode) return c.documentMode;
             for (var a = 7; a > 4; a--) {
                 var b = c.createElement("div");
-                if (b.innerHTML = "<!--[if IE " + a + "]><span></span><![endif]-->", b.getElementsByTagName("span").length) return b = null, 
+                if (b.innerHTML = "<!--[if IE " + a + "]><span></span><![endif]-->", b.getElementsByTagName("span").length) return b = null,
                 a;
             }
             return d;
@@ -510,8 +510,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             },
             debug: !1
         };
-        b.pageYOffset !== d ? (t.State.scrollAnchor = b, t.State.scrollPropertyLeft = "pageXOffset", 
-        t.State.scrollPropertyTop = "pageYOffset") : (t.State.scrollAnchor = c.documentElement || c.body.parentNode || c.body, 
+        b.pageYOffset !== d ? (t.State.scrollAnchor = b, t.State.scrollPropertyLeft = "pageXOffset",
+        t.State.scrollPropertyTop = "pageYOffset") : (t.State.scrollAnchor = c.documentElement || c.body.parentNode || c.body,
         t.State.scrollPropertyLeft = "scrollLeft", t.State.scrollPropertyTop = "scrollTop");
         var u = function() {
             function a(a) {
@@ -543,8 +543,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     tension: null,
                     friction: null
                 }, j = [ 0 ], k = 0, l = 1e-4, m = .016;
-                for (a = parseFloat(a) || 500, b = parseFloat(b) || 20, e = e || null, i.tension = a, 
-                i.friction = b, f = null !== e, f ? (k = d(a, b), g = k / e * m) : g = m; h = c(h || i, g), 
+                for (a = parseFloat(a) || 500, b = parseFloat(b) || 20, e = e || null, i.tension = a,
+                i.friction = b, f = null !== e, f ? (k = d(a, b), g = k / e * m) : g = m; h = c(h || i, g),
                 j.push(1 + h.x), k += 16, Math.abs(h.x) > l && Math.abs(h.v) > l; ) ;
                 return f ? function(a) {
                     return j[a * (j.length - 1) | 0];
@@ -610,7 +610,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     return b ? b[0] : a;
                 },
                 cleanRootPropertyValue: function(a, b) {
-                    return v.RegEx.valueUnwrap.test(b) && (b = b.match(v.RegEx.valueUnwrap)[1]), v.Values.isCSSNullValue(b) && (b = v.Hooks.templates[a][1]), 
+                    return v.RegEx.valueUnwrap.test(b) && (b = b.match(v.RegEx.valueUnwrap)[1]), v.Values.isCSSNullValue(b) && (b = v.Hooks.templates[a][1]),
                     b;
                 },
                 extractValue: function(a, b) {
@@ -625,7 +625,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     var d = v.Hooks.registered[a];
                     if (d) {
                         var e, f, g = d[0], h = d[1];
-                        return c = v.Hooks.cleanRootPropertyValue(g, c), e = c.toString().match(v.RegEx.valueSplit), 
+                        return c = v.Hooks.cleanRootPropertyValue(g, c), e = c.toString().match(v.RegEx.valueSplit),
                         e[h] = b, f = e.join(" ");
                     }
                     return c;
@@ -640,7 +640,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
 
                           case "extract":
                             var d;
-                            return v.RegEx.wrappedValueAlreadyExtracted.test(c) ? d = c : (d = c.toString().match(v.RegEx.valueUnwrap), 
+                            return v.RegEx.wrappedValueAlreadyExtracted.test(c) ? d = c : (d = c.toString().match(v.RegEx.valueUnwrap),
                             d = d ? d[1].replace(/,(\s+)?/g, " ") : c), d;
 
                           case "inject":
@@ -740,13 +740,13 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                                         red: "rgb(255, 0, 0)",
                                         white: "rgb(255, 255, 255)"
                                     };
-                                    /^[A-z]+$/i.test(e) ? g = h[e] !== d ? h[e] : h.black : v.RegEx.isHex.test(e) ? g = "rgb(" + v.Values.hexToRgb(e).join(" ") + ")" : /^rgba?\(/i.test(e) || (g = h.black), 
+                                    /^[A-z]+$/i.test(e) ? g = h[e] !== d ? h[e] : h.black : v.RegEx.isHex.test(e) ? g = "rgb(" + v.Values.hexToRgb(e).join(" ") + ")" : /^rgba?\(/i.test(e) || (g = h.black),
                                     f = (g || e).toString().match(v.RegEx.valueUnwrap)[1].replace(/,(\s+)?/g, " ");
                                 }
                                 return 8 >= n || 3 !== f.split(" ").length || (f += " 1"), f;
 
                               case "inject":
-                                return 8 >= n ? 4 === e.split(" ").length && (e = e.split(/\s+/).slice(0, 3).join(" ")) : 3 === e.split(" ").length && (e += " 1"), 
+                                return 8 >= n ? 4 === e.split(" ").length && (e = e.split(/\s+/).slice(0, 3).join(" ")) : 3 === e.split(" ").length && (e += " 1"),
                                 (8 >= n ? "rgb" : "rgba") + "(" + e.replace(/\s+/g, ",").replace(/\.(\d)+(?=,)/g, "") + ")";
                             }
                         };
@@ -769,7 +769,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                         var e;
                         if (e = 0 === c ? a : b[c] + a.replace(/^\w/, function(a) {
                             return a.toUpperCase();
-                        }), p.isString(t.State.prefixElement.style[e])) return t.State.prefixMatches[a] = e, 
+                        }), p.isString(t.State.prefixElement.style[e])) return t.State.prefixMatches[a] = e,
                         [ e, !0 ];
                     }
                     return [ a, !1 ];
@@ -807,7 +807,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     var i = 0;
                     if (8 >= n) i = m.css(a, c); else {
                         var j = !1;
-                        if (/^(width|height)$/.test(c) && 0 === v.getPropertyValue(a, "display") && (j = !0, 
+                        if (/^(width|height)$/.test(c) && 0 === v.getPropertyValue(a, "display") && (j = !0,
                         v.setPropertyValue(a, "display", v.Values.getDisplayType(a))), !f) {
                             if ("height" === c && "border-box" !== v.getPropertyValue(a, "boxSizing").toString().toLowerCase()) {
                                 var k = a.offsetHeight - (parseFloat(v.getPropertyValue(a, "borderTopWidth")) || 0) - (parseFloat(v.getPropertyValue(a, "borderBottomWidth")) || 0) - (parseFloat(v.getPropertyValue(a, "paddingTop")) || 0) - (parseFloat(v.getPropertyValue(a, "paddingBottom")) || 0);
@@ -819,8 +819,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                             }
                         }
                         var o;
-                        o = g(a) === d ? b.getComputedStyle(a, null) : g(a).computedStyle ? g(a).computedStyle : g(a).computedStyle = b.getComputedStyle(a, null), 
-                        "borderColor" === c && (c = "borderTopColor"), i = 9 === n && "filter" === c ? o.getPropertyValue(c) : o[c], 
+                        o = g(a) === d ? b.getComputedStyle(a, null) : g(a).computedStyle ? g(a).computedStyle : g(a).computedStyle = b.getComputedStyle(a, null),
+                        "borderColor" === c && (c = "borderTopColor"), i = 9 === n && "filter" === c ? o.getPropertyValue(c) : o[c],
                         ("" === i || null === i) && (i = a.style[c]), e();
                     }
                     if ("auto" === i && /^(top|right|bottom|left)$/i.test(c)) {
@@ -832,12 +832,12 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                 var i;
                 if (v.Hooks.registered[c]) {
                     var j = c, k = v.Hooks.getRoot(j);
-                    e === d && (e = v.getPropertyValue(a, v.Names.prefixCheck(k)[0])), v.Normalizations.registered[k] && (e = v.Normalizations.registered[k]("extract", a, e)), 
+                    e === d && (e = v.getPropertyValue(a, v.Names.prefixCheck(k)[0])), v.Normalizations.registered[k] && (e = v.Normalizations.registered[k]("extract", a, e)),
                     i = v.Hooks.extractValue(j, e);
                 } else if (v.Normalizations.registered[c]) {
                     var l, o;
-                    l = v.Normalizations.registered[c]("name", a), "transform" !== l && (o = h(a, v.Names.prefixCheck(l)[0]), 
-                    v.Values.isCSSNullValue(o) && v.Hooks.templates[c] && (o = v.Hooks.templates[c][1])), 
+                    l = v.Normalizations.registered[c]("name", a), "transform" !== l && (o = h(a, v.Names.prefixCheck(l)[0]),
+                    v.Values.isCSSNullValue(o) && v.Hooks.templates[c] && (o = v.Hooks.templates[c][1])),
                     i = v.Normalizations.registered[c]("extract", a, o);
                 }
                 if (!/^[\d-]/.test(i)) if (g(a) && g(a).isSVG && v.Names.SVGAttribute(c)) if (/^(height|width)$/i.test(c)) try {
@@ -845,18 +845,18 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                 } catch (p) {
                     i = 0;
                 } else i = a.getAttribute(c); else i = h(a, v.Names.prefixCheck(c)[0]);
-                return v.Values.isCSSNullValue(i) && (i = 0), t.debug >= 2 && console.log("Get " + c + ": " + i), 
+                return v.Values.isCSSNullValue(i) && (i = 0), t.debug >= 2 && console.log("Get " + c + ": " + i),
                 i;
             },
             setPropertyValue: function(a, c, d, e, f) {
                 var h = c;
-                if ("scroll" === c) f.container ? f.container["scroll" + f.direction] = d : "Left" === f.direction ? b.scrollTo(d, f.alternateValue) : b.scrollTo(f.alternateValue, d); else if (v.Normalizations.registered[c] && "transform" === v.Normalizations.registered[c]("name", a)) v.Normalizations.registered[c]("inject", a, d), 
+                if ("scroll" === c) f.container ? f.container["scroll" + f.direction] = d : "Left" === f.direction ? b.scrollTo(d, f.alternateValue) : b.scrollTo(f.alternateValue, d); else if (v.Normalizations.registered[c] && "transform" === v.Normalizations.registered[c]("name", a)) v.Normalizations.registered[c]("inject", a, d),
                 h = "transform", d = g(a).transformCache[c]; else {
                     if (v.Hooks.registered[c]) {
                         var i = c, j = v.Hooks.getRoot(c);
                         e = e || v.getPropertyValue(a, j), d = v.Hooks.injectValue(i, d, e), c = j;
                     }
-                    if (v.Normalizations.registered[c] && (d = v.Normalizations.registered[c]("inject", a, d), 
+                    if (v.Normalizations.registered[c] && (d = v.Normalizations.registered[c]("inject", a, d),
                     c = v.Normalizations.registered[c]("name", a)), h = v.Names.prefixCheck(c)[0], 8 >= n) try {
                         a.style[h] = d;
                     } catch (k) {
@@ -880,13 +880,13 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                         rotate: [ b("rotateZ"), 0, 0 ]
                     };
                     m.each(g(a).transformCache, function(a) {
-                        /^translate/i.test(a) ? a = "translate" : /^scale/i.test(a) ? a = "scale" : /^rotate/i.test(a) && (a = "rotate"), 
+                        /^translate/i.test(a) ? a = "translate" : /^scale/i.test(a) ? a = "scale" : /^rotate/i.test(a) && (a = "rotate"),
                         d[a] && (c += a + "(" + d[a].join(" ") + ") ", delete d[a]);
                     });
                 } else {
                     var e, f;
                     m.each(g(a).transformCache, function(b) {
-                        return e = g(a).transformCache[b], "transformPerspective" === b ? (f = e, !0) : (9 === n && "rotateZ" === b && (b = "rotate"), 
+                        return e = g(a).transformCache[b], "transformPerspective" === b ? (f = e, !0) : (9 === n && "rotateZ" === b && (b = "rotate"),
                         void (c += b + e + " "));
                     }), f && (c = "perspective" + f + " " + c);
                 }
@@ -910,8 +910,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                 function a(a) {
                     function l(a, b) {
                         var c = d, e = d, g = d;
-                        return p.isArray(a) ? (c = a[0], !p.isArray(a[1]) && /^[\d-]/.test(a[1]) || p.isFunction(a[1]) || v.RegEx.isHex.test(a[1]) ? g = a[1] : (p.isString(a[1]) && !v.RegEx.isHex.test(a[1]) || p.isArray(a[1])) && (e = b ? a[1] : j(a[1], h.duration), 
-                        a[2] !== d && (g = a[2]))) : c = a, b || (e = e || h.easing), p.isFunction(c) && (c = c.call(f, y, x)), 
+                        return p.isArray(a) ? (c = a[0], !p.isArray(a[1]) && /^[\d-]/.test(a[1]) || p.isFunction(a[1]) || v.RegEx.isHex.test(a[1]) ? g = a[1] : (p.isString(a[1]) && !v.RegEx.isHex.test(a[1]) || p.isArray(a[1])) && (e = b ? a[1] : j(a[1], h.duration),
+                        a[2] !== d && (g = a[2]))) : c = a, b || (e = e || h.easing), p.isFunction(c) && (c = c.call(f, y, x)),
                         p.isFunction(g) && (g = g.call(f, y, x)), [ c || 0, e, g ];
                     }
                     function n(a, b) {
@@ -928,22 +928,22 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                         }, d = a.position === I.lastPosition && a.myParent === I.lastParent, e = a.fontSize === I.lastFontSize;
                         I.lastParent = a.myParent, I.lastPosition = a.position, I.lastFontSize = a.fontSize;
                         var h = 100, i = {};
-                        if (e && d) i.emToPx = I.lastEmToPx, i.percentToPxWidth = I.lastPercentToPxWidth, 
+                        if (e && d) i.emToPx = I.lastEmToPx, i.percentToPxWidth = I.lastPercentToPxWidth,
                         i.percentToPxHeight = I.lastPercentToPxHeight; else {
                             var j = g(f).isSVG ? c.createElementNS("http://www.w3.org/2000/svg", "rect") : c.createElement("div");
                             t.init(j), a.myParent.appendChild(j), m.each([ "overflow", "overflowX", "overflowY" ], function(a, b) {
                                 t.CSS.setPropertyValue(j, b, "hidden");
-                            }), t.CSS.setPropertyValue(j, "position", a.position), t.CSS.setPropertyValue(j, "fontSize", a.fontSize), 
+                            }), t.CSS.setPropertyValue(j, "position", a.position), t.CSS.setPropertyValue(j, "fontSize", a.fontSize),
                             t.CSS.setPropertyValue(j, "boxSizing", "content-box"), m.each([ "minWidth", "maxWidth", "width", "minHeight", "maxHeight", "height" ], function(a, b) {
                                 t.CSS.setPropertyValue(j, b, h + "%");
-                            }), t.CSS.setPropertyValue(j, "paddingLeft", h + "em"), i.percentToPxWidth = I.lastPercentToPxWidth = (parseFloat(v.getPropertyValue(j, "width", null, !0)) || 1) / h, 
-                            i.percentToPxHeight = I.lastPercentToPxHeight = (parseFloat(v.getPropertyValue(j, "height", null, !0)) || 1) / h, 
-                            i.emToPx = I.lastEmToPx = (parseFloat(v.getPropertyValue(j, "paddingLeft")) || 1) / h, 
+                            }), t.CSS.setPropertyValue(j, "paddingLeft", h + "em"), i.percentToPxWidth = I.lastPercentToPxWidth = (parseFloat(v.getPropertyValue(j, "width", null, !0)) || 1) / h,
+                            i.percentToPxHeight = I.lastPercentToPxHeight = (parseFloat(v.getPropertyValue(j, "height", null, !0)) || 1) / h,
+                            i.emToPx = I.lastEmToPx = (parseFloat(v.getPropertyValue(j, "paddingLeft")) || 1) / h,
                             a.myParent.removeChild(j);
                         }
-                        return null === I.remToPx && (I.remToPx = parseFloat(v.getPropertyValue(c.body, "fontSize")) || 16), 
-                        null === I.vwToPx && (I.vwToPx = parseFloat(b.innerWidth) / 100, I.vhToPx = parseFloat(b.innerHeight) / 100), 
-                        i.remToPx = I.remToPx, i.vwToPx = I.vwToPx, i.vhToPx = I.vhToPx, t.debug >= 1 && console.log("Unit ratios: " + JSON.stringify(i), f), 
+                        return null === I.remToPx && (I.remToPx = parseFloat(v.getPropertyValue(c.body, "fontSize")) || 16),
+                        null === I.vwToPx && (I.vwToPx = parseFloat(b.innerWidth) / 100, I.vhToPx = parseFloat(b.innerHeight) / 100),
+                        i.remToPx = I.remToPx, i.vwToPx = I.vwToPx, i.vhToPx = I.vhToPx, t.debug >= 1 && console.log("Unit ratios: " + JSON.stringify(i), f),
                         i;
                     }
                     if (h.begin && 0 === y) try {
@@ -955,9 +955,9 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     }
                     if ("scroll" === C) {
                         var w, z, A, D = /^x$/i.test(h.axis) ? "Left" : "Top", E = parseFloat(h.offset) || 0;
-                        h.container ? p.isWrapped(h.container) || p.isNode(h.container) ? (h.container = h.container[0] || h.container, 
-                        w = h.container["scroll" + D], A = w + m(f).position()[D.toLowerCase()] + E) : h.container = null : (w = t.State.scrollAnchor[t.State["scrollProperty" + D]], 
-                        z = t.State.scrollAnchor[t.State["scrollProperty" + ("Left" === D ? "Top" : "Left")]], 
+                        h.container ? p.isWrapped(h.container) || p.isNode(h.container) ? (h.container = h.container[0] || h.container,
+                        w = h.container["scroll" + D], A = w + m(f).position()[D.toLowerCase()] + E) : h.container = null : (w = t.State.scrollAnchor[t.State["scrollProperty" + D]],
+                        z = t.State.scrollAnchor[t.State["scrollProperty" + ("Left" === D ? "Top" : "Left")]],
                         A = m(f).offset()[D.toLowerCase()] + E), i = {
                             scroll: {
                                 rootPropertyValue: !1,
@@ -976,13 +976,13 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                         }, t.debug && console.log("tweensContainer (scroll): ", i.scroll, f);
                     } else if ("reverse" === C) {
                         if (!g(f).tweensContainer) return void m.dequeue(f, h.queue);
-                        "none" === g(f).opts.display && (g(f).opts.display = "auto"), "hidden" === g(f).opts.visibility && (g(f).opts.visibility = "visible"), 
-                        g(f).opts.loop = !1, g(f).opts.begin = null, g(f).opts.complete = null, s.easing || delete h.easing, 
+                        "none" === g(f).opts.display && (g(f).opts.display = "auto"), "hidden" === g(f).opts.visibility && (g(f).opts.visibility = "visible"),
+                        g(f).opts.loop = !1, g(f).opts.begin = null, g(f).opts.complete = null, s.easing || delete h.easing,
                         s.duration || delete h.duration, h = m.extend({}, g(f).opts, h);
                         var F = m.extend(!0, {}, g(f).tweensContainer);
                         for (var G in F) if ("element" !== G) {
                             var H = F[G].startValue;
-                            F[G].startValue = F[G].currentValue = F[G].endValue, F[G].endValue = H, p.isEmptyObject(s) || (F[G].easing = h.easing), 
+                            F[G].startValue = F[G].currentValue = F[G].endValue, F[G].endValue = H, p.isEmptyObject(s) || (F[G].easing = h.easing),
                             t.debug && console.log("reverse tweensContainer (" + G + "): " + JSON.stringify(F[G]), f);
                         }
                         i = F;
@@ -1005,14 +1005,14 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                             K = v.Names.camelCase(K);
                             var P = v.Hooks.getRoot(K), Q = !1;
                             if (g(f).isSVG || "tween" === P || v.Names.prefixCheck(P)[1] !== !1 || v.Normalizations.registered[P] !== d) {
-                                (h.display !== d && null !== h.display && "none" !== h.display || h.visibility !== d && "hidden" !== h.visibility) && /opacity|filter/.test(K) && !O && 0 !== M && (O = 0), 
-                                h._cacheValues && F && F[K] ? (O === d && (O = F[K].endValue + F[K].unitType), Q = g(f).rootPropertyValueCache[P]) : v.Hooks.registered[K] ? O === d ? (Q = v.getPropertyValue(f, P), 
+                                (h.display !== d && null !== h.display && "none" !== h.display || h.visibility !== d && "hidden" !== h.visibility) && /opacity|filter/.test(K) && !O && 0 !== M && (O = 0),
+                                h._cacheValues && F && F[K] ? (O === d && (O = F[K].endValue + F[K].unitType), Q = g(f).rootPropertyValueCache[P]) : v.Hooks.registered[K] ? O === d ? (Q = v.getPropertyValue(f, P),
                                 O = v.getPropertyValue(f, K, Q)) : Q = v.Hooks.templates[P][1] : O === d && (O = v.getPropertyValue(f, K));
                                 var R, S, T, U = !1;
                                 if (R = n(K, O), O = R[0], T = R[1], R = n(K, M), M = R[0].replace(/^([+-\/*])=/, function(a, b) {
                                     return U = b, "";
-                                }), S = R[1], O = parseFloat(O) || 0, M = parseFloat(M) || 0, "%" === S && (/^(fontSize|lineHeight)$/.test(K) ? (M /= 100, 
-                                S = "em") : /^scale/.test(K) ? (M /= 100, S = "") : /(Red|Green|Blue)$/i.test(K) && (M = M / 100 * 255, 
+                                }), S = R[1], O = parseFloat(O) || 0, M = parseFloat(M) || 0, "%" === S && (/^(fontSize|lineHeight)$/.test(K) ? (M /= 100,
+                                S = "em") : /^scale/.test(K) ? (M /= 100, S = "") : /(Red|Green|Blue)$/i.test(K) && (M = M / 100 * 255,
                                 S = "")), /[\/*]/.test(U)) S = T; else if (T !== S && 0 !== O) if (0 === M) S = T; else {
                                     e = e || r();
                                     var V = /margin|padding|left|right|width|text|word|letter/i.test(K) || /X$/.test(K) || "x" === K ? "x" : "y";
@@ -1067,8 +1067,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                         }
                         i.element = f;
                     }
-                    i.element && (v.Values.addClass(f, "velocity-animating"), J.push(i), "" === h.queue && (g(f).tweensContainer = i, 
-                    g(f).opts = h), g(f).isAnimating = !0, y === x - 1 ? (t.State.calls.push([ J, o, h, null, B.resolver ]), 
+                    i.element && (v.Values.addClass(f, "velocity-animating"), J.push(i), "" === h.queue && (g(f).tweensContainer = i,
+                    g(f).opts = h), g(f).isAnimating = !0, y === x - 1 ? (t.State.calls.push([ J, o, h, null, B.resolver ]),
                     t.State.isTicking === !1 && (t.State.isTicking = !0, k())) : y++);
                 }
                 var e, f = this, h = m.extend({}, t.defaults, s), i = {};
@@ -1093,20 +1093,20 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                   default:
                     h.duration = parseFloat(h.duration) || 1;
                 }
-                t.mock !== !1 && (t.mock === !0 ? h.duration = h.delay = 1 : (h.duration *= parseFloat(t.mock) || 1, 
-                h.delay *= parseFloat(t.mock) || 1)), h.easing = j(h.easing, h.duration), h.begin && !p.isFunction(h.begin) && (h.begin = null), 
-                h.progress && !p.isFunction(h.progress) && (h.progress = null), h.complete && !p.isFunction(h.complete) && (h.complete = null), 
-                h.display !== d && null !== h.display && (h.display = h.display.toString().toLowerCase(), 
-                "auto" === h.display && (h.display = t.CSS.Values.getDisplayType(f))), h.visibility !== d && null !== h.visibility && (h.visibility = h.visibility.toString().toLowerCase()), 
+                t.mock !== !1 && (t.mock === !0 ? h.duration = h.delay = 1 : (h.duration *= parseFloat(t.mock) || 1,
+                h.delay *= parseFloat(t.mock) || 1)), h.easing = j(h.easing, h.duration), h.begin && !p.isFunction(h.begin) && (h.begin = null),
+                h.progress && !p.isFunction(h.progress) && (h.progress = null), h.complete && !p.isFunction(h.complete) && (h.complete = null),
+                h.display !== d && null !== h.display && (h.display = h.display.toString().toLowerCase(),
+                "auto" === h.display && (h.display = t.CSS.Values.getDisplayType(f))), h.visibility !== d && null !== h.visibility && (h.visibility = h.visibility.toString().toLowerCase()),
                 h.mobileHA = h.mobileHA && t.State.isMobile && !t.State.isGingerbread, h.queue === !1 ? h.delay ? setTimeout(a, h.delay) : a() : m.queue(f, h.queue, function(b, c) {
-                    return c === !0 ? (B.promise && B.resolver(o), !0) : (t.velocityQueueEntryFlag = !0, 
+                    return c === !0 ? (B.promise && B.resolver(o), !0) : (t.velocityQueueEntryFlag = !0,
                     void a(b));
                 }), "" !== h.queue && "fx" !== h.queue || "inprogress" === m.queue(f)[0] || m.dequeue(f);
             }
             var h, i, n, o, q, s, u = arguments[0] && (arguments[0].p || m.isPlainObject(arguments[0].properties) && !arguments[0].properties.names || p.isString(arguments[0].properties));
-            if (p.isWrapped(this) ? (h = !1, n = 0, o = this, i = this) : (h = !0, n = 1, o = u ? arguments[0].elements || arguments[0].e : arguments[0]), 
+            if (p.isWrapped(this) ? (h = !1, n = 0, o = this, i = this) : (h = !0, n = 1, o = u ? arguments[0].elements || arguments[0].e : arguments[0]),
             o = f(o)) {
-                u ? (q = arguments[0].properties || arguments[0].p, s = arguments[0].options || arguments[0].o) : (q = arguments[n], 
+                u ? (q = arguments[0].properties || arguments[0].p, s = arguments[0].options || arguments[0].o) : (q = arguments[n],
                 s = arguments[n + 1]);
                 var x = o.length, y = 0;
                 if (!/^(stop|finish)$/i.test(q) && !m.isPlainObject(s)) {
@@ -1135,7 +1135,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                   case "finish":
                   case "stop":
                     m.each(o, function(a, b) {
-                        g(b) && g(b).delayTimer && (clearTimeout(g(b).delayTimer.setTimeout), g(b).delayTimer.next && g(b).delayTimer.next(), 
+                        g(b) && g(b).delayTimer && (clearTimeout(g(b).delayTimer.setTimeout), g(b).delayTimer.next && g(b).delayTimer.next(),
                         delete g(b).delayTimer);
                     });
                     var D = [];
@@ -1159,9 +1159,9 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                         if (p.isString(q) && t.Redirects[q]) {
                             var E = m.extend({}, s), F = E.duration, G = E.delay || 0;
                             return E.backwards === !0 && (o = m.extend(!0, [], o).reverse()), m.each(o, function(a, b) {
-                                parseFloat(E.stagger) ? E.delay = G + parseFloat(E.stagger) * a : p.isFunction(E.stagger) && (E.delay = G + E.stagger.call(b, a, x)), 
-                                E.drag && (E.duration = parseFloat(F) || (/^(callout|transition)/.test(q) ? 1e3 : r), 
-                                E.duration = Math.max(E.duration * (E.backwards ? 1 - a / x : (a + 1) / x), .75 * E.duration, 200)), 
+                                parseFloat(E.stagger) ? E.delay = G + parseFloat(E.stagger) * a : p.isFunction(E.stagger) && (E.delay = G + E.stagger.call(b, a, x)),
+                                E.drag && (E.duration = parseFloat(F) || (/^(callout|transition)/.test(q) ? 1e3 : r),
+                                E.duration = Math.max(E.duration * (E.backwards ? 1 - a / x : (a + 1) / x), .75 * E.duration, 200)),
                                 t.Redirects[q].call(b, b, E || {}, a, x, o, B.promise ? B : d);
                             }), a();
                         }
@@ -1190,7 +1190,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                         delay: E.delay,
                         progress: E.progress
                     };
-                    L === K - 1 && (M.display = E.display, M.visibility = E.visibility, M.complete = E.complete), 
+                    L === K - 1 && (M.display = E.display, M.visibility = E.visibility, M.complete = E.complete),
                     w(o, "reverse", M);
                 }
                 return a();
@@ -1204,7 +1204,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     a(!0);
                 }, 16);
             }, k()) : x = b.requestAnimationFrame || o;
-        }), a.Velocity = t, a !== b && (a.fn.velocity = w, a.fn.velocity.defaults = t.defaults), 
+        }), a.Velocity = t, a !== b && (a.fn.velocity = w, a.fn.velocity.defaults = t.defaults),
         m.each([ "Down", "Up" ], function(a, b) {
             t.Redirects["slide" + b] = function(a, c, e, f, g, h) {
                 var i = m.extend({}, c), j = i.begin, k = i.complete, l = {
@@ -1214,7 +1214,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                     paddingTop: "",
                     paddingBottom: ""
                 }, n = {};
-                i.display === d && (i.display = "Down" === b ? "inline" === t.CSS.Values.getDisplayType(a) ? "inline-block" : "block" : "none"), 
+                i.display === d && (i.display = "Down" === b ? "inline" === t.CSS.Values.getDisplayType(a) ? "inline-block" : "block" : "none"),
                 i.begin = function() {
                     j && j.call(g, g);
                     for (var c in l) {
@@ -1249,11 +1249,11 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
     }
     function g(a, b, c) {
         var e;
-        if (a) if (a.forEach) a.forEach(b, c); else if (a.length !== d) for (e = 0; e < a.length; ) b.call(c, a[e], e, a), 
+        if (a) if (a.forEach) a.forEach(b, c); else if (a.length !== d) for (e = 0; e < a.length; ) b.call(c, a[e], e, a),
         e++; else for (e in a) a.hasOwnProperty(e) && b.call(c, a[e], e, a);
     }
     function h(a, b, c) {
-        for (var e = Object.keys(b), f = 0; f < e.length; ) (!c || c && a[e[f]] === d) && (a[e[f]] = b[e[f]]), 
+        for (var e = Object.keys(b), f = 0; f < e.length; ) (!c || c && a[e[f]] === d) && (a[e[f]] = b[e[f]]),
         f++;
         return a;
     }
@@ -1334,7 +1334,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
     }
     function y(a, b) {
         var c = this;
-        this.manager = a, this.callback = b, this.element = a.element, this.target = a.options.inputTarget, 
+        this.manager = a, this.callback = b, this.element = a.element, this.target = a.options.inputTarget,
         this.domHandler = function(b) {
             l(a.options.enable, [ a ]) && c.handler(b);
         }, this.init();
@@ -1345,15 +1345,15 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
     }
     function A(a, b, c) {
         var d = c.pointers.length, e = c.changedPointers.length, f = b & ya && 0 === d - e, g = b & (Aa | Ba) && 0 === d - e;
-        c.isFirst = !!f, c.isFinal = !!g, f && (a.session = {}), c.eventType = b, B(a, c), 
+        c.isFirst = !!f, c.isFinal = !!g, f && (a.session = {}), c.eventType = b, B(a, c),
         a.emit("hammer.input", c), a.recognize(c), a.session.prevInput = c;
     }
     function B(a, b) {
         var c = a.session, d = b.pointers, e = d.length;
         c.firstInput || (c.firstInput = E(b)), e > 1 && !c.firstMultiple ? c.firstMultiple = E(b) : 1 === e && (c.firstMultiple = !1);
         var f = c.firstInput, g = c.firstMultiple, h = g ? g.center : f.center, i = b.center = F(d);
-        b.timeStamp = na(), b.deltaTime = b.timeStamp - f.timeStamp, b.angle = J(h, i), 
-        b.distance = I(h, i), C(c, b), b.offsetDirection = H(b.deltaX, b.deltaY), b.scale = g ? L(g.pointers, d) : 1, 
+        b.timeStamp = na(), b.deltaTime = b.timeStamp - f.timeStamp, b.angle = J(h, i),
+        b.distance = I(h, i), C(c, b), b.offsetDirection = H(b.deltaX, b.deltaY), b.scale = g ? L(g.pointers, d) : 1,
         b.rotation = g ? K(g.pointers, d) : 0, D(c, b);
         var j = a.element;
         p(b.srcEvent.target, j) && (j = b.srcEvent.target), b.target = j;
@@ -1449,7 +1449,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         if (f = c.filter(function(a) {
             return p(a.target, i);
         }), b === ya) for (e = 0; e < f.length; ) d[f[e].identifier] = !0, e++;
-        for (e = 0; e < g.length; ) d[g[e].identifier] && h.push(g[e]), b & (Aa | Ba) && delete d[g[e].identifier], 
+        for (e = 0; e < g.length; ) d[g[e].identifier] && h.push(g[e]), b & (Aa | Ba) && delete d[g[e].identifier],
         e++;
         return h.length ? [ u(f.concat(h), "identifier", !0), h ] : void 0;
     }
@@ -1467,7 +1467,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         return b && c ? cb + " " + db : b || c ? b ? cb : db : q(a, ab) ? ab : _a;
     }
     function V(a) {
-        this.id = w(), this.manager = null, this.options = i(a || {}, this.defaults), this.options.enable = m(this.options.enable, !0), 
+        this.id = w(), this.manager = null, this.options = i(a || {}, this.defaults), this.options.enable = m(this.options.enable, !0),
         this.state = eb, this.simultaneous = {}, this.requireFail = [];
     }
     function W(a) {
@@ -1499,16 +1499,16 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         Z.apply(this, arguments);
     }
     function da() {
-        V.apply(this, arguments), this.pTime = !1, this.pCenter = !1, this._timer = null, 
+        V.apply(this, arguments), this.pTime = !1, this.pCenter = !1, this._timer = null,
         this._input = null, this.count = 0;
     }
     function ea(a, b) {
         return b = b || {}, b.recognizers = m(b.recognizers, ea.defaults.preset), new fa(a, b);
     }
     function fa(a, b) {
-        b = b || {}, this.options = i(b, ea.defaults), this.options.inputTarget = this.options.inputTarget || a, 
-        this.handlers = {}, this.session = {}, this.recognizers = [], this.element = a, 
-        this.input = z(this), this.touchAction = new T(this, this.options.touchAction), 
+        b = b || {}, this.options = i(b, ea.defaults), this.options.inputTarget = this.options.inputTarget || a,
+        this.handlers = {}, this.session = {}, this.recognizers = [], this.element = a,
+        this.input = z(this), this.touchAction = new T(this, this.options.touchAction),
         ga(this, !0), g(b.recognizers, function(a) {
             var b = this.add(new a[0](a[1]));
             a[2] && b.recognizeWith(a[2]), a[3] && b.requireFailure(a[3]);
@@ -1528,11 +1528,11 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
     y.prototype = {
         handler: function() {},
         init: function() {
-            this.evEl && n(this.element, this.evEl, this.domHandler), this.evTarget && n(this.target, this.evTarget, this.domHandler), 
+            this.evEl && n(this.element, this.evEl, this.domHandler), this.evTarget && n(this.target, this.evTarget, this.domHandler),
             this.evWin && n(x(this.element), this.evWin, this.domHandler);
         },
         destroy: function() {
-            this.evEl && o(this.element, this.evEl, this.domHandler), this.evTarget && o(this.target, this.evTarget, this.domHandler), 
+            this.evEl && o(this.element, this.evEl, this.domHandler), this.evTarget && o(this.target, this.evTarget, this.domHandler),
             this.evWin && o(x(this.element), this.evWin, this.domHandler);
         }
     };
@@ -1544,7 +1544,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
     j(M, y, {
         handler: function(a) {
             var b = Ma[a.type];
-            b & ya && 0 === a.button && (this.pressed = !0), b & za && 1 !== a.which && (b = Aa), 
+            b & ya && 0 === a.button && (this.pressed = !0), b & za && 1 !== a.which && (b = Aa),
             this.pressed && this.allow && (b & Aa && (this.pressed = !1), this.callback(this.manager, b, {
                 pointers: [ a ],
                 changedPointers: [ a ],
@@ -1565,11 +1565,11 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         4: va,
         5: wa
     }, Ra = "pointerdown", Sa = "pointermove pointerup pointercancel";
-    a.MSPointerEvent && (Ra = "MSPointerDown", Sa = "MSPointerMove MSPointerUp MSPointerCancel"), 
+    a.MSPointerEvent && (Ra = "MSPointerDown", Sa = "MSPointerMove MSPointerUp MSPointerCancel"),
     j(N, y, {
         handler: function(a) {
             var b = this.store, c = !1, d = a.type.toLowerCase().replace("ms", ""), e = Pa[d], f = Qa[a.pointerType] || a.pointerType, g = f == ta, h = s(b, a.pointerId, "pointerId");
-            e & ya && (0 === a.button || g) ? 0 > h && (b.push(a), h = b.length - 1) : e & (Aa | Ba) && (c = !0), 
+            e & ya && (0 === a.button || g) ? 0 > h && (b.push(a), h = b.length - 1) : e & (Aa | Ba) && (c = !0),
             0 > h || (b[h] = a, this.callback(this.manager, e, {
                 pointers: b,
                 changedPointers: [ a ],
@@ -1662,7 +1662,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             return a = Y(a, this), b[a.id] || (b[a.id] = a, a.recognizeWith(this)), this;
         },
         dropRecognizeWith: function(a) {
-            return f(a, "dropRecognizeWith", this) ? this : (a = Y(a, this), delete this.simultaneous[a.id], 
+            return f(a, "dropRecognizeWith", this) ? this : (a = Y(a, this), delete this.simultaneous[a.id],
             this);
         },
         requireFailure: function(a) {
@@ -1701,8 +1701,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         },
         recognize: function(a) {
             var b = h({}, a);
-            return l(this.options.enable, [ this, b ]) ? (this.state & (ib | jb | kb) && (this.state = eb), 
-            this.state = this.process(b), void (this.state & (fb | gb | hb | jb) && this.tryEmit(b))) : (this.reset(), 
+            return l(this.options.enable, [ this, b ]) ? (this.state & (ib | jb | kb) && (this.state = eb),
+            this.state = this.process(b), void (this.state & (fb | gb | hb | jb) && this.tryEmit(b))) : (this.reset(),
             void (this.state = kb));
         },
         process: function() {},
@@ -1733,8 +1733,8 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         },
         directionTest: function(a) {
             var b = this.options, c = !0, d = a.distance, e = a.direction, f = a.deltaX, g = a.deltaY;
-            return e & b.direction || (b.direction & Ha ? (e = 0 === f ? Ca : 0 > f ? Da : Ea, 
-            c = f != this.pX, d = Math.abs(a.deltaX)) : (e = 0 === g ? Ca : 0 > g ? Fa : Ga, 
+            return e & b.direction || (b.direction & Ha ? (e = 0 === f ? Ca : 0 > f ? Da : Ea,
+            c = f != this.pX, d = Math.abs(a.deltaX)) : (e = 0 === g ? Ca : 0 > g ? Fa : Ga,
             c = g != this.pY, d = Math.abs(a.deltaY))), a.direction = e, c && d > b.threshold && e & b.direction;
         },
         attrTest: function(a) {
@@ -1775,7 +1775,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         },
         process: function(a) {
             var b = this.options, c = a.pointers.length === b.pointers, d = a.distance < b.threshold, f = a.deltaTime > b.time;
-            if (this._input = a, !d || !c || a.eventType & (Aa | Ba) && !f) this.reset(); else if (a.eventType & ya) this.reset(), 
+            if (this._input = a, !d || !c || a.eventType & (Aa | Ba) && !f) this.reset(); else if (a.eventType & ya) this.reset(),
             this._timer = e(function() {
                 this.state = ib, this.tryEmit();
             }, b.time, this); else if (a.eventType & Aa) return ib;
@@ -1785,7 +1785,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             clearTimeout(this._timer);
         },
         emit: function(a) {
-            this.state === ib && (a && a.eventType & Aa ? this.manager.emit(this.options.event + "up", a) : (this._input.timeStamp = na(), 
+            this.state === ib && (a && a.eventType & Aa ? this.manager.emit(this.options.event + "up", a) : (this._input.timeStamp = na(),
             this.manager.emit(this.options.event, this._input)));
         }
     }), j(ba, Z, {
@@ -1813,7 +1813,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         },
         attrTest: function(a) {
             var b, c = this.options.direction;
-            return c & (Ha | Ia) ? b = a.velocity : c & Ha ? b = a.velocityX : c & Ia && (b = a.velocityY), 
+            return c & (Ha | Ia) ? b = a.velocity : c & Ha ? b = a.velocityX : c & Ia && (b = a.velocityY),
             this._super.attrTest.call(this, a) && c & a.direction && a.distance > this.options.threshold && ma(b) > this.options.velocity && a.eventType & Aa;
         },
         emit: function(a) {
@@ -1839,7 +1839,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             if (d && f && c) {
                 if (a.eventType != Aa) return this.failTimeout();
                 var g = this.pTime ? a.timeStamp - this.pTime < b.interval : !0, h = !this.pCenter || I(this.pCenter, a.center) < b.posThreshold;
-                this.pTime = a.timeStamp, this.pCenter = a.center, h && g ? this.count += 1 : this.count = 1, 
+                this.pTime = a.timeStamp, this.pCenter = a.center, h && g ? this.count += 1 : this.count = 1,
                 this._input = a;
                 var i = this.count % b.taps;
                 if (0 === i) return this.hasRequireFailures() ? (this._timer = e(function() {
@@ -1889,7 +1889,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
     var lb = 1, mb = 2;
     fa.prototype = {
         set: function(a) {
-            return h(this.options, a), a.touchAction && this.touchAction.update(), a.inputTarget && (this.input.destroy(), 
+            return h(this.options, a), a.touchAction && this.touchAction.update(), a.inputTarget && (this.input.destroy(),
             this.input.target = a.inputTarget, this.input.init()), this;
         },
         stop: function(a) {
@@ -1901,7 +1901,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
                 this.touchAction.preventDefaults(a);
                 var c, d = this.recognizers, e = b.curRecognizer;
                 (!e || e && e.state & ib) && (e = b.curRecognizer = null);
-                for (var f = 0; f < d.length; ) c = d[f], b.stopped === mb || e && c != e && !c.canRecognizeWith(e) ? c.reset() : c.recognize(a), 
+                for (var f = 0; f < d.length; ) c = d[f], b.stopped === mb || e && c != e && !c.canRecognizeWith(e) ? c.reset() : c.recognize(a),
                 !e && c.state & (fb | gb | hb) && (e = b.curRecognizer = c), f++;
             }
         },
@@ -1913,7 +1913,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
         add: function(a) {
             if (f(a, "add", this)) return this;
             var b = this.get(a.options.event);
-            return b && this.remove(b), this.recognizers.push(a), a.manager = this, this.touchAction.update(), 
+            return b && this.remove(b), this.recognizers.push(a), a.manager = this, this.touchAction.update(),
             a;
         },
         remove: function(a) {
@@ -1944,7 +1944,7 @@ jQuery.easing.jswing = jQuery.easing.swing, jQuery.extend(jQuery.easing, {
             }
         },
         destroy: function() {
-            this.element && ga(this, !1), this.handlers = {}, this.session = {}, this.input.destroy(), 
+            this.element && ga(this, !1), this.handlers = {}, this.session = {}, this.input.destroy(),
             this.element = null;
         }
     }, h(ea, {
@@ -2036,7 +2036,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         };
         return b = a.extend(c, b), this.each(function() {
             function c(b) {
-                h = g.find("> li > .collapsible-header"), b.hasClass("active") ? b.parent().addClass("active") : b.parent().removeClass("active"), 
+                h = g.find("> li > .collapsible-header"), b.hasClass("active") ? b.parent().addClass("active") : b.parent().removeClass("active"),
                 b.parent().hasClass("active") ? b.siblings(".collapsible-body").stop(!0, !1).slideDown({
                     duration: 350,
                     easing: "easeOutQuart",
@@ -2061,7 +2061,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 });
             }
             function d(b) {
-                b.hasClass("active") ? b.parent().addClass("active") : b.parent().removeClass("active"), 
+                b.hasClass("active") ? b.parent().addClass("active") : b.parent().removeClass("active"),
                 b.parent().hasClass("active") ? b.siblings(".collapsible-body").stop(!0, !1).slideDown({
                     duration: 350,
                     easing: "easeOutQuart",
@@ -2086,7 +2086,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 return a.closest("li > .collapsible-header");
             }
             var g = a(this), h = a(this).find("> li > .collapsible-header"), i = g.data("collapsible");
-            g.off("click.collapse", ".collapsible-header"), h.off("click.collapse"), b.accordion || "accordion" === i || void 0 === i ? (h = g.find("> li > .collapsible-header"), 
+            g.off("click.collapse", ".collapsible-header"), h.off("click.collapse"), b.accordion || "accordion" === i || void 0 === i ? (h = g.find("> li > .collapsible-header"),
             h.on("click.collapse", function(b) {
                 var d = a(b.target);
                 e(d) && (d = f(d)), d.toggleClass("active"), c(d);
@@ -2102,7 +2102,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
     });
 }(jQuery), function(a) {
     a.fn.scrollTo = function(b) {
-        return a(this).scrollTop(a(this).scrollTop() - a(this).offset().top + a(b).offset().top), 
+        return a(this).scrollTop(a(this).scrollTop() - a(this).offset().top + a(b).offset().top),
         this;
     }, a.fn.dropdown = function(b) {
         var c = {
@@ -2116,9 +2116,9 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         };
         this.each(function() {
             function d() {
-                void 0 !== g.data("induration") && (h.inDuration = g.data("inDuration")), void 0 !== g.data("outduration") && (h.outDuration = g.data("outDuration")), 
-                void 0 !== g.data("constrainwidth") && (h.constrain_width = g.data("constrainwidth")), 
-                void 0 !== g.data("hover") && (h.hover = g.data("hover")), void 0 !== g.data("gutter") && (h.gutter = g.data("gutter")), 
+                void 0 !== g.data("induration") && (h.inDuration = g.data("inDuration")), void 0 !== g.data("outduration") && (h.outDuration = g.data("outDuration")),
+                void 0 !== g.data("constrainwidth") && (h.constrain_width = g.data("constrainwidth")),
+                void 0 !== g.data("hover") && (h.hover = g.data("hover")), void 0 !== g.data("gutter") && (h.gutter = g.data("gutter")),
                 void 0 !== g.data("beloworigin") && (h.belowOrigin = g.data("beloworigin")), void 0 !== g.data("alignment") && (h.alignment = g.data("alignment"));
             }
             function e() {
@@ -2126,7 +2126,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 var b = 0;
                 h.belowOrigin === !0 && (b = g.height());
                 var c, e = g.offset().left, f = h.alignment;
-                if (e + i.innerWidth() > a(window).width() ? f = "right" : e - i.innerWidth() + g.innerWidth() < 0 && (f = "left"), 
+                if (e + i.innerWidth() > a(window).width() ? f = "right" : e - i.innerWidth() + g.innerWidth() < 0 && (f = "left"),
                 "left" === f) c = h.gutter, leftPosition = g.position().left + c; else if ("right" === f) {
                     var j = g.position().left + g.outerWidth() - i.outerWidth();
                     c = -h.gutter, leftPosition = j + c;
@@ -2166,7 +2166,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                     a(c).closest(".dropdown-button").is(g) || (i.stop(!0, !0), f(), j = !1);
                 });
             } else g.unbind("click." + g.attr("id")), g.bind("click." + g.attr("id"), function(b) {
-                g[0] != b.currentTarget || g.hasClass("active") || 0 !== a(b.target).closest(".dropdown-content").length ? g.hasClass("active") && (f(), 
+                g[0] != b.currentTarget || g.hasClass("active") || 0 !== a(b.target).closest(".dropdown-content").length ? g.hasClass("active") && (f(),
                 a(document).unbind("click." + i.attr("id"))) : (b.preventDefault(), e()), i.hasClass("active") && a(document).bind("click." + i.attr("id"), function(b) {
                     i.is(b.target) || g.is(b.target) || g.find(b.target).length || (f(), a(document).unbind("click." + i.attr("id")));
                 });
@@ -2192,7 +2192,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 dismissible: !0,
                 starting_top: "4%"
             }, f = d(), g = a(this), h = a('<div class="lean-overlay"></div>'), i = ++b;
-            h.attr("id", f).css("z-index", 1e3 + 2 * i), g.data("overlay-id", f).css("z-index", 1e3 + 2 * i + 1), 
+            h.attr("id", f).css("z-index", 1e3 + 2 * i), g.data("overlay-id", f).css("z-index", 1e3 + 2 * i + 1),
             a("body").append(h), c = a.extend(e, c), c.dismissible && (h.click(function() {
                 g.closeModal(c);
             }), a(document).on("keyup.leanModal" + f, function(a) {
@@ -2242,7 +2242,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 out_duration: 250,
                 complete: void 0
             }, e = a(this), f = e.data("overlay-id"), g = a("#" + f);
-            c = a.extend(d, c), a("body").css("overflow", ""), e.find(".modal-close").off("click.close"), 
+            c = a.extend(d, c), a("body").css("overflow", ""), e.find(".modal-close").off("click.close"),
             a(document).off("keyup.leanModal" + f), g.velocity({
                 opacity: 0
             }, {
@@ -2268,7 +2268,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             }, {
                 duration: c.out_duration,
                 complete: function() {
-                    a(this).css("display", "none"), "function" == typeof c.complete && c.complete(), 
+                    a(this).css("display", "none"), "function" == typeof c.complete && c.complete(),
                     g.remove(), b--;
                 }
             });
@@ -2292,9 +2292,9 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         return this.each(function() {
             function b() {
                 f = !1;
-                var b = i.parent(".material-placeholder"), d = (window.innerWidth, window.innerHeight, 
+                var b = i.parent(".material-placeholder"), d = (window.innerWidth, window.innerHeight,
                 i.data("width")), g = i.data("height");
-                i.velocity("stop", !0), a("#materialbox-overlay").velocity("stop", !0), a(".materialbox-caption").velocity("stop", !0), 
+                i.velocity("stop", !0), a("#materialbox-overlay").velocity("stop", !0), a(".materialbox-caption").velocity("stop", !0),
                 a("#materialbox-overlay").velocity({
                     opacity: 0
                 }, {
@@ -2353,7 +2353,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                         left: 0
                     }), c = void 0, d = h[0].parentNode; null !== d && !a(d).is(document); ) {
                         var n = a(d);
-                        "hidden" === n.css("overflow") && (n.css("overflow", "visible"), c = void 0 === c ? n : c.add(n)), 
+                        "hidden" === n.css("overflow") && (n.css("overflow", "visible"), c = void 0 === c ? n : c.add(n)),
                         d = d.parentNode;
                     }
                     i.css({
@@ -2384,7 +2384,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                         });
                     }
                     var q = 0, r = l / j, s = m / k, t = 0, u = 0;
-                    r > s ? (q = m / l, t = .9 * j, u = .9 * j * q) : (q = l / m, t = .9 * k * q, u = .9 * k), 
+                    r > s ? (q = m / l, t = .9 * j, u = .9 * j * q) : (q = l / m, t = .9 * k * q, u = .9 * k),
                     i.hasClass("responsive-img") ? i.velocity({
                         "max-width": t,
                         width: l
@@ -2461,8 +2461,8 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 var b = a(this);
                 a(window).width(), b.width("100%");
                 var c, d, e = b.find("li.tab a"), f = b.width(), g = b.find("li").first().outerWidth(), h = parseInt(b.find("li").first().css("minWidth")), i = 0;
-                c = a(e.filter('[href="' + location.hash + '"]')), 0 === c.length && (c = a(this).find("li.tab a.active").first()), 
-                0 === c.length && (c = a(this).find("li.tab a").first()), c.addClass("active"), 
+                c = a(e.filter('[href="' + location.hash + '"]')), 0 === c.length && (c = a(this).find("li.tab a.active").first()),
+                0 === c.length && (c = a(this).find("li.tab a").first()), c.addClass("active"),
                 i = e.index(c), 0 > i && (i = 0), d = a(c[0].hash), b.append('<div class="indicator"></div>');
                 var j = b.find(".indicator");
                 if (b.is(":visible") && (j.css({
@@ -2479,7 +2479,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                     a(this.hash).hide();
                 }), b.on("click", "a", function(h) {
                     if (a(this).parent().hasClass("disabled")) return void h.preventDefault();
-                    f = b.width(), g = b.find("li").first().outerWidth(), c.removeClass("active"), d.hide(), 
+                    f = b.width(), g = b.find("li").first().outerWidth(), c.removeClass("active"), d.hide(),
                     c = a(this), d = a(this.hash), e = b.find("li.tab a"), c.addClass("active");
                     var k = i;
                     i = e.index(a(this)), 0 > i && (i = 0), d.show(), i - k >= 0 ? (j.velocity({
@@ -2514,7 +2514,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                     var k = document.createElement("div");
                     k.className = "scrollbar-measure", document.body.appendChild(k);
                     var l = k.offsetHeight - k.clientHeight;
-                    document.body.removeChild(k), 0 === l && (l = 15, b.find(".indicator").css("bottom", l)), 
+                    document.body.removeChild(k), 0 === l && (l = 15, b.find(".indicator").css("bottom", l)),
                     b.height(a(this).height() + l);
                 }
             });
@@ -2555,13 +2555,13 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                                 top: "0px"
                             }), k.children("span").text(i.attr("data-tooltip"));
                             var a, c, f, j = i.outerWidth(), m = i.outerHeight(), n = i.attr("data-position"), o = k.outerHeight(), p = k.outerWidth(), q = "0px", r = "0px", s = 8;
-                            "top" === n ? (a = i.offset().top - o - g, c = i.offset().left + j / 2 - p / 2, 
+                            "top" === n ? (a = i.offset().top - o - g, c = i.offset().left + j / 2 - p / 2,
                             f = b(c, a, p, o), q = "-10px", l.css({
                                 borderRadius: "14px 14px 0 0",
                                 transformOrigin: "50% 90%",
                                 marginTop: o,
                                 marginLeft: p / 2 - l.width() / 2
-                            })) : "left" === n ? (a = i.offset().top + m / 2 - o / 2, c = i.offset().left - p - g, 
+                            })) : "left" === n ? (a = i.offset().top + m / 2 - o / 2, c = i.offset().left - p - g,
                             f = b(c, a, p, o), r = "-10px", l.css({
                                 width: "14px",
                                 height: "14px",
@@ -2569,7 +2569,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                                 transformOrigin: "95% 50%",
                                 marginTop: o / 2,
                                 marginLeft: p
-                            })) : "right" === n ? (a = i.offset().top + m / 2 - o / 2, c = i.offset().left + j + g, 
+                            })) : "right" === n ? (a = i.offset().top + m / 2 - o / 2, c = i.offset().left + j + g,
                             f = b(c, a, p, o), r = "+10px", l.css({
                                 width: "14px",
                                 height: "14px",
@@ -2577,13 +2577,13 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                                 transformOrigin: "5% 50%",
                                 marginTop: o / 2,
                                 marginLeft: "0px"
-                            })) : (a = i.offset().top + i.outerHeight() + g, c = i.offset().left + j / 2 - p / 2, 
+                            })) : (a = i.offset().top + i.outerHeight() + g, c = i.offset().left + j / 2 - p / 2,
                             f = b(c, a, p, o), q = "+10px", l.css({
                                 marginLeft: p / 2 - l.width() / 2
                             })), k.css({
                                 top: f.y,
                                 left: f.x
-                            }), s = p / 8, 8 > s && (s = 8), ("right" === n || "left" === n) && (s = p / 10, 
+                            }), s = p / 8, 8 > s && (s = 8), ("right" === n || "left" === n) && (s = p / 10,
                             6 > s && (s = 6)), k.velocity({
                                 marginTop: q,
                                 marginLeft: r
@@ -2641,8 +2641,8 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
     };
     var b = function(b, c, d, e) {
         var f = b, g = c;
-        return 0 > f ? f = 4 : f + d > window.innerWidth && (f -= f + d - window.innerWidth), 
-        0 > g ? g = 4 : g + e > window.innerHeight + a(window).scrollTop && (g -= g + e - window.innerHeight), 
+        return 0 > f ? f = 4 : f + d > window.innerWidth && (f -= f + d - window.innerWidth),
+        0 > g ? g = 4 : g + e > window.innerHeight + a(window).scrollTop && (g -= g + e - window.innerHeight),
         {
             x: f,
             y: g
@@ -2664,7 +2664,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             top: 0,
             left: 0
         }, f = a && a.ownerDocument;
-        return b = f.documentElement, "undefined" != typeof a.getBoundingClientRect && (e = a.getBoundingClientRect()), 
+        return b = f.documentElement, "undefined" != typeof a.getBoundingClientRect && (e = a.getBoundingClientRect()),
         d = c(f), {
             top: e.top + d.pageYOffset - b.clientTop,
             left: e.left + d.pageXOffset - b.clientLeft
@@ -2692,8 +2692,8 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
     }
     function g(b) {
         var c = f(b);
-        null !== c && (j.show(b, c), "ontouchstart" in a && (c.addEventListener("touchend", j.hide, !1), 
-        c.addEventListener("touchcancel", j.hide, !1)), c.addEventListener("mouseup", j.hide, !1), 
+        null !== c && (j.show(b, c), "ontouchstart" in a && (c.addEventListener("touchend", j.hide, !1),
+        c.addEventListener("touchcancel", j.hide, !1)), c.addEventListener("mouseup", j.hide, !1),
         c.addEventListener("mouseleave", j.hide, !1));
     }
     var h = h || {}, i = document.querySelectorAll.bind(document), j = {
@@ -2703,21 +2703,21 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             var c = b || this, f = document.createElement("div");
             f.className = "waves-ripple", c.appendChild(f);
             var g = d(c), h = a.pageY - g.top, i = a.pageX - g.left, k = "scale(" + c.clientWidth / 100 * 10 + ")";
-            "touches" in a && (h = a.touches[0].pageY - g.top, i = a.touches[0].pageX - g.left), 
-            f.setAttribute("data-hold", Date.now()), f.setAttribute("data-scale", k), f.setAttribute("data-x", i), 
+            "touches" in a && (h = a.touches[0].pageY - g.top, i = a.touches[0].pageX - g.left),
+            f.setAttribute("data-hold", Date.now()), f.setAttribute("data-scale", k), f.setAttribute("data-x", i),
             f.setAttribute("data-y", h);
             var l = {
                 top: h + "px",
                 left: i + "px"
             };
-            f.className = f.className + " waves-notransition", f.setAttribute("style", e(l)), 
-            f.className = f.className.replace("waves-notransition", ""), l["-webkit-transform"] = k, 
-            l["-moz-transform"] = k, l["-ms-transform"] = k, l["-o-transform"] = k, l.transform = k, 
-            l.opacity = "1", l["-webkit-transition-duration"] = j.duration + "ms", l["-moz-transition-duration"] = j.duration + "ms", 
-            l["-o-transition-duration"] = j.duration + "ms", l["transition-duration"] = j.duration + "ms", 
-            l["-webkit-transition-timing-function"] = "cubic-bezier(0.250, 0.460, 0.450, 0.940)", 
-            l["-moz-transition-timing-function"] = "cubic-bezier(0.250, 0.460, 0.450, 0.940)", 
-            l["-o-transition-timing-function"] = "cubic-bezier(0.250, 0.460, 0.450, 0.940)", 
+            f.className = f.className + " waves-notransition", f.setAttribute("style", e(l)),
+            f.className = f.className.replace("waves-notransition", ""), l["-webkit-transform"] = k,
+            l["-moz-transform"] = k, l["-ms-transform"] = k, l["-o-transform"] = k, l.transform = k,
+            l.opacity = "1", l["-webkit-transition-duration"] = j.duration + "ms", l["-moz-transition-duration"] = j.duration + "ms",
+            l["-o-transition-duration"] = j.duration + "ms", l["transition-duration"] = j.duration + "ms",
+            l["-webkit-transition-timing-function"] = "cubic-bezier(0.250, 0.460, 0.450, 0.940)",
+            l["-moz-transition-timing-function"] = "cubic-bezier(0.250, 0.460, 0.450, 0.940)",
+            l["-o-transition-timing-function"] = "cubic-bezier(0.250, 0.460, 0.450, 0.940)",
             l["transition-timing-function"] = "cubic-bezier(0.250, 0.460, 0.450, 0.940)", f.setAttribute("style", e(l));
         },
         hide: function(a) {
@@ -2759,7 +2759,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                     var e = document.createElement("i");
                     e.className = c.className + " waves-input-wrapper";
                     var f = c.getAttribute("style");
-                    f || (f = ""), e.setAttribute("style", f), c.className = "waves-button-input", c.removeAttribute("style"), 
+                    f || (f = ""), e.setAttribute("style", f), c.className = "waves-button-input", c.removeAttribute("style"),
                     d.replaceChild(e, c), e.appendChild(c);
                 }
             }
@@ -2777,10 +2777,10 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         }
     };
     h.displayEffect = function(b) {
-        b = b || {}, "duration" in b && (j.duration = b.duration), j.wrapInput(i(".waves-effect")), 
+        b = b || {}, "duration" in b && (j.duration = b.duration), j.wrapInput(i(".waves-effect")),
         "ontouchstart" in a && document.body.addEventListener("touchstart", g, !1), document.body.addEventListener("mousedown", g, !1);
     }, h.attach = function(b) {
-        "input" === b.tagName.toLowerCase() && (j.wrapInput([ b ]), b = b.parentElement), 
+        "input" === b.tagName.toLowerCase() && (j.wrapInput([ b ]), b = b.parentElement),
         "ontouchstart" in a && b.addEventListener("touchstart", g, !1), b.addEventListener("mousedown", g, !1);
     }, a.Waves = h, document.addEventListener("DOMContentLoaded", function() {
         h.displayEffect();
@@ -2839,7 +2839,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         queue: !1
     });
     var h = b, i = setInterval(function() {
-        null === g.parentNode && window.clearInterval(i), g.classList.contains("panning") || (h -= 20), 
+        null === g.parentNode && window.clearInterval(i), g.classList.contains("panning") || (h -= 20),
         0 >= h && (Vel(g, {
             opacity: 0,
             marginTop: "-40px"
@@ -2902,14 +2902,14 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 var d = a(this), e = a("#" + d.attr("data-activates"));
                 240 != b.menuWidth && e.css("width", b.menuWidth);
                 var f = a('<div class="drag-target"></div>');
-                a("body").append(f), "left" == b.edge ? (e.css("left", -1 * (b.menuWidth + 10)), 
+                a("body").append(f), "left" == b.edge ? (e.css("left", -1 * (b.menuWidth + 10)),
                 f.css({
                     left: 0
-                })) : (e.addClass("right-aligned").css("right", -1 * (b.menuWidth + 10)).css("left", ""), 
+                })) : (e.addClass("right-aligned").css("right", -1 * (b.menuWidth + 10)).css("left", ""),
                 f.css({
                     right: 0
                 })), e.hasClass("fixed") && window.innerWidth > 992 && e.css("left", 0), e.hasClass("fixed") && a(window).resize(function() {
-                    window.innerWidth > 992 ? 0 !== a("#sidenav-overlay").css("opacity") && h ? c(!0) : (e.removeAttr("style"), 
+                    window.innerWidth > 992 ? 0 !== a("#sidenav-overlay").css("opacity") && h ? c(!0) : (e.removeAttr("style"),
                     e.css("width", b.menuWidth)) : h === !1 && ("left" === b.edge ? e.css("left", -1 * (b.menuWidth + 10)) : e.css("right", -1 * (b.menuWidth + 10)));
                 }), b.closeOnClick === !0 && e.on("click.itemclick", "a:not(.collapsible-header)", function() {
                     c();
@@ -2922,15 +2922,15 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 }).bind("pan", function(d) {
                     if ("touch" == d.gesture.pointerType) {
                         var f = (d.gesture.direction, d.gesture.center.x);
-                        if (d.gesture.center.y, d.gesture.velocityX, a("body").css("overflow", "hidden"), 
+                        if (d.gesture.center.y, d.gesture.velocityX, a("body").css("overflow", "hidden"),
                         0 === a("#sidenav-overlay").length) {
                             var g = a('<div id="sidenav-overlay"></div>');
                             g.css("opacity", 0).click(function() {
                                 c();
                             }), a("body").append(g);
                         }
-                        if ("left" === b.edge && (f > b.menuWidth ? f = b.menuWidth : 0 > f && (f = 0)), 
-                        "left" === b.edge) f < b.menuWidth / 2 ? h = !1 : f >= b.menuWidth / 2 && (h = !0), 
+                        if ("left" === b.edge && (f > b.menuWidth ? f = b.menuWidth : 0 > f && (f = 0)),
+                        "left" === b.edge) f < b.menuWidth / 2 ? h = !1 : f >= b.menuWidth / 2 && (h = !0),
                         e.css("left", f - b.menuWidth); else {
                             f < window.innerWidth - b.menuWidth / 2 ? h = !0 : f >= window.innerWidth - b.menuWidth / 2 && (h = !1);
                             var i = -1 * (f - b.menuWidth / 2);
@@ -3120,7 +3120,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             var j = l();
             h || c.leading !== !1 || (h = j);
             var k = b - (j - h);
-            return d = this, e = arguments, 0 >= k ? (clearTimeout(g), g = null, h = j, f = a.apply(d, e), 
+            return d = this, e = arguments, 0 >= k ? (clearTimeout(g), g = null, h = j, f = a.apply(d, e),
             d = e = null) : g || c.trailing === !1 || (g = setTimeout(i, k)), f;
         };
     }
@@ -3148,7 +3148,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             });
         }), d = d || {
             throttle: 100
-        }, k.top = d.offsetTop || 0, k.right = d.offsetRight || 0, k.bottom = d.offsetBottom || 0, 
+        }, k.top = d.offsetTop || 0, k.right = d.offsetRight || 0, k.bottom = d.offsetBottom || 0,
         k.left = d.offsetLeft || 0;
         var j = e(c, d.throttle || 100), l = function() {
             a(document).ready(j);
@@ -3158,7 +3158,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 return 0 != a.height();
             });
             var b = a(this);
-            h[0] ? (a("a[href=#" + h[0].attr("id") + "]").removeClass("active"), b.data("scrollSpy:id") < h[0].data("scrollSpy:id") ? h.unshift(a(this)) : h.push(a(this))) : h.push(a(this)), 
+            h[0] ? (a("a[href=#" + h[0].attr("id") + "]").removeClass("active"), b.data("scrollSpy:id") < h[0].data("scrollSpy:id") ? h.unshift(a(this)) : h.push(a(this))) : h.push(a(this)),
             a("a[href=#" + h[0].attr("id") + "]").addClass("active");
         }), b.on("scrollSpy:exit", function() {
             if (h = a.grep(h, function(a) {
@@ -3184,10 +3184,10 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
     a(document).ready(function() {
         function b(b) {
             var c = b.css("font-family"), e = b.css("font-size");
-            e && d.css("font-size", e), c && d.css("font-family", c), "off" === b.attr("wrap") && d.css("overflow-wrap", "normal").css("white-space", "pre"), 
+            e && d.css("font-size", e), c && d.css("font-family", c), "off" === b.attr("wrap") && d.css("overflow-wrap", "normal").css("white-space", "pre"),
             d.text(b.val() + "\n");
             var f = d.html().replace(/\n/g, "<br>");
-            d.html(f), b.is(":visible") ? d.css("width", b.width()) : d.css("width", a(window).width() / 2), 
+            d.html(f), b.is(":visible") ? d.css("width", b.width()) : d.css("width", a(window).width() / 2),
             b.css("height", d.height());
         }
         Materialize.updateTextFields = function() {
@@ -3198,7 +3198,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         };
         var c = "input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], textarea";
         a("input[autofocus]").siblings("label, i").addClass("active"), a(document).on("change", c, function() {
-            (0 !== a(this).val().length || void 0 !== a(this).attr("placeholder")) && a(this).siblings("label").addClass("active"), 
+            (0 !== a(this).val().length || void 0 !== a(this).attr("placeholder")) && a(this).siblings("label").addClass("active"),
             validate_field(a(this));
         }), a(document).ready(function() {
             Materialize.updateTextFields();
@@ -3214,13 +3214,13 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             a(this).siblings("label, i").addClass("active");
         }), a(document).on("blur", c, function() {
             var b = a(this);
-            0 === b.val().length && b[0].validity.badInput !== !0 && void 0 === b.attr("placeholder") && b.siblings("label, i").removeClass("active"), 
-            0 === b.val().length && b[0].validity.badInput !== !0 && void 0 !== b.attr("placeholder") && b.siblings("i").removeClass("active"), 
+            0 === b.val().length && b[0].validity.badInput !== !0 && void 0 === b.attr("placeholder") && b.siblings("label, i").removeClass("active"),
+            0 === b.val().length && b[0].validity.badInput !== !0 && void 0 !== b.attr("placeholder") && b.siblings("i").removeClass("active"),
             validate_field(b);
         }), window.validate_field = function(a) {
             var b = void 0 !== a.attr("length"), c = parseInt(a.attr("length")), d = a.val().length;
-            0 === a.val().length && a[0].validity.badInput === !1 ? a.hasClass("validate") && (a.removeClass("valid"), 
-            a.removeClass("invalid")) : a.hasClass("validate") && (a.is(":valid") && b && c >= d || a.is(":valid") && !b ? (a.removeClass("invalid"), 
+            0 === a.val().length && a[0].validity.badInput === !1 ? a.hasClass("validate") && (a.removeClass("valid"),
+            a.removeClass("invalid")) : a.hasClass("validate") && (a.is(":valid") && b && c >= d || a.is(":valid") && !b ? (a.removeClass("invalid"),
             a.addClass("valid")) : (a.removeClass("valid"), a.addClass("invalid")));
         };
         var d = a(".hiddendiv").first();
@@ -3246,8 +3246,8 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             c.find(".value").html(a(this).val());
         }), a(document).on("input mousedown touchstart", g, function(b) {
             var c = a(this).siblings(".thumb");
-            c.length <= 0 && (c = a('<span class="thumb"><span class="value"></span></span>'), 
-            a(this).append(c)), c.find(".value").html(a(this).val()), h = !0, a(this).addClass("active"), 
+            c.length <= 0 && (c = a('<span class="thumb"><span class="value"></span></span>'),
+            a(this).append(c)), c.find(".value").html(a(this).val()), h = !0, a(this).addClass("active"),
             c.hasClass("active") || c.velocity({
                 height: "30px",
                 width: "30px",
@@ -3292,7 +3292,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
     }), a.fn.material_select = function(b) {
         function c(a, b, c) {
             var e = a.indexOf(b);
-            -1 === e ? a.push(b) : a.splice(e, 1), c.siblings("ul.dropdown-content").find("li").eq(b).toggleClass("active"), 
+            -1 === e ? a.push(b) : a.splice(e, 1), c.siblings("ul.dropdown-content").find("li").eq(b).toggleClass("active"),
             c.find("option").eq(b).prop("selected", !0), d(a, c);
         }
         function d(a, b) {
@@ -3306,14 +3306,14 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             var d = a(this);
             if (!d.hasClass("browser-default")) {
                 var e = d.attr("multiple") ? !0 : !1, f = d.data("select-id");
-                if (f && (d.parent().find("span.caret").remove(), d.parent().find("input").remove(), 
+                if (f && (d.parent().find("span.caret").remove(), d.parent().find("input").remove(),
                 d.unwrap(), a("ul#select-options-" + f).remove()), "destroy" === b) return void d.data("select-id", null).removeClass("initialized");
                 var g = Materialize.guid();
                 d.data("select-id", g);
                 var h = a('<div class="select-wrapper"></div>');
                 h.addClass(d.attr("class"));
                 var i, j = a('<ul id="select-options-' + g + '" class="dropdown-content select-dropdown ' + (e ? "multiple-select-dropdown" : "") + '"></ul>'), k = d.children("option"), l = [], m = !1;
-                i = void 0 !== d.find("option:selected") ? d.find("option:selected") : j.first(), 
+                i = void 0 !== d.find("option:selected") ? d.find("option:selected") : j.first(),
                 k.each(function() {
                     e ? j.append(a('<li class="' + (a(this).is(":disabled") ? "disabled" : "") + '"><span><input type="checkbox"' + (a(this).is(":disabled") ? "disabled" : "") + "/><label></label>" + a(this).html() + "</span></li>")) : j.append(a('<li class="' + (a(this).is(":disabled") ? "disabled" : "") + '"><span>' + a(this).html() + "</span></li>"));
                 }), j.find("li").each(function(f) {
@@ -3321,9 +3321,9 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                     a(this).click(function(d) {
                         a(this).hasClass("disabled") || (e ? (a('input[type="checkbox"]', this).prop("checked", function(a, b) {
                             return !b;
-                        }), c(l, a(this).index(), g), p.trigger("focus")) : (j.find("li").removeClass("active"), 
-                        a(this).toggleClass("active"), g.siblings("input.select-dropdown").val(a(this).text())), 
-                        activateOption(j, a(this)), g.find("option").eq(f).prop("selected", !0), g.trigger("change"), 
+                        }), c(l, a(this).index(), g), p.trigger("focus")) : (j.find("li").removeClass("active"),
+                        a(this).toggleClass("active"), g.siblings("input.select-dropdown").val(a(this).text())),
+                        activateOption(j, a(this)), g.find("option").eq(f).prop("selected", !0), g.trigger("change"),
                         "undefined" != typeof b && b()), d.stopPropagation();
                     });
                 }), d.wrap(h);
@@ -3333,7 +3333,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 d.before(p), p.before(n), a("body").append(j), d.is(":disabled") || p.dropdown({
                     hover: !1,
                     closeOnClick: !1
-                }), d.attr("tabindex") && a(p[0]).attr("tabindex", d.attr("tabindex")), d.addClass("initialized"), 
+                }), d.attr("tabindex") && a(p[0]).attr("tabindex", d.attr("tabindex")), d.addClass("initialized"),
                 p.on({
                     focus: function() {
                         j.is(":visible") || a(this).trigger("open"), a("ul.select-dropdown").not(j[0]).is(":visible") && a("input.select-dropdown").trigger("close");
@@ -3371,8 +3371,8 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                             var h = j.find("li.selected:not(.disabled)")[0];
                             h && (a(h).trigger("click"), e || p.trigger("close"));
                         }
-                        40 == b.which && (g = j.find("li.selected").length ? j.find("li.selected").next("li:not(.disabled)")[0] : j.find("li:not(.disabled)")[0], 
-                        activateOption(j, g)), 27 == b.which && p.trigger("close"), 38 == b.which && (g = j.find("li.selected").prev("li:not(.disabled)")[0], 
+                        40 == b.which && (g = j.find("li.selected").length ? j.find("li.selected").next("li:not(.disabled)")[0] : j.find("li:not(.disabled)")[0],
+                        activateOption(j, g)), 27 == b.which && p.trigger("close"), 38 == b.which && (g = j.find("li.selected").prev("li:not(.disabled)")[0],
                         g && activateOption(j, g)), setTimeout(function() {
                             q = [];
                         }, 1e3);
@@ -3414,8 +3414,8 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                     });
                 }
                 function d(a) {
-                    a >= h.length ? a = 0 : 0 > a && (a = h.length - 1), i = g.find(".active").index(), 
-                    i != a && (e = h.eq(i), $caption = e.find(".caption"), e.removeClass("active"), 
+                    a >= h.length ? a = 0 : 0 > a && (a = h.length - 1), i = g.find(".active").index(),
+                    i != a && (e = h.eq(i), $caption = e.find(".caption"), e.removeClass("active"),
                     e.velocity({
                         opacity: 0
                     }, {
@@ -3450,7 +3450,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                     }), h.eq(a).addClass("active"), b.indicators && j.eq(a).addClass("active"));
                 }
                 var e, f = a(this), g = f.find("ul.slides").first(), h = g.find("li"), i = g.find(".active").index();
-                if (-1 != i && (e = h.eq(i)), f.hasClass("fullscreen") || (b.indicators ? f.height(b.height + 40) : f.height(b.height), 
+                if (-1 != i && (e = h.eq(i)), f.hasClass("fullscreen") || (b.indicators ? f.height(b.height + 40) : f.height(b.height),
                 g.height(b.height)), h.find(".caption").each(function() {
                     c(a(this), 0);
                 }), h.find("img").each(function() {
@@ -3516,7 +3516,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                         }));
                     }
                 }).bind("panend", function(a) {
-                    "touch" === a.gesture.pointerType && ($curr_slide = g.find(".active"), k = !1, curr_index = g.find(".active").index(), 
+                    "touch" === a.gesture.pointerType && ($curr_slide = g.find(".active"), k = !1, curr_index = g.find(".active").index(),
                     m || l ? l ? (d(curr_index + 1), $curr_slide.velocity({
                         translateX: -1 * f.innerWidth()
                     }, {
@@ -3620,9 +3620,9 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 }
                 function d(d, e) {
                     d.each(function() {
-                        b.top <= e && b.bottom >= e && !a(this).hasClass("pinned") && (c(a(this)), a(this).css("top", b.offset), 
-                        a(this).addClass("pinned")), e < b.top && !a(this).hasClass("pin-top") && (c(a(this)), 
-                        a(this).css("top", 0), a(this).addClass("pin-top")), e > b.bottom && !a(this).hasClass("pin-bottom") && (c(a(this)), 
+                        b.top <= e && b.bottom >= e && !a(this).hasClass("pinned") && (c(a(this)), a(this).css("top", b.offset),
+                        a(this).addClass("pinned")), e < b.top && !a(this).hasClass("pin-top") && (c(a(this)),
+                        a(this).css("top", 0), a(this).addClass("pin-top")), e > b.bottom && !a(this).hasClass("pin-bottom") && (c(a(this)),
                         a(this).addClass("pin-bottom"), a(this).css("top", b.bottom - g));
                     });
                 }
@@ -3683,7 +3683,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
     }, c = function(a) {
         $this = a;
         var b, c, d = $this.hasClass("horizontal");
-        d === !0 ? c = 40 : b = 40, $this.removeClass("active"), $this.find("ul .btn-floating").velocity("stop", !0), 
+        d === !0 ? c = 40 : b = 40, $this.removeClass("active"), $this.find("ul .btn-floating").velocity("stop", !0),
         $this.find("ul .btn-floating").velocity({
             opacity: "0",
             scaleX: ".4",
@@ -3818,7 +3818,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             return b._.node("div", b._.node("div", b._.node("div", b._.node("div", y.component.nodes(t.open), v.box), v.wrap), v.frame), v.holder);
         }
         function n() {
-            w.data(g, y).addClass(v.input).attr("tabindex", -1).val(w.data("value") ? y.get("select", u.format) : f.value), 
+            w.data(g, y).addClass(v.input).attr("tabindex", -1).val(w.data("value") ? y.get("select", u.format) : f.value),
             u.editable || w.on("focus." + t.id + " click." + t.id, function(a) {
                 a.preventDefault(), y.$root[0].focus();
             }).on("keydown." + t.id, q), e(f, {
@@ -3836,7 +3836,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 },
                 "mousedown click": function(b) {
                     var c = b.target;
-                    c != y.$root.children()[0] && (b.stopPropagation(), "mousedown" != b.type || a(c).is("input, select, textarea, button, option") || (b.preventDefault(), 
+                    c != y.$root.children()[0] && (b.stopPropagation(), "mousedown" != b.type || a(c).is("input, select, textarea, button, option") || (b.preventDefault(),
                     y.$root[0].focus()));
                 }
             }).on({
@@ -3848,7 +3848,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 }
             }).on("focus.toOpen", r).on("click", "[data-pick], [data-nav], [data-clear], [data-close]", function() {
                 var b = a(this), c = b.data(), d = b.hasClass(v.navDisabled) || b.hasClass(v.disabled), e = h();
-                e = e && (e.type || e.href), (d || e && !a.contains(y.$root[0], e)) && y.$root[0].focus(), 
+                e = e && (e.type || e.href), (d || e && !a.contains(y.$root[0], e)) && y.$root[0].focus(),
                 !d && c.nav ? y.set("highlight", y.component.item.highlight, {
                     nav: c.nav
                 }) : !d && "pick" in c ? y.set("select", c.pick) : c.clear ? y.clear().close(!0) : c.close && y.close(!0);
@@ -3856,15 +3856,15 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         }
         function p() {
             var b;
-            u.hiddenName === !0 ? (b = f.name, f.name = "") : (b = [ "string" == typeof u.hiddenPrefix ? u.hiddenPrefix : "", "string" == typeof u.hiddenSuffix ? u.hiddenSuffix : "_submit" ], 
-            b = b[0] + f.name + b[1]), y._hidden = a('<input type=hidden name="' + b + '"' + (w.data("value") || f.value ? ' value="' + y.get("select", u.formatSubmit) + '"' : "") + ">")[0], 
+            u.hiddenName === !0 ? (b = f.name, f.name = "") : (b = [ "string" == typeof u.hiddenPrefix ? u.hiddenPrefix : "", "string" == typeof u.hiddenSuffix ? u.hiddenSuffix : "_submit" ],
+            b = b[0] + f.name + b[1]), y._hidden = a('<input type=hidden name="' + b + '"' + (w.data("value") || f.value ? ' value="' + y.get("select", u.formatSubmit) + '"' : "") + ">")[0],
             w.on("change." + t.id, function() {
                 y._hidden.value = f.value ? y.get("select", u.formatSubmit) : "";
             }), u.container ? a(u.container).append(y._hidden) : w.after(y._hidden);
         }
         function q(a) {
             var b = a.keyCode, c = /^(8|46)$/.test(b);
-            return 27 == b ? (y.close(), !1) : void ((32 == b || c || !t.open && y.component.key[b]) && (a.preventDefault(), 
+            return 27 == b ? (y.close(), !1) : void ((32 == b || c || !t.open && y.component.key[b]) && (a.preventDefault(),
             a.stopPropagation(), c ? y.clear().close() : y.open()));
         }
         function r(a) {
@@ -3879,10 +3879,10 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             constructor: x,
             $node: w,
             start: function() {
-                return t && t.start ? y : (t.methods = {}, t.start = !0, t.open = !1, t.type = f.type, 
-                f.autofocus = f == h(), f.readOnly = !u.editable, f.id = f.id || t.id, "text" != f.type && (f.type = "text"), 
-                y.component = new i(y, u), y.$root = a(b._.node("div", m(), v.picker, 'id="' + f.id + '_root" tabindex="0"')), 
-                o(), u.formatSubmit && p(), n(), u.container ? a(u.container).append(y.$root) : w.after(y.$root), 
+                return t && t.start ? y : (t.methods = {}, t.start = !0, t.open = !1, t.type = f.type,
+                f.autofocus = f == h(), f.readOnly = !u.editable, f.id = f.id || t.id, "text" != f.type && (f.type = "text"),
+                y.component = new i(y, u), y.$root = a(b._.node("div", m(), v.picker, 'id="' + f.id + '_root" tabindex="0"')),
+                o(), u.formatSubmit && p(), n(), u.container ? a(u.container).append(y.$root) : w.after(y.$root),
                 y.on({
                     start: y.component.onStart,
                     render: y.component.onRender,
@@ -3900,26 +3900,26 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 }), s = c(y.$root.children()[0]), f.autofocus && y.open(), y.trigger("start").trigger("render"));
             },
             render: function(a) {
-                return a ? y.$root.html(m()) : y.$root.find("." + v.box).html(y.component.nodes(t.open)), 
+                return a ? y.$root.html(m()) : y.$root.find("." + v.box).html(y.component.nodes(t.open)),
                 y.trigger("render");
             },
             stop: function() {
-                return t.start ? (y.close(), y._hidden && y._hidden.parentNode.removeChild(y._hidden), 
+                return t.start ? (y.close(), y._hidden && y._hidden.parentNode.removeChild(y._hidden),
                 y.$root.remove(), w.removeClass(v.input).removeData(g), setTimeout(function() {
                     w.off("." + t.id);
-                }, 0), f.type = t.type, f.readOnly = !1, y.trigger("stop"), t.methods = {}, t.start = !1, 
+                }, 0), f.type = t.type, f.readOnly = !1, y.trigger("stop"), t.methods = {}, t.start = !1,
                 y) : y;
             },
             open: function(c) {
                 return t.open ? y : (w.addClass(v.active), e(f, "expanded", !0), setTimeout(function() {
                     y.$root.addClass(v.opened), e(y.$root[0], "hidden", !1);
-                }, 0), c !== !1 && (t.open = !0, s && k.css("overflow", "hidden").css("padding-right", "+=" + d()), 
+                }, 0), c !== !1 && (t.open = !0, s && k.css("overflow", "hidden").css("padding-right", "+=" + d()),
                 y.$root[0].focus(), j.on("click." + t.id + " focusin." + t.id, function(a) {
                     var b = a.target;
                     b != f && b != document && 3 != a.which && y.close(b === y.$root.children()[0]);
                 }).on("keydown." + t.id, function(c) {
                     var d = c.keyCode, e = y.component.key[d], f = c.target;
-                    27 == d ? y.close(!0) : f != y.$root[0] || !e && 13 != d ? a.contains(y.$root[0], f) && 13 == d && (c.preventDefault(), 
+                    27 == d ? y.close(!0) : f != y.$root[0] || !e && 13 != d ? a.contains(y.$root[0], f) && 13 == d && (c.preventDefault(),
                     f.click()) : (c.preventDefault(), e ? b._.trigger(y.component.key.go, y, [ b._.trigger(e) ]) : y.$root.find("." + v.highlighted).hasClass(v.disabled) || y.set("select", y.component.item.highlight).close());
                 })), y.trigger("open"));
             },
@@ -3928,7 +3928,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                     y.$root.on("focus.toOpen", r);
                 }, 0)), w.removeClass(v.active), e(f, "expanded", !1), setTimeout(function() {
                     y.$root.removeClass(v.opened + " " + v.focused), e(y.$root[0], "hidden", !0);
-                }, 0), t.open ? (t.open = !1, s && k.css("overflow", "").css("padding-right", "-=" + d()), 
+                }, 0), t.open ? (t.open = !1, s && k.css("overflow", "").css("padding-right", "-=" + d()),
                 j.off("." + t.id), y.trigger("close")) : y;
             },
             clear: function(a) {
@@ -3938,7 +3938,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                 var e, f, g = a.isPlainObject(b), h = g ? b : {};
                 if (d = g && a.isPlainObject(c) ? c : d || {}, b) {
                     g || (h[b] = c);
-                    for (e in h) f = h[e], e in y.component.item && (void 0 === f && (f = null), y.component.set(e, f, d)), 
+                    for (e in h) f = h[e], e in y.component.item && (void 0 === f && (f = null), y.component.set(e, f, d)),
                     ("select" == e || "clear" == e) && w.val("clear" == e ? "" : y.get(e, u.format)).trigger("change");
                     y.render();
                 }
@@ -3986,7 +3986,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
     }
     function c(a) {
         var b, c = "position";
-        return a.currentStyle ? b = a.currentStyle[c] : window.getComputedStyle && (b = getComputedStyle(a)[c]), 
+        return a.currentStyle ? b = a.currentStyle[c] : window.getComputedStyle && (b = getComputedStyle(a)[c]),
         "fixed" == b;
     }
     function d() {
@@ -4033,12 +4033,12 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         };
     }, b._ = {
         group: function(a) {
-            for (var c, d = "", e = b._.trigger(a.min, a); e <= b._.trigger(a.max, a, [ e ]); e += a.i) c = b._.trigger(a.item, a, [ e ]), 
+            for (var c, d = "", e = b._.trigger(a.min, a); e <= b._.trigger(a.max, a, [ e ]); e += a.i) c = b._.trigger(a.item, a, [ e ]),
             d += b._.node(a.node, c[0], c[1], c[2]);
             return d;
         },
         node: function(b, c, d, e) {
-            return c ? (c = a.isArray(c) ? c.join("") : c, d = d ? ' class="' + d + '"' : "", 
+            return c ? (c = a.isArray(c) ? c.join("") : c, d = d ? ' class="' + d + '"' : "",
             e = e ? " " + e : "", "<" + b + d + e + ">" + c + "</" + b + ">") : "";
         },
         lead: function(a) {
@@ -4082,7 +4082,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             view: "parse create validate viewset",
             disable: "deactivate",
             enable: "activate"
-        }, c.item = {}, c.item.clear = null, c.item.disable = (b.disable || []).slice(0), 
+        }, c.item = {}, c.item.clear = null, c.item.disable = (b.disable || []).slice(0),
         c.item.enable = -function(a) {
             return a[0] === !0 ? a.shift() : -1;
         }(c.item.disable), c.set("min", b.min).set("max", b.max).set("now"), g ? c.set("select", g, {
@@ -4122,14 +4122,14 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         var d = this, e = d.item;
         return null === b ? ("clear" == a && (a = "select"), e[a] = b, d) : (e["enable" == a ? "disable" : "flip" == a ? "enable" : a] = d.queue[a].split(" ").map(function(e) {
             return b = d[e](a, b, c);
-        }).pop(), "select" == a ? d.set("highlight", e.select, c) : "highlight" == a ? d.set("view", e.highlight, c) : a.match(/^(flip|min|max|disable|enable)$/) && (e.select && d.disabled(e.select) && d.set("select", e.select, c), 
+        }).pop(), "select" == a ? d.set("highlight", e.select, c) : "highlight" == a ? d.set("view", e.highlight, c) : a.match(/^(flip|min|max|disable|enable)$/) && (e.select && d.disabled(e.select) && d.set("select", e.select, c),
         e.highlight && d.disabled(e.highlight) && d.set("highlight", e.highlight, c)), d);
     }, c.prototype.get = function(a) {
         return this.item[a];
     }, c.prototype.create = function(a, c, d) {
         var e, g = this;
-        return c = void 0 === c ? a : c, c == -(1 / 0) || c == 1 / 0 ? e = c : b.isPlainObject(c) && f.isInteger(c.pick) ? c = c.obj : b.isArray(c) ? (c = new Date(c[0], c[1], c[2]), 
-        c = f.isDate(c) ? c : g.create().obj) : c = f.isInteger(c) || f.isDate(c) ? g.normalize(new Date(c), d) : g.now(a, c, d), 
+        return c = void 0 === c ? a : c, c == -(1 / 0) || c == 1 / 0 ? e = c : b.isPlainObject(c) && f.isInteger(c.pick) ? c = c.obj : b.isArray(c) ? (c = new Date(c[0], c[1], c[2]),
+        c = f.isDate(c) ? c : g.create().obj) : c = f.isInteger(c) || f.isDate(c) ? g.normalize(new Date(c), d) : g.now(a, c, d),
         {
             year: e || c.getFullYear(),
             month: e || c.getMonth(),
@@ -4142,7 +4142,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         var d = this, e = function(a) {
             return a === !0 || b.isArray(a) || f.isDate(a) ? d.create(a) : a;
         };
-        return f.isInteger(a) || (a = e(a)), f.isInteger(c) || (c = e(c)), f.isInteger(a) && b.isPlainObject(c) ? a = [ c.year, c.month, c.date + a ] : f.isInteger(c) && b.isPlainObject(a) && (c = [ a.year, a.month, a.date + c ]), 
+        return f.isInteger(a) || (a = e(a)), f.isInteger(c) || (c = e(c)), f.isInteger(a) && b.isPlainObject(c) ? a = [ c.year, c.month, c.date + a ] : f.isInteger(c) && b.isPlainObject(a) && (c = [ a.year, a.month, a.date + c ]),
         {
             from: e(a),
             to: e(c)
@@ -4157,8 +4157,8 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
     }, c.prototype.navigate = function(a, c, d) {
         var e, f, g, h, i = b.isArray(c), j = b.isPlainObject(c), k = this.item.view;
         if (i || j) {
-            for (j ? (f = c.year, g = c.month, h = c.date) : (f = +c[0], g = +c[1], h = +c[2]), 
-            d && d.nav && k && k.month !== g && (f = k.year, g = k.month), e = new Date(f, g + (d && d.nav ? d.nav : 0), 1), 
+            for (j ? (f = c.year, g = c.month, h = c.date) : (f = +c[0], g = +c[1], h = +c[2]),
+            d && d.nav && k && k.month !== g && (f = k.year, g = k.month), e = new Date(f, g + (d && d.nav ? d.nav : 0), 1),
             f = e.getFullYear(), g = e.getMonth(); new Date(f, g, h).getMonth() !== g; ) h -= 1;
             c = [ f, g, h ];
         }
@@ -4180,9 +4180,9 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
             }
             return f.isInteger(a);
         }).length;
-        if ((!d || !d.nav) && (!m && j.disabled(c) || m && j.disabled(c) && (p || e || g) || !m && (c.pick <= n.pick || c.pick >= o.pick))) for (m && !p && (!g && l > 0 || !e && 0 > l) && (l *= -1); j.disabled(c) && (Math.abs(l) > 1 && (c.month < k.month || c.month > k.month) && (c = k, 
-        l = l > 0 ? 1 : -1), c.pick <= n.pick ? (h = !0, l = 1, c = j.create([ n.year, n.month, n.date + (c.pick === n.pick ? 0 : -1) ])) : c.pick >= o.pick && (i = !0, 
-        l = -1, c = j.create([ o.year, o.month, o.date + (c.pick === o.pick ? 0 : 1) ])), 
+        if ((!d || !d.nav) && (!m && j.disabled(c) || m && j.disabled(c) && (p || e || g) || !m && (c.pick <= n.pick || c.pick >= o.pick))) for (m && !p && (!g && l > 0 || !e && 0 > l) && (l *= -1); j.disabled(c) && (Math.abs(l) > 1 && (c.month < k.month || c.month > k.month) && (c = k,
+        l = l > 0 ? 1 : -1), c.pick <= n.pick ? (h = !0, l = 1, c = j.create([ n.year, n.month, n.date + (c.pick === n.pick ? 0 : -1) ])) : c.pick >= o.pick && (i = !0,
+        l = -1, c = j.create([ o.year, o.month, o.date + (c.pick === o.pick ? 0 : 1) ])),
         !h || !i); ) c = j.create([ c.year, c.month, c.date + l ]);
         return c;
     }, c.prototype.disabled = function(a) {
@@ -4194,7 +4194,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         }).length, -1 === c.item.enable ? !d : d || a.pick < c.item.min.pick || a.pick > c.item.max.pick;
     }, c.prototype.parse = function(a, b, c) {
         var d = this, e = {};
-        return b && "string" == typeof b ? (c && c.format || (c = c || {}, c.format = d.settings.format), 
+        return b && "string" == typeof b ? (c && c.format || (c = c || {}, c.format = d.settings.format),
         d.formats.toArray(c.format).map(function(a) {
             var c = d.formats[a], g = c ? f.trigger(c, d, [ b, e ]) : a.replace(/^!/, "").length;
             c && (e[a] = b.substr(0, g)), b = b.substr(g);
@@ -4255,14 +4255,14 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         return f.isInteger(a) && f.isInteger(c) || "boolean" == typeof a && "boolean" == typeof c ? a === c : (f.isDate(a) || b.isArray(a)) && (f.isDate(c) || b.isArray(c)) ? d.create(a).pick === d.create(c).pick : b.isPlainObject(a) && b.isPlainObject(c) ? d.isDateExact(a.from, c.from) && d.isDateExact(a.to, c.to) : !1;
     }, c.prototype.isDateOverlap = function(a, c) {
         var d = this, e = d.settings.firstDay ? 1 : 0;
-        return f.isInteger(a) && (f.isDate(c) || b.isArray(c)) ? (a = a % 7 + e, a === d.create(c).day + 1) : f.isInteger(c) && (f.isDate(a) || b.isArray(a)) ? (c = c % 7 + e, 
+        return f.isInteger(a) && (f.isDate(c) || b.isArray(c)) ? (a = a % 7 + e, a === d.create(c).day + 1) : f.isInteger(c) && (f.isDate(a) || b.isArray(a)) ? (c = c % 7 + e,
         c === d.create(a).day + 1) : b.isPlainObject(a) && b.isPlainObject(c) ? d.overlapRanges(a, c) : !1;
     }, c.prototype.flipEnable = function(a) {
         var b = this.item;
         b.enable = a || (-1 == b.enable ? 1 : -1);
     }, c.prototype.deactivate = function(a, c) {
         var d = this, e = d.item.disable.slice(0);
-        return "flip" == c ? d.flipEnable() : c === !1 ? (d.flipEnable(1), e = []) : c === !0 ? (d.flipEnable(-1), 
+        return "flip" == c ? d.flipEnable() : c === !1 ? (d.flipEnable(1), e = []) : c === !0 ? (d.flipEnable(-1),
         e = []) : c.map(function(a) {
             for (var c, g = 0; g < e.length; g += 1) if (d.isDateExact(a, e[g])) {
                 c = !0;
@@ -4272,7 +4272,7 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
         }), e;
     }, c.prototype.activate = function(a, c) {
         var d = this, e = d.item.disable, g = e.length;
-        return "flip" == c ? d.flipEnable() : c === !0 ? (d.flipEnable(1), e = []) : c === !1 ? (d.flipEnable(-1), 
+        return "flip" == c ? d.flipEnable() : c === !0 ? (d.flipEnable(1), e = []) : c === !1 ? (d.flipEnable(-1),
         e = []) : c.map(function(a) {
             var c, h, i, j;
             for (i = 0; g > i; i += 1) {
@@ -4373,8 +4373,8 @@ Vel = $ ? $.Velocity : Velocity, function(a) {
                         a = b.create([ k.year, k.month, a + (c.firstDay ? 1 : 0) ]);
                         var d = i && i.pick == a.pick, e = j && j.pick == a.pick, g = l && b.disabled(a) || a.pick < m.pick || a.pick > n.pick, o = f.trigger(b.formats.toString, b, [ c.format, a ]);
                         return [ f.node("div", a.date, function(b) {
-                            return b.push(k.month == a.month ? c.klass.infocus : c.klass.outfocus), h.pick == a.pick && b.push(c.klass.now), 
-                            d && b.push(c.klass.selected), e && b.push(c.klass.highlighted), g && b.push(c.klass.disabled), 
+                            return b.push(k.month == a.month ? c.klass.infocus : c.klass.outfocus), h.pick == a.pick && b.push(c.klass.now),
+                            d && b.push(c.klass.selected), e && b.push(c.klass.highlighted), g && b.push(c.klass.disabled),
                             b.join(" ");
                         }([ c.klass.day ]), "data-pick=" + a.pick + " " + f.ariaAttr({
                             role: "gridcell",

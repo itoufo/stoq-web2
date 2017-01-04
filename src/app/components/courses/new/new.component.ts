@@ -1,5 +1,10 @@
-import * as jquery  from 'jquery';
-import '../../../../js/materialize-plugins/leanModal.js'
+import * as jQuery from 'jquery';
+import 'hammerjs';
+import '../../../../js/materialize-plugins/leanModal.js';
+import 'jquery-validation/dist/jquery.validate.js';
+var jquery = jQuery;
+
+
 import {
   Component,
   Output,
@@ -24,7 +29,6 @@ import {
   PopupBase,
   ErrorMessage,
 } from "./../../../models";
-
 
 @Component({
   selector: 'courses-new',

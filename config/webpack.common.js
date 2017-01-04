@@ -121,7 +121,10 @@ module.exports = function (options) {
           test: /\.json$/,
           use: 'json-loader'
         },
-
+        {
+          test: require.resolve('jquery'),
+          loaders: ['expose-loader?jQuery', 'expose-loader?$']
+        },
         /*
          * to string and css loader support for *.css files
          * Returns file content as string

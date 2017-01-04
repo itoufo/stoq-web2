@@ -128,3 +128,9 @@ interface ErrorConstructor extends ErrorStackTraceLimit {}
 interface NodeRequireFunction extends Es6PromiseLoader  {}
 interface NodeModule extends WebpackModule {}
 interface Global extends GlobalEnvironment  {}
+
+
+interface jQuery {
+  sideNav(option:any): void;
+  velocity(option:any): void;
+}

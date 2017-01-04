@@ -5,7 +5,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var jquery = require("jquery/dist/jquery.js");
+var jQuery = require('jquery');
+var jquery = jQuery;
 var wysihtml5 = require('../../../../js/wysihtml5/dist/wysihtml5-0.4.0pre');
 var wysihtml5ParserRules = require('../../../../js/wysihtml5/dist/advanced');
 var core_1 = require('@angular/core');
@@ -51,9 +52,9 @@ var QuestionsFormComponent = (function () {
         //this.activate.emit('event');
         this.endLoading.emit('event');
         this.startValidation();
-        jquery(this.el.nativeElement)
+        jQuery(this.el.nativeElement)
             .find("#" + this.editorContainerId() + ' iframe.wysihtml5-sandbox, input[name="_wysihtml5_mode"]').remove();
-        var $editor = jquery(this.el.nativeElement).find("#" + this.editorId());
+        var $editor = jQuery(this.el.nativeElement).find("#" + this.editorId());
         $editor.css("display", "block");
         this._editor = new wysihtml5.Editor(this.editorId(), {
             toolbar: this.toolbarId(),
@@ -62,8 +63,8 @@ var QuestionsFormComponent = (function () {
         });
         this._editor.on("change", this.setQuestionText.bind(this));
         this._editor.on("focus", this.focusEditor.bind(this));
-        jquery(document).ready(function () {
-            jquery('.tooltipped').tooltip({ delay: 50 });
+        $(document).ready(function () {
+            $('.tooltipped').tooltip({ delay: 50 });
         });
         this._loading.endLoading();
     };
@@ -137,9 +138,9 @@ var QuestionsFormComponent = (function () {
     };
     QuestionsFormComponent.prototype.startValidation = function () {
         var formId = "#" + this.formId();
-        jquery(formId).data('validator', null);
-        jquery(formId).unbind('validate');
-        jquery(formId).validate({
+        jQuery(formId).data('validator', null);
+        jQuery(formId).unbind('validate');
+        jQuery(formId).validate({
             ignore: ":hidden:not(textarea)",
             debug: true,
             rules: {
@@ -154,9 +155,9 @@ var QuestionsFormComponent = (function () {
             },
             errorElement: 'div',
             errorPlacement: function (error, element) {
-                var placement = jquery(element).data('error');
+                var placement = jQuery(element).data('error');
                 if (placement) {
-                    jquery(placement).append(error);
+                    jQuery(placement).append(error);
                 }
                 else {
                     error.insertAfter(element);
@@ -232,8 +233,8 @@ var QuestionsFormComponent = (function () {
         this.question.references.push(new models_1.Reference(""));
     };
     QuestionsFormComponent.prototype.invalidFunction = function (event, validator) {
-        var form = jquery("#" + this.formId());
-        var errorDescription = jquery("#" + this.formId() + " div.error");
+        var form = jQuery("#" + this.formId());
+        var errorDescription = jQuery("#" + this.formId() + " div.error");
         form.addClass("invalid");
         /**
          * 下記エラー内容表示は上手く動いておらず

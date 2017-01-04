@@ -1,4 +1,5 @@
-var jQuery, $ = require('jquery');
+import * as jQuery from 'jquery';
+var jquery = jQuery;
 
 import {
   Component,
@@ -127,7 +128,7 @@ export class CoursesFormComponent implements OnInit, OnDestroy {
 
     // TODO: 発火タイミングをもっといい感じにできる気がする。
     // TODO: と言うか、このタイミングだと発火しそこねる気がする。
-    jQuery(this.el.nativeElement).find('.collapsible')
+    jquery(this.el.nativeElement).find('.collapsible')
       .each(function(i) {
         jQuery(this).collapsible({accordion: false});
       });
@@ -215,10 +216,10 @@ export class CoursesFormComponent implements OnInit, OnDestroy {
   startValidation() {
     var formId = "#course_form";
 
-    jQuery(formId).data('validator', null);
-    jQuery(formId).unbind('validate');
+    jquery(formId).data('validator', null);
+    jquery(formId).unbind('validate');
 
-    jQuery(formId).validate({
+    jquery(formId).validate({
       rules: {
         name: {
           required: true

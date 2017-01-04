@@ -5,7 +5,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var jQuery, $ = require('jquery');
+var jQuery = require('jquery');
+var jquery = jQuery;
 var core_1 = require('@angular/core');
 var services_1 = require("./../../../services");
 var models_1 = require("./../../../models");
@@ -68,7 +69,7 @@ var CoursesFormComponent = (function () {
         this.startValidation();
         // TODO: 発火タイミングをもっといい感じにできる気がする。
         // TODO: と言うか、このタイミングだと発火しそこねる気がする。
-        jQuery(this.el.nativeElement).find('.collapsible')
+        jquery(this.el.nativeElement).find('.collapsible')
             .each(function (i) {
             jQuery(this).collapsible({ accordion: false });
         });
@@ -137,9 +138,9 @@ var CoursesFormComponent = (function () {
     };
     CoursesFormComponent.prototype.startValidation = function () {
         var formId = "#course_form";
-        jQuery(formId).data('validator', null);
-        jQuery(formId).unbind('validate');
-        jQuery(formId).validate({
+        jquery(formId).data('validator', null);
+        jquery(formId).unbind('validate');
+        jquery(formId).validate({
             rules: {
                 name: {
                     required: true
