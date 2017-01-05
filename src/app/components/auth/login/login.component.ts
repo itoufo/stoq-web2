@@ -8,7 +8,7 @@ import {
   AfterViewInit,
 } from '@angular/core';
 
-import { Router } from '@angular/router';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 import {
   AuthService,
   ApiService,
@@ -17,7 +17,6 @@ import {
   ErrorService,
   PopupService,
 } from "./../../../services";
-
 import { Response } from '@angular/http';
 
 @Component({
@@ -39,11 +38,12 @@ export class LoginComponent implements OnInit, AfterViewInit{
   remember;
 
   constructor(
+    private route: ActivatedRoute,
     private _router: Router,
     private _api: ApiService,
     private _auth: AuthService,
     private _logger: LoggerService,
-    private _loading: LoadingService
+    private _loading: LoadingService,
   ) {
     this.email = localStorage.getItem('remember-name');
     this.password = localStorage.getItem('remember-password');

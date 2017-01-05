@@ -11,6 +11,7 @@ import {
 
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
+import {Params} from "@angular/router";
 
 @Injectable()
 export class ApiService {
@@ -24,6 +25,9 @@ export class ApiService {
   private api_path;
   private analyze_path;
   private material_bucket;
+  private localhost;
+
+  private authParams: Params;
 
   public headers: Headers;
   constructor(
@@ -32,6 +36,7 @@ export class ApiService {
     this.api_path = process.env.API_ENDPOINT;
     this.analyze_path = process.env.ANALYZE_ENDPOINT;
     this.material_bucket= process.env.MATERIAL_BUCKET;
+    this.localhost= process.env.LOCAL_HOST;
   }
 
   // *********************** ***************************
@@ -48,7 +53,7 @@ export class ApiService {
     params['email'] = params['email'] || "";
     params['password'] = params['password'] || "";
     params['password_confirmation'] = params['password_confirmation'] || "";
-    params['confirm_success_url'] = "https://" + document.location.hostname + "#/confirmation";
+    params['confirm_success_url'] = this.localhost+ "/confirmation";
 
     console.log("post signup");
     return this._callPostApi('Anonymous', '/auth', params);
@@ -64,13 +69,24 @@ export class ApiService {
   }
 
   /**
-   * ログイン
+   * パスワード再設定要求
    * @param params { email, passeword }
    * @returns {Observable<Response>|Observable<R>}
    */
   postResetPassword(params: any) {
-    params['redirect_url'] = "https://" + document.location.hostname + "#/login";
+    params['redirect_url'] = this.localhost + "/password/reset";
     return this._callPostApi('Anonymous', '/auth/password', params);
+  }
+
+  /**
+   * パスワード更新
+   * @param params
+   * @param authParams
+   * @returns {Observable<Response>}
+   */
+  putEditPassword(params: any, authParams?: Params) {
+    this.authParams  = authParams;
+    return this._callPutApi('Secured', '/auth/password', params);
   }
 
   /**
@@ -571,6 +587,33 @@ export class ApiService {
   }
 
   /**
+   * Putのコール
+   * @param type
+   * @param url
+   * @param params
+   * @param analyze
+   * @returns {Observable<Response>}
+   * @private
+   */
+  _callPutApi(type: string, url: string, params?: any, analyze: boolean = false) : Observable<Response> {
+    params = JSON.stringify(params);
+    console.log(params);
+    if(analyze){
+      url = this.analyze_path + url;
+    }else{
+      url = this.api_path + url;
+    }
+
+    if (type === 'Anonymous') {
+      this._setHeader();
+      return this._http.put(url, params, { headers: this.headers });
+    } else if (type === 'Secured') {
+      this._setHeader(true);
+      return this._http.put(url, params, { headers: this.headers });
+    }
+  }
+
+  /**
    * Deleteのコール
    * @param type
    * @param url
@@ -630,6 +673,10 @@ export class ApiService {
       this.headers.append('Access-Token', localStorage.getItem('Access-Token'));
       this.headers.append('Client', localStorage.getItem('Client'));
       this.headers.append('Uid', localStorage.getItem('Uid'));
+    }else if(auth && this.authParams){
+      this.headers.append('Access-Token', this.authParams['token']);
+      this.headers.append('Client', this.authParams['client']);
+      this.headers.append('Uid', this.authParams['uid']);
     }
   }
 }

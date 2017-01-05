@@ -62,7 +62,8 @@ import {
   FooterComponent,
   PopupComponent,
   NotFoundComponent,
-  ResetPasswordComponent,
+  PasswordResetComponent,
+  PasswordRequestComponent,
 } from './components/index'
 
 import {
@@ -133,13 +134,14 @@ type StoreType = {
     GroupsFormComponent,
     GroupsIndexComponent,
     UserAnalysisComponent,
-    ResetPasswordComponent,
+    PasswordResetComponent,
+    PasswordRequestComponent,
   ],
   imports: [ // import Angular's modules
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: false, preloadingStrategy: PreloadAllModules })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
@@ -152,6 +154,7 @@ export class AppModule {
     public appRef: ApplicationRef,
     public appState: AppState
   ) {}
+
 
   public hmrOnInit(store: StoreType) {
     if (!store || !store.state) {

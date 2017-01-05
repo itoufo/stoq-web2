@@ -15,6 +15,7 @@ const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
 const  API_ENDPOINT = process.env.ApiEndpoint = 'http://localhost:3000/api/v1';
 const  ANALYZE_ENDPOINT = process.env.AnalyzeEndpoint = 'http://127.0.0.1:8888';
+const  LOCAL_HOST = process.env.LocalHost = 'http://127.0.0.1:9090';
 const  MATERIAL_BUCKET = process.env.MaterialBucket = 'stoq-material-dev';
 
 /**
@@ -29,12 +30,12 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   port: PORT,
   ENV: ENV,
   HMR: HMR,
+  LOCAL_HOST: LOCAL_HOST,
   API_ENDPOINT: API_ENDPOINT,
   ANALYZE_ENDPOINT: ANALYZE_ENDPOINT,
   MATERIAL_BUCKET: MATERIAL_BUCKET
 });
 
-const MaterialBucket = 'stoq-material-dev';
 
 /**
  * Webpack configuration
@@ -113,6 +114,7 @@ module.exports = function (options) {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
+          'LOCAL_HOST': JSON.stringify(METADATA.LOCAL_HOST),
           'API_ENDPOINT': JSON.stringify(METADATA.API_ENDPOINT),
           'ANALYZE_ENDPOINT': JSON.stringify(METADATA.ANALYZE_ENDPOINT),
           'MATERIAL_BUCKET': JSON.stringify(METADATA.MATERIAL_BUCKET),

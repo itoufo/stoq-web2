@@ -25,12 +25,7 @@ export {UserAnalysisComponent} from "./users";
 /**
  * 認証関係
  */
-export {
-  LoginComponent,
-  SignupComponent,
-  ConfirmationComponent,
-  ResetPasswordComponent,
-} from "./auth";
+export * from "./auth";
 
 
 /**

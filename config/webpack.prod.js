@@ -18,6 +18,10 @@ const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const V8LazyParseWebpackPlugin = require('v8-lazy-parse-webpack-plugin');
 
+const  API_ENDPOINT = process.env.ApiEndpoint = 'https://stoq-api.herokuapp.com/api/v1';
+const  ANALYZE_ENDPOINT = process.env.AnalyzeEndpoint = 'https://stoq-analy.herokuapp.com';
+const  LOCAL_HOST = process.env.LocalHost =  'https://stoq-web.herokuapp.com';
+const  MATERIAL_BUCKET = process.env.MaterialBucket = 'stoq-material';
 
 /**
  * Webpack Constants
@@ -29,12 +33,13 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   host: HOST,
   port: PORT,
   ENV: ENV,
-  HMR: false
+  HMR: false,
+  LOCAL_HOST: LOCAL_HOST,
+  API_ENDPOINT: API_ENDPOINT,
+  ANALYZE_ENDPOINT: ANALYZE_ENDPOINT,
+  MATERIAL_BUCKET: MATERIAL_BUCKET
 });
 
-const API_ENDPOINT = 'https://stoq-api.herokuapp.com/api/v1';
-const ANALYZE_ENDPOINT = 'https://stoq-analy.herokuapp.com';
-const MATERIAL_BUCKET = 'stoq-material';
 
 module.exports = function (env) {
   return webpackMerge(commonConfig({env: ENV}), {
@@ -119,9 +124,10 @@ module.exports = function (env) {
           'ENV': JSON.stringify(METADATA.ENV),
           'NODE_ENV': JSON.stringify(METADATA.ENV),
           'HMR': METADATA.HMR,
-          'ApiEndpoint': API_ENDPOINT,
-          'AnalyzeEndpoint': ANALYZE_ENDPOINT,
-          'MaterialBucket': MATERIAL_BUCKET,
+          'LOCAL_HOST': JSON.stringify(METADATA.LOCAL_HOST),
+          'API_ENDPOINT': JSON.stringify(METADATA.API_ENDPOINT),
+          'ANALYZE_ENDPOINT': JSON.stringify(METADATA.ANALYZE_ENDPOINT),
+          'MATERIAL_BUCKET': JSON.stringify(METADATA.MATERIAL_BUCKET),
         }
       }),
 

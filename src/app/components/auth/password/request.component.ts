@@ -27,13 +27,12 @@ import {Angulartics2On} from 'angulartics2';
 
 @Component({
   selector: 'signup',
-  templateUrl: './reset_password.component.html',
-  styleUrls: ['./reset_password.component.scss'],
+  templateUrl: './request.component.html',
+  styleUrls: ['./request.component.scss'],
   providers: [ApiService, AuthService],
   inputs: ['email', 'password', 'password_confirmation'],
 })
-
-export class ResetPasswordComponent implements OnInit{
+export class PasswordRequestComponent implements OnInit{
   private email: string;
   private password: string;
   private password_confirmation: string;

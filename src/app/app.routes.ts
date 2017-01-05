@@ -29,18 +29,23 @@ import {
   GroupsShowComponent,
   GroupsIndexComponent,
   GroupsEditComponent,
-  ResetPasswordComponent,
+  PasswordResetComponent,
+  PasswordRequestComponent,
 } from './components'
 
 export const ROUTES: Routes = [
   { path: '',
     redirectTo: '/courses',
     pathMatch: 'full'
-
   },
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
-  { path: 'reset_password', component: ResetPasswordComponent},
+  { path: 'password',
+    children: [
+      { path: 'request', component: PasswordRequestComponent},
+      { path: 'reset', component: PasswordResetComponent},
+    ]
+  },
   { path: 'confirmation', component: ConfirmationComponent},
   { path: 'courses', component: CoursesComponent,
     children: [

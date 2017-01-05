@@ -1,6 +1,3 @@
-// import * as jQuery from 'jquery';
-import 'hammerjs';
-
 import {
   Component,
   AfterViewInit,

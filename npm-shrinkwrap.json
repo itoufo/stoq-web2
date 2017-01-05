@@ -3709,6 +3709,18 @@
       "from": "https://registry.npmjs.org/jquery/-/jquery-3.1.1.tgz",
       "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.1.1.tgz"
     },
+    "jquery-hammerjs": {
+      "version": "2.0.0",
+      "from": "jquery-hammerjs@latest",
+      "resolved": "https://registry.npmjs.org/jquery-hammerjs/-/jquery-hammerjs-2.0.0.tgz",
+      "dependencies": {
+        "jquery": {
+          "version": "2.1.4",
+          "from": "jquery@>=2.1.0 <2.2.0",
+          "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.1.4.tgz"
+        }
+      }
+    },
     "jquery-validation": {
       "version": "1.16.0",
       "from": "jquery-validation@latest",

@@ -1,0 +1,30 @@
+<div id="loading_curtain"></div>
+
+<div class="signup">
+  <div class="p-container">
+    <h1 class="str-u-text-center"></h1>
+    <p class="str-u-text-center str-u-m20-b p-description">パスワードの再設定</p>
+    <form class="str-form" id="reset_password-form">
+      <div class="str-form-group">
+        <input type="password" id="password"
+               [(ngModel)]="password" name="password" placeholder="パスワード" />
+        <input type="password" id="password_confirmation"
+               [(ngModel)]="password_confirmation" name="password_confirmation" placeholder="パスワード確認" />
+      </div>
+      <div class="str-form-group">
+        <button type='submit'
+                angulartics2On="click"
+                angularticsEvent="PasswordResetClick"
+                angularticsCategory="signup"
+                class="str-btn str-btn-block str-btn-cuxino"
+        >送信</button>
+      </div>
+    </form>
+    <div>
+      <a routerLink="/login" routerLinkActive="active">ログイン</a>
+    </div>
+    <div>
+      <a routerLink="/signup" routerLinkActive="active">新規登録</a>
+    </div>
+  </div>
+</div>
