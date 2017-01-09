@@ -1,5 +1,4 @@
 import * as moment from 'moment/moment';
-import * as jquery from "jquery";
 
 
 import {
@@ -83,9 +82,9 @@ export class GroupsNewComponent implements OnInit, AfterViewInit {
     // POPUPのデザインを選択
     this.popup.id = "#modal3";
 
-    jquery("form").unbind('submit');
-    jquery('.modal-trigger').unbind('click');
-    jquery('.modal-trigger').leanModal({
+    jQuery("form").unbind('submit');
+    jQuery('.modal-trigger').unbind('click');
+    jQuery('.modal-trigger').leanModal({
       dismissible: true, // Modal can be dismissed by clicking outside of the modal
       opacity: .5, // Opacity of modal background
       in_duration: 300, // Transition in duration

@@ -200,7 +200,7 @@ export class CoursesFormComponent implements OnInit, OnDestroy {
       data => {
         var body = data.json();
         this._logger.debug(data);
-        this._router.navigateByUrl('courses/' + body.data.course_id);
+        this._router.navigateByUrl('courses/' + body.data.course_id + '/detail');
       },
       err => {
         this._popup.displayError(err, "コース更新エラー");
