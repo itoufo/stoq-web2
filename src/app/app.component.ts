@@ -4,6 +4,7 @@
 
 import * as jQuery from 'jquery';
 import 'velocity-animate';
+import 'materialize-css/dist/js/materialize.js';
 import '../js/materialize-plugins/sideNav.js';
 import 'hammerjs/hammer.js';
 import 'jquery-hammerjs/jquery.hammer.js';
