@@ -13,7 +13,7 @@ const DefinePlugin = require('webpack/lib/DefinePlugin');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 
-const  API_ENDPOINT = process.env.ApiEndpoint = 'http://localhost:3000/api/v1';
+const  API_ENDPOINT = process.env.ApiEndpoint = 'https://stoq-api-dev.herokuapp.com/api/v1';
 const  ANALYZE_ENDPOINT = process.env.AnalyzeEndpoint = 'http://127.0.0.1:8888';
 const  LOCAL_HOST = process.env.LocalHost = 'http://127.0.0.1:9090';
 const  MATERIAL_BUCKET = process.env.MaterialBucket = 'stoq-material-dev';
